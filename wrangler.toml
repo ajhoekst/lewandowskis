@@ -3,6 +3,7 @@ main = "worker/dist/worker.js"
 compatibility_date = "2026-10-23"
 account_id = "d4f484575c07f97310120a84b709dcca"
 workers_dev = true
+preview_urls = true
 
 [assets]
 directory = "worker/public"
@@ -17,3 +18,7 @@ binding = "DB"
 database_name = "lewandowskis"
 database_id = "6e79a05a-ceb6-4ce4-b097-450ac8208844"
 migrations_dir = "worker/migrations"
+
+[observability.logs]
+enabled = true
+invocation_logs = true
