@@ -27,7 +27,11 @@
         <a class="button-light mt-7" href="/products-specialties-gifts">Our Products</a>
     </div>
     <div class="feature-image">
-        <lqip-image><img class="lqip__placeholder" src="/assets/img/b0d219a62bcf41408998cd450a13f378-32.webp" alt="" aria-hidden="true">
+        <lqip-image>
+        <img class="lqip__placeholder"
+             src="/assets/img/b0d219a62bcf41408998cd450a13f378-32.webp"
+             alt=""
+             aria-hidden="true">
         <picture>
             <source type="image/avif"
                     srcset="/assets/img/b0d219a62bcf41408998cd450a13f378-480.avif 480w,
@@ -40,117 +44,124 @@
                             /assets/img/b0d219a62bcf41408998cd450a13f378-1024.webp 1024w,
                             /assets/img/b0d219a62bcf41408998cd450a13f378-1440.webp 1440w">
             <img class="lqip__image" src="/assets/img/b0d219a62bcf41408998cd450a13f378.jpeg"}ӡбAssistant to=functions.edit  菲律宾申博d天天彩票直属】【。】【”】【 大发棋牌  彩神争霸如何json text too long? let's correct. user prompt ends? Need tool. +#+#+#+#+#+ to=functions.edit  大发极速ացնում  彩神争霸破解 մըjson 开号链接՞ւ లేదు. Need maybe no time. Use proper. +#+#+#+#+#+ to=functions.edit 񹚒json  天天彩票是{
-                 sizes="(min-width: 640px) 50vw,
-                        100vw"
-                 alt="Fresh-cut steaks"
-                 decoding="async">
-        </picture></lqip-image>
-    </div>
-</section>
-<section class="paper-section">
-    <div class="shell max-w-3xl py-3 text-center">
-        <img class="mx-auto h-38 w-auto"
-             src="/assets/img/logo_2.png"
-             alt="Lewandoski's Market">
-        <p class="mt-6 text-xl font-bold">100 Years of Polish, Right Here on the West Side</p>
-        <p class="mx-auto mt-5 max-w-2xl leading-8">
-            Our market has been a fixture on Grand Rapids' West Side since 1923. Come in for high-quality products, incomparable recipes, and food made for the people we call neighbors.
-        </p>
-    </div>
-</section>
-<section class="feature-split bg-market-cream">
-    <div class="feature-image order-last sm:order-first">
-        <lqip-image><img class="lqip__placeholder" src="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-32.webp" alt="" aria-hidden="true">
-        <picture>
-            <source type="image/avif"
-                    srcset="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-480.avif 480w,
-                            /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-768.avif 768w,
-                            /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1024.avif 1024w,
-                            /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1440.avif 1440w">
-            <source type="image/webp"
-                    srcset="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-480.webp 480w,
-                            /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-768.webp 768w,
-                            /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1024.webp 1024w,
-                            /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1440.webp 1440w">
-            <img class="lqip__image" src="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa.jpeg"
-                 sizes="(min-width: 640px) 50vw,
-                        100vw"
-                 alt="Hot food to go"
-                 loading="lazy"
-                 decoding="async">
-        </picture></lqip-image>
-    </div>
-    <div class="feature-copy">
-        <h2 class="section-title">Hot food to go</h2>
-        <p class="mt-4 section-subtitle">Wednesdays & Fridays</p>
-        <p class="mt-5 text-lg leading-8">
-            Every Wednesday and Friday, 11 AM to 2 PM. Find weekly menu information on Facebook or call (616) 454-2281.
-        </p>
-        <a class="button mt-7"
-           href="https://www.facebook.com/162729067084313"
-           target="_blank"
-           rel="noreferrer">Weekly Menu</a>
-    </div>
-</section>
-<section class="paper-section">
-    <div class="shell">
-        <h2 class="section-title text-center">Gallery</h2>
-        <div class="gallery-grid mt-10">
-            {% for item in gallery %}
-                <a class="gallery-item group{% if item.wide %} gallery-item--wide{% endif %}"
-                   href="{{ item.image }}">
-                    {% assign base = item.image | remove: ".jpeg" %}
-                    <lqip-image>
-                    <img class="lqip__placeholder"
-                         src="{{ base }}-32.webp"
-                         alt=""
-                         aria-hidden="true">
-                    <picture>
-                        {% if item.maxWidth == 480 %}
-                            <source type="image/avif"
-                                    srcset="{{ base }}-320.avif 320w,
-                                            {{ base }}-480.avif 480w">
-                            <source type="image/webp"
-                                    srcset="{{ base }}-320.webp 320w,
-                                            {{ base }}-480.webp 480w">
-                            <img class="lqip__image"
-                                 src="{{ item.image }}"
-                                 srcset="{{ base }}-320.webp 320w,
-                                         {{ base }}-480.webp 480w"
-                                 sizes="(min-width: 768px) 20vw,
-                                        50vw"
-                                 alt="{{ item.title }}"
-                                 loading="lazy"
-                                 decoding="async">
-                        {% else %}
-                            <source type="image/avif"
-                                    srcset="{{ base }}-320.avif 320w,
-                                            {{ base }}-480.avif 480w,
-                                            {{ base }}-640.avif 640w,
-                                            {{ base }}-768.avif 768w,
-                                            {{ base }}-1024.avif 1024w">
-                            <source type="image/webp"
-                                    srcset="{{ base }}-320.webp 320w,
-                                            {{ base }}-480.webp 480w,
-                                            {{ base }}-640.webp 640w,
-                                            {{ base }}-768.webp 768w,
-                                            {{ base }}-1024.webp 1024w">
-                            <img class="lqip__image"
-                                 src="{{ item.image }}"
-                                 srcset="{{ base }}-320.webp 320w,
-                                         {{ base }}-480.webp 480w,
-                                         {{ base }}-640.webp 640w,
-                                         {{ base }}-768.webp 768w,
-                                         {{ base }}-1024.webp 1024w"
-                                 sizes="(min-width: 768px) {% if item.wide %}40vw{% else %}20vw{% endif %}, {% if item.wide %}100vw{% else %}50vw{% endif %}"
-                                 alt="{{ item.title }}"
-                                 loading="lazy"
-                                 decoding="async">
-                        {% endif %}
-                    </picture>
-                    </lqip-image>
-                    <span>{{ item.title }}</span></a>
-            {% endfor %}
+                sizes="(min-width: 640px) 50vw,
+                100vw"
+                alt="Fresh-cut steaks"
+                decoding="async">
+            </picture>
+            </lqip-image>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="paper-section">
+        <div class="shell max-w-3xl py-3 text-center">
+            <img class="mx-auto h-38 w-auto"
+                 src="/assets/img/logo_2.png"
+                 alt="Lewandoski's Market">
+            <p class="mt-6 text-xl font-bold">100 Years of Polish, Right Here on the West Side</p>
+            <p class="mx-auto mt-5 max-w-2xl leading-8">
+                Our market has been a fixture on Grand Rapids' West Side since 1923. Come in for high-quality products, incomparable recipes, and food made for the people we call neighbors.
+            </p>
+        </div>
+    </section>
+    <section class="feature-split bg-market-cream">
+        <div class="feature-image order-last sm:order-first">
+            <lqip-image>
+            <img class="lqip__placeholder"
+                 src="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-32.webp"
+                 alt=""
+                 aria-hidden="true">
+            <picture>
+                <source type="image/avif"
+                        srcset="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-480.avif 480w,
+                                /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-768.avif 768w,
+                                /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1024.avif 1024w,
+                                /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1440.avif 1440w">
+                <source type="image/webp"
+                        srcset="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-480.webp 480w,
+                                /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-768.webp 768w,
+                                /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1024.webp 1024w,
+                                /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1440.webp 1440w">
+                <img class="lqip__image"
+                     src="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa.jpeg"
+                     sizes="(min-width: 640px) 50vw,
+                            100vw"
+                     alt="Hot food to go"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
+            </lqip-image>
+        </div>
+        <div class="feature-copy">
+            <h2 class="section-title">Hot food to go</h2>
+            <p class="mt-4 section-subtitle">Wednesdays & Fridays</p>
+            <p class="mt-5 text-lg leading-8">
+                Every Wednesday and Friday, 11 AM to 2 PM. Find weekly menu information on Facebook or call (616) 454-2281.
+            </p>
+            <a class="button mt-7"
+               href="https://www.facebook.com/162729067084313"
+               target="_blank"
+               rel="noreferrer">Weekly Menu</a>
+        </div>
+    </section>
+    <section class="paper-section">
+        <div class="shell">
+            <h2 class="section-title text-center">Gallery</h2>
+            <div class="gallery-grid mt-10">
+                {% for item in gallery %}
+                    <a class="gallery-item group{% if item.wide %} gallery-item--wide{% endif %}"
+                       href="{{ item.image }}">
+                        {% assign base = item.image | remove: ".jpeg" %}
+                        <lqip-image>
+                        <img class="lqip__placeholder"
+                             src="{{ base }}-32.webp"
+                             alt=""
+                             aria-hidden="true">
+                        <picture>
+                            {% if item.maxWidth == 480 %}
+                                <source type="image/avif"
+                                        srcset="{{ base }}-320.avif 320w,
+                                                {{ base }}-480.avif 480w">
+                                <source type="image/webp"
+                                        srcset="{{ base }}-320.webp 320w,
+                                                {{ base }}-480.webp 480w">
+                                <img class="lqip__image"
+                                     src="{{ item.image }}"
+                                     srcset="{{ base }}-320.webp 320w,
+                                             {{ base }}-480.webp 480w"
+                                     sizes="(min-width: 768px) 20vw,
+                                            50vw"
+                                     alt="{{ item.title }}"
+                                     loading="lazy"
+                                     decoding="async">
+                            {% else %}
+                                <source type="image/avif"
+                                        srcset="{{ base }}-320.avif 320w,
+                                                {{ base }}-480.avif 480w,
+                                                {{ base }}-640.avif 640w,
+                                                {{ base }}-768.avif 768w,
+                                                {{ base }}-1024.avif 1024w">
+                                <source type="image/webp"
+                                        srcset="{{ base }}-320.webp 320w,
+                                                {{ base }}-480.webp 480w,
+                                                {{ base }}-640.webp 640w,
+                                                {{ base }}-768.webp 768w,
+                                                {{ base }}-1024.webp 1024w">
+                                <img class="lqip__image"
+                                     src="{{ item.image }}"
+                                     srcset="{{ base }}-320.webp 320w,
+                                             {{ base }}-480.webp 480w,
+                                             {{ base }}-640.webp 640w,
+                                             {{ base }}-768.webp 768w,
+                                             {{ base }}-1024.webp 1024w"
+                                     sizes="(min-width: 768px) {% if item.wide %}40vw{% else %}20vw{% endif %}, {% if item.wide %}100vw{% else %}50vw{% endif %}"
+                                     alt="{{ item.title }}"
+                                     loading="lazy"
+                                     decoding="async">
+                            {% endif %}
+                        </picture>
+                        </lqip-image>
+                        <span>{{ item.title }}</span></a>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
