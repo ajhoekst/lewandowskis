@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS submissions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  form_type TEXT NOT NULL,
+  submitted_at TEXT NOT NULL,
+  payload TEXT NOT NULL
+);

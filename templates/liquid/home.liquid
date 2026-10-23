@@ -1,0 +1,20 @@
+<section class="hero"
+         style="background-image:url('/assets/img/video_poster.jpg')">
+    <div class="shell py-24 text-center">
+        <h1 class="hero-title mx-auto">Polish heritage, right here on the West Side.</h1>
+        <a class="button-light mt-7" href="/products-specialties-gifts">Our Products</a>
+    </div>
+</section>
+<section class="paper-section">
+    <div class="shell">
+        <h2 class="section-title text-center">Gallery</h2>
+        <div class="gallery-grid mt-10">
+            {% for item in gallery %}
+                <a class="gallery-item group{% if item.wide %} gallery-item--wide{% endif %}"
+                   href="{{ item.image }}">
+                    <img src="{{ item.image }}" alt="{{ item.title }}">
+                    <span>{{ item.title }}</span></a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

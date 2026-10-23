@@ -1,0 +1,11 @@
+assets/
+data/
+node_modules/
+.venv/
+worker/dist/
+worker/public/
+__pycache__/
+*.pyc
+playwright-ca-bundle.pem
+*.crt
+*.cer

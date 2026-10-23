@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>{{ title }} | Lewandoski's Market</title>
+        <link rel="stylesheet" href="/static/css/site.css">
+        <script src="/static/vendor/htmx-4.0.0.js"></script>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="site-logo-row">
+                <div class="shell relative">
+                    <a class="site-logo-link" href="/">
+                        <img class="site-logo"
+                             src="/assets/img/logo_2.png"
+                             alt="Lewandoski's Market">
+                    </a>
+                </div>
+            </div>
+            <nav class="site-nav">
+                <a href="/about">About Us</a><a href="/products-specialties-gifts">Products</a><a href="/events">Events</a><a href="/community-partners">Community</a><a href="/contact-us">Contact Us</a>
+            </nav>
+        </header>
+        <main id="content">
+            {{ content }}
+        </main>
+    </body>
+</html>

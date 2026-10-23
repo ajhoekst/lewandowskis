@@ -1,0 +1,28 @@
+<section class="page-hero">
+    <img src="{{ image }}" alt="">
+    <div class="shell relative">
+        <h1 class="hero-title mx-auto">{{ heading }}</h1>
+    </div>
+</section>
+<section class="paper-section">
+    <div class="form-panel">
+        <h2 class="section-title text-center text-4xl">{{ subheading }}</h2>
+        <div id="form-feedback" aria-live="polite"></div>
+        <form method="post"
+              action="/forms/{{ form_type }}"
+              hx-post="/forms/{{ form_type }}"
+              hx-target="#form-feedback"
+              hx-swap="innerHTML">
+            {% for field in fields %}
+                <label class="form-label">
+                    {{ field.label }}
+                    <input class="field"
+                           name="{{ field.name }}"
+                           {% if field.type %}type="{{ field.type }}"{% endif %}
+                           required>
+                </label>
+            {% endfor %}
+            <button class="button mt-5" type="submit">Submit</button>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,409 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Balthazar";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/balthazar-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/pt-serif-400.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("/static/fonts/pt-serif-700.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Parisienne";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/static/fonts/parisienne-400.ttf") format("truetype");
+}
+
+@theme {
+  --color-market-red: #a80005;
+  --color-market-ink: #141414;
+  --color-market-cream: #fffdd0;
+  --color-market-yellow: #f9f7a0;
+  --font-display: "Balthazar", Georgia, serif;
+  --font-body: "PT Serif", Georgia, serif;
+  --font-script: "Parisienne", cursive;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-market-cream font-body text-market-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+
+  a {
+    @apply underline-offset-4;
+  }
+}
+
+@layer components {
+  .shell {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+  }
+
+  .site-topbar {
+    @apply bg-market-ink py-2 text-center text-xs text-market-cream sm:text-right;
+  }
+
+  .site-header {
+    @apply sticky top-0 z-50 bg-market-red text-market-cream shadow-sm;
+  }
+
+  .site-header--home {
+    @apply absolute inset-x-0 top-0 bg-market-red/95;
+  }
+
+  .site-logo-row {
+    @apply h-22 border-b border-market-cream/45;
+  }
+
+  .site-logo-link {
+    @apply absolute left-5 top-0;
+  }
+
+  .site-logo {
+    @apply block h-22 w-auto max-w-48 object-contain;
+  }
+
+  .site-contact {
+    @apply absolute top-1/2 hidden -translate-y-1/2 font-display text-xs uppercase no-underline md:block;
+  }
+
+  .site-address {
+    @apply hidden xl:block;
+  }
+
+  .site-contact--left {
+    @apply left-5;
+  }
+
+  .site-contact--right {
+    @apply right-5 flex flex-col items-end gap-1 text-right;
+  }
+
+  .site-nav {
+    @apply hidden flex-wrap items-center justify-center gap-x-0 border-b border-market-cream/45 bg-market-red py-1 md:flex md:gap-x-1 xl:gap-x-2;
+  }
+
+  .site-nav a {
+    @apply px-2 py-1 font-display text-xs uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-yellow hover:text-market-ink xl:px-3 xl:text-sm;
+  }
+
+  .site-mobile-nav {
+    @apply static md:hidden;
+  }
+
+  .site-mobile-nav summary {
+    @apply absolute right-5 top-1/2 z-60 flex h-11 w-12 -translate-y-1/2 cursor-pointer flex-col items-center justify-center gap-1 border border-market-cream/80;
+    list-style: none;
+  }
+
+  .site-mobile-nav summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-mobile-nav summary span {
+    @apply block h-0.5 w-6 bg-market-cream transition duration-200;
+  }
+
+  .site-mobile-nav[open] summary span:first-child {
+    transform: translateY(6px) rotate(45deg);
+  }
+
+  .site-mobile-nav[open] summary span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .site-mobile-nav[open] summary span:last-child {
+    transform: translateY(-6px) rotate(-45deg);
+  }
+
+  .mobile-nav-list {
+    @apply absolute left-0 top-full z-50 w-full overflow-hidden bg-market-red opacity-0 shadow-lg transition-all duration-300 ease-in-out;
+    max-height: 0;
+    transform: translateY(-0.5rem);
+  }
+
+  .site-mobile-nav[open] .mobile-nav-list {
+    max-height: calc(100dvh - 5.5rem);
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .mobile-nav-list>div {
+    @apply overflow-y-auto;
+  }
+
+  .mobile-nav-list a {
+    @apply block border-b border-market-cream/25 px-7 py-3 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-yellow hover:text-market-ink;
+  }
+
+  @media (min-width: 768px) {
+    .site-logo-row {
+      @apply h-22;
+    }
+
+    .site-logo-link {
+      @apply left-1/2 -translate-x-1/2;
+    }
+
+    .site-logo {
+      @apply h-22 max-w-52;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-logo-row {
+      @apply h-28;
+    }
+
+    .site-logo {
+      @apply h-28 max-w-60;
+    }
+
+    .site-contact {
+      @apply text-sm;
+    }
+  }
+
+  @media (max-width: 767px) and (orientation: landscape) and (max-height: 600px) {
+    .site-logo-row {
+      @apply h-18;
+    }
+
+    .site-logo {
+      @apply h-18;
+    }
+
+    .site-mobile-nav[open] .mobile-nav-list {
+      max-height: calc(100dvh - 4.5rem);
+    }
+
+    .mobile-nav-list a {
+      @apply px-4 py-2 text-base;
+    }
+
+    .hero {
+      min-height: 26rem;
+    }
+
+    .home-slideshow {
+      height: 26rem;
+    }
+  }
+
+  .site-main--inner {
+    @apply pt-0;
+  }
+
+  .hero {
+    @apply relative isolate flex min-h-[34rem] items-center overflow-hidden bg-market-ink text-market-cream sm:min-h-[42rem];
+  }
+
+  .hero-media {
+    @apply absolute inset-0 -z-20 h-full w-full object-cover;
+  }
+
+  .hero-shade {
+    @apply absolute inset-0 -z-10 bg-black/55;
+  }
+
+  .hero-title {
+    @apply max-w-4xl font-display text-5xl uppercase leading-[0.92] tracking-wide sm:text-7xl lg:text-8xl;
+  }
+
+  .hero-script {
+    @apply mt-4 font-script text-4xl text-market-cream sm:text-5xl;
+  }
+
+  .section-title {
+    @apply font-display text-4xl uppercase leading-none text-market-red sm:text-6xl;
+  }
+
+  .section-subtitle {
+    @apply font-script text-4xl text-market-red sm:text-5xl;
+  }
+
+  .button {
+    @apply inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink;
+  }
+
+  .button-light {
+    @apply inline-block rounded-[5px] border-2 border-market-cream bg-transparent px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-red;
+  }
+
+  .button-menu {
+    @apply inline-block rounded-[5px] border-2 border-market-red bg-market-red px-5 py-2 font-display text-base uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-cream hover:text-market-ink;
+  }
+
+  .feature-split {
+    @apply grid overflow-hidden sm:grid-cols-2;
+  }
+
+  .feature-copy {
+    @apply flex min-h-80 flex-col items-center justify-center px-8 py-14 text-center sm:px-14;
+  }
+
+  .feature-image {
+    @apply min-h-80 bg-cover bg-center;
+  }
+
+  .home-slideshow {
+    @apply relative flex h-[34rem] snap-x snap-mandatory overflow-x-auto bg-market-ink sm:h-[40rem];
+  }
+
+  .home-slide {
+    @apply relative min-w-full snap-center bg-cover bg-center;
+  }
+
+  .home-slide::before {
+    content: "";
+    @apply absolute inset-0 bg-black/45;
+  }
+
+  .home-slide-content {
+    @apply absolute inset-0 flex flex-col items-center justify-center px-6 text-center text-market-cream;
+  }
+
+  .reviews-section {
+    @apply relative overflow-hidden bg-market-cream py-18 text-center;
+  }
+
+  .reviews-section::before {
+    content: "";
+    @apply absolute inset-0 bg-[url('/assets/img/reviews_back_2.jpg')] bg-cover bg-center opacity-35;
+  }
+
+  .reviews-section>* {
+    @apply relative;
+  }
+
+  .review-grid {
+    @apply grid gap-5 md:grid-cols-2 xl:grid-cols-4;
+  }
+
+  .review-card {
+    @apply bg-market-cream/90 px-6 py-7 text-center shadow-sm;
+  }
+
+  .map-newsletter {
+    @apply grid bg-market-red text-market-cream md:grid-cols-2;
+  }
+
+  .map-panel {
+    @apply flex min-h-84 items-center justify-center bg-market-ink bg-cover bg-center px-8 text-center;
+  }
+
+  .newsletter-panel {
+    @apply flex min-h-84 flex-col items-center justify-center px-8 py-14 text-center;
+  }
+
+  .gallery-grid {
+    @apply grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-5;
+  }
+
+  .gallery-item {
+    @apply relative block aspect-square overflow-hidden bg-market-ink;
+  }
+
+  .gallery-item--wide {
+    @apply col-span-2 md:row-span-2;
+  }
+
+  .gallery-item img {
+    @apply h-full w-full object-cover transition duration-300 hover:scale-105;
+  }
+
+  .gallery-item span {
+    @apply absolute inset-x-0 bottom-0 bg-black/70 px-3 py-2 text-center text-sm text-market-cream opacity-0 transition group-hover:opacity-100;
+  }
+
+  .paper-section {
+    @apply relative bg-market-cream py-16 sm:py-22;
+  }
+
+  .paper-section::before {
+    content: "";
+    @apply absolute inset-0 bg-[url('/assets/img/about_back_2.jpg')] bg-cover bg-center opacity-15;
+  }
+
+  .paper-section>* {
+    @apply relative;
+  }
+
+  .section-banner {
+    @apply bg-market-red py-7 text-center text-market-cream;
+  }
+
+  .form-panel {
+    @apply mx-auto max-w-2xl bg-white px-7 py-10 sm:px-10;
+    box-shadow: 0 0 0 10px #fffdd0, 0 0 0 12px #a80005;
+  }
+
+  .form-label {
+    @apply block font-display text-xl uppercase tracking-wide text-market-red;
+  }
+
+  .field {
+    @apply mt-2 w-full border border-market-red/40 bg-market-cream/30 px-3 py-2 font-body text-base outline-none focus:border-market-red focus:ring-1 focus:ring-market-red;
+  }
+
+  .page-hero {
+    @apply relative isolate overflow-hidden bg-market-ink py-26 text-center text-market-cream sm:py-36;
+  }
+
+  .page-hero::before {
+    content: "";
+    @apply absolute inset-0 -z-10 bg-black/55;
+  }
+
+  .page-hero img {
+    @apply absolute inset-0 -z-20 h-full w-full object-cover;
+  }
+
+  .partner-card {
+    @apply border-2 border-market-cream bg-market-red px-8 py-10 text-center text-market-cream shadow-[0_0_0_1px_#a80005];
+  }
+
+  .market-details {
+    @apply border-b border-market-red/35 py-5;
+  }
+
+  .market-details summary {
+    @apply flex cursor-pointer list-none items-center justify-between gap-4 font-display text-3xl uppercase text-market-red;
+  }
+
+  .market-details summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-footer {
+    @apply border-t-2 border-market-cream bg-market-ink py-12 text-market-cream;
+  }
+}
