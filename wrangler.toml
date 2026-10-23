@@ -22,3 +22,13 @@ migrations_dir = "worker/migrations"
 [observability.logs]
 enabled = true
 invocation_logs = true
+
+[[previews.r2_buckets]]
+binding = "ASSETS"
+bucket_name = "lewandowskis"
+
+[[previews.d1_databases]]
+binding = "DB"
+database_name = "lewandowskis"
+database_id = "6e79a05a-ceb6-4ce4-b097-450ac8208844"
+migrations_dir = "worker/migrations"
