@@ -1,4 +1,4 @@
-name = "lewandowskis-market"
+name = "lewandowskis"
 main = "worker/dist/worker.js"
 compatibility_date = "2026-10-23"
 account_id = "d4f484575c07f97310120a84b709dcca"
