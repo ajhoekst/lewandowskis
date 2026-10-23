@@ -274,10 +274,16 @@
     @apply relative min-h-80 overflow-hidden;
   }
 
+  .feature-image lqip-image,
   .feature-image picture,
   .feature-image img {
     @apply absolute inset-0 h-full w-full object-cover;
   }
+
+  lqip-image { @apply relative block overflow-hidden bg-market-ink; }
+  .lqip__placeholder { @apply absolute inset-[-12px] h-[calc(100%+24px)] w-[calc(100%+24px)] object-cover blur-[14px] scale-105; }
+  .lqip__image { @apply relative opacity-0 transition-opacity duration-300; }
+  lqip-image.is-loaded .lqip__image { @apply opacity-100; }
 
   .home-slideshow {
     @apply relative flex h-[34rem] snap-x snap-mandatory overflow-x-auto bg-market-ink sm:h-[40rem];
@@ -341,6 +347,8 @@
     @apply col-span-2 md:row-span-2;
   }
 
+  .gallery-item lqip-image,
+  .gallery-item picture,
   .gallery-item img {
     @apply h-full w-full object-cover transition duration-300 hover:scale-105;
   }
