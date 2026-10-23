@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "npx @tailwindcss/cli -i app/static/css/input.css -o app/static/css/site.css --minify",
     "watch:css": "npx @tailwindcss/cli -i app/static/css/input.css -o app/static/css/site.css --watch",
-    "build": "npm run build:css",
+    "build": "npm run build:css && npm run build:worker",
     "build:worker": "mkdir -p worker/public/static/css worker/public/static/vendor worker/dist && cp app/static/css/site.css worker/public/static/css/site.css && cp node_modules/htmx.org/dist/htmx.js worker/public/static/vendor/htmx-4.0.0.js && npx esbuild worker/src/worker.ts --bundle --format=esm --platform=browser --loader:.liquid=text --outfile=worker/dist/worker.js",
     "dev:worker": "npm run build:worker && workerd serve worker/workerd.capnp --watch --directory-path assets=assets --directory-path static=app/static --directory-path templates=templates/liquid",
     "test": "echo \"No JavaScript tests configured\""
