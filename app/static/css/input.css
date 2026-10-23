@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/static/fonts/balthazar-400.ttf") format("truetype");
+  src: url("/assets/fonts/balthazar-400.ttf") format("truetype");
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/static/fonts/pt-serif-400.ttf") format("truetype");
+  src: url("/assets/fonts/pt-serif-400.ttf") format("truetype");
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("/static/fonts/pt-serif-700.ttf") format("truetype");
+  src: url("/assets/fonts/pt-serif-700.ttf") format("truetype");
 }
 
 @font-face {
@@ -29,7 +29,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("/static/fonts/parisienne-400.ttf") format("truetype");
+  src: url("/assets/fonts/parisienne-400.ttf") format("truetype");
 }
 
 @theme {
