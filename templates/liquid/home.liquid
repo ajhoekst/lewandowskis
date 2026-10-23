@@ -23,8 +23,7 @@
         </p>
         <a class="button-light mt-7" href="/products-specialties-gifts">Our Products</a>
     </div>
-    <div class="feature-image"
-         style="background-image:url('/assets/img/b0d219a62bcf41408998cd450a13f378.jpeg')"></div>
+    <div class="feature-image"><picture><source type="image/avif" srcset="/assets/img/b0d219a62bcf41408998cd450a13f378-480.avif 480w, /assets/img/b0d219a62bcf41408998cd450a13f378-768.avif 768w, /assets/img/b0d219a62bcf41408998cd450a13f378-1024.avif 1024w, /assets/img/b0d219a62bcf41408998cd450a13f378-1440.avif 1440w"><source type="image/webp" srcset="/assets/img/b0d219a62bcf41408998cd450a13f378-480.webp 480w, /assets/img/b0d219a62bcf41408998cd450a13f378-768.webp 768w, /assets/img/b0d219a62bcf41408998cd450a13f378-1024.webp 1024w, /assets/img/b0d219a62bcf41408998cd450a13f378-1440.webp 1440w"><img src="/assets/img/b0d219a62bcf41408998cd450a13f378.jpeg" sizes="(min-width: 640px) 50vw, 100vw" alt="Fresh-cut steaks" decoding="async"></picture></div>
 </section>
 <section class="paper-section">
     <div class="shell max-w-3xl py-3 text-center">
@@ -38,8 +37,7 @@
     </div>
 </section>
 <section class="feature-split bg-market-cream">
-    <div class="feature-image order-last sm:order-first"
-         style="background-image:url('/assets/img/c40d684b2c5b44d6b968115ed95ee4aa.jpeg')"></div>
+    <div class="feature-image order-last sm:order-first"><picture><source type="image/avif" srcset="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-480.avif 480w, /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-768.avif 768w, /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1024.avif 1024w, /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1440.avif 1440w"><source type="image/webp" srcset="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-480.webp 480w, /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-768.webp 768w, /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1024.webp 1024w, /assets/img/c40d684b2c5b44d6b968115ed95ee4aa-1440.webp 1440w"><img src="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa.jpeg" sizes="(min-width: 640px) 50vw, 100vw" alt="Hot food to go" loading="lazy" decoding="async"></picture></div>
     <div class="feature-copy">
         <h2 class="section-title">Hot food to go</h2>
         <p class="mt-4 section-subtitle">Wednesdays & Fridays</p>
@@ -59,7 +57,8 @@
             {% for item in gallery %}
                 <a class="gallery-item group{% if item.wide %} gallery-item--wide{% endif %}"
                    href="{{ item.image }}">
-                    <img src="{{ item.image }}" alt="{{ item.title }}">
+                    {% assign base = item.image | remove: ".jpeg" %}
+                    <picture><source type="image/avif" srcset="{{ base }}-320.avif 320w, {{ base }}-480.avif 480w, {{ base }}-640.avif 640w, {{ base }}-768.avif 768w, {{ base }}-1024.avif 1024w"><source type="image/webp" srcset="{{ base }}-320.webp 320w, {{ base }}-480.webp 480w, {{ base }}-640.webp 640w, {{ base }}-768.webp 768w, {{ base }}-1024.webp 1024w"><img src="{{ item.image }}" srcset="{{ base }}-320.webp 320w, {{ base }}-480.webp 480w, {{ base }}-640.webp 640w, {{ base }}-768.webp 768w, {{ base }}-1024.webp 1024w" sizes="(min-width: 768px) {% if item.wide %}40vw{% else %}20vw{% endif %}, {% if item.wide %}100vw{% else %}50vw{% endif %}" alt="{{ item.title }}" loading="lazy" decoding="async"></picture>
                     <span>{{ item.title }}</span></a>
             {% endfor %}
         </div>

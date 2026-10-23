@@ -23,9 +23,8 @@
         <div class="grid gap-5 sm:grid-cols-2">
             {% for item in selected.images %}
                 <article class="border border-market-red/25 bg-white p-3">
-                    <img class="aspect-[4/3] w-full object-cover"
-                         src="{{ item.src }}"
-                         alt="{{ item.alt }}">
+                    {% assign base = item.src | remove: ".jpeg" %}
+                    <picture><source type="image/avif" srcset="{{ base }}-320.avif 320w, {{ base }}-480.avif 480w, {{ base }}-640.avif 640w, {{ base }}-768.avif 768w, {{ base }}-1024.avif 1024w"><source type="image/webp" srcset="{{ base }}-320.webp 320w, {{ base }}-480.webp 480w, {{ base }}-640.webp 640w, {{ base }}-768.webp 768w, {{ base }}-1024.webp 1024w"><img class="aspect-[4/3] w-full object-cover" src="{{ item.src }}" srcset="{{ base }}-320.webp 320w, {{ base }}-480.webp 480w, {{ base }}-640.webp 640w, {{ base }}-768.webp 768w, {{ base }}-1024.webp 1024w" sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw" alt="{{ item.alt }}" loading="lazy" decoding="async"></picture>
                     <h3 class="mt-4 font-display text-2xl uppercase text-market-red">{{ item.alt }}</h3>
                     <p class="mt-2 leading-7">{{ item.description }}</p>
                     <a class="button mt-5" href="/contact-us">Ask About Availability</a></article>

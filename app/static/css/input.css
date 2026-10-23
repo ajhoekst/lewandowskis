@@ -271,7 +271,12 @@
   }
 
   .feature-image {
-    @apply min-h-80 bg-cover bg-center;
+    @apply relative min-h-80 overflow-hidden;
+  }
+
+  .feature-image picture,
+  .feature-image img {
+    @apply absolute inset-0 h-full w-full object-cover;
   }
 
   .home-slideshow {
