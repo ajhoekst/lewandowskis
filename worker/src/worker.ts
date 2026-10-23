@@ -1,11 +1,14 @@
 import { Liquid } from "liquidjs";
+import aboutTemplate from "../../templates/liquid/about.liquid";
+import communityPartnersTemplate from "../../templates/liquid/community-partners.liquid";
+import contactTemplate from "../../templates/liquid/contact-us.liquid";
+import donationTemplate from "../../templates/liquid/donation-request.liquid";
+import eventsTemplate from "../../templates/liquid/events.liquid";
 import formFeedback from "../../templates/liquid/partials/form-feedback.liquid";
 import menuCategoryTemplate from "../../templates/liquid/partials/menu-category.liquid";
-import formTemplate from "../../templates/liquid/form.liquid";
 import homeTemplate from "../../templates/liquid/home.liquid";
 import layoutTemplate from "../../templates/liquid/layout.liquid";
 import menuTemplate from "../../templates/liquid/menu.liquid";
-import pageTemplate from "../../templates/liquid/page.liquid";
 
 type Fetcher = { fetch(request: Request): Promise<Response> };
 type R2Object = { body: ReadableStream; httpMetadata?: { contentType?: string } };
@@ -15,6 +18,7 @@ type Env = { ASSETS: Fetcher | R2Bucket; STATIC: Fetcher; TEMPLATES: Fetcher; DB
 type Submission = { formType: string; submittedAt: string; payload: Record<string, string> };
 
 const submissions: Submission[] = [];
+const assetCacheControl = "public, max-age=604800, s-maxage=31536000";
 const menu = [
   { slug: "sausage", name: "Sausage", description: "Fresh and smoked Kielbasa, Krakowska, and a premium selection of house-made sausage built on time-honored methods.", items: [["Fresh Kielbasa", "/assets/img/feb9c6602c164b05bdd77d1ebe94979c.jpeg", "Our classic fresh Kielbasa is seasoned and prepared in-house for your next family meal."], ["Smoked sausage", "/assets/img/b40961b50a8c40448e2f4c8505227745.jpeg", "A richly flavored smoked sausage made with time-honored recipes."], ["Homemade sausage", "/assets/img/2b5781b091304453bfb026d0a3b9112d.jpeg", "A selection of handcrafted sausage made fresh for the butcher case."]] },
   { slug: "meats", name: "Meats", description: "Fresh-cut meats selected to make everyday dinners and special occasions memorable.", items: [["Fresh burger patties", "/assets/img/344b9b3c8a20412eabc0cb981c2ad59c.jpeg", "Fresh-ground burger patties ready for the grill, skillet, or your favorite recipe."], ["Fresh meat selection", "/assets/img/8e798e9ab03f44aab4466591e2e41429.jpeg", "Quality cuts and specialty meats for everyday dinners and special occasions."]] },
@@ -28,19 +32,22 @@ const gallery = [
   ["Cheese Spread", "d0671e8f98e0417d821ac42620539198", true], ["Gołąbki", "b335e7b1f14e7ea478bcb14aeb7f4d"], ["Brats", "57566a9c4f5c40f6bfee99fdf56abb45"], ["Old picture", "58aa2baa662d482e98ca00a01f84f42d"], ["Lewandoskis Market exterior", "bfa9b02970ff4f68b9f7416b44c3b576"], ["Old picture of the market", "31683db2b6cb4a8b87b7519f9cb1a074"], ["Charcuterie board with cheeses and cured meats", "311b147de93440249c03086a5d8d0494"], ["Staff member posing for a photo", "c8fe361e9f784f01bbb95fdf33e90683", true], ["Steak", "349921811b7b4f579c2115a95eb9bb21"], ["Exterior of the restaurant", "1ec97e80d3714743bf1dc2bd8a011e96"], ["Kapusta", "0393b163d7f941bb9542633e86ee2524"], ["Fresh Baked Bread", "5b1ed2d1d813474a84469fd9e5290031"], ["Interior, shelf with different products", "2221484751614805a650467b9031451f"], ["Owner and an employee", "1859c42d87a64a11acb2ad02901d1c8f"], ["Merchandise t-shirts", "f8b7bdf209434584b37c8fbd2f52ebcb", true], ["Meatballs", "307a500fa60b4130b991cba414dab3fa"], ["Baked Beans", "8514655a5ad7461a9b17b14d8339d608"], ["Lewandoskis Market", "6f8c81e4f66a488589b11d58b552cbf2"], ["Pickled products", "f16979b2793d4f1999d1c9c216e18862"], ["T-bone steak", "aa861fbeb51341b89e87df1c99373abc"], ["Bacon", "8887a886246d4ec88889176c55599145"], ["Interior, display fridges area", "c0c56128f51442a59771852de159db92", true], ["Sausages", "52a2d8d4bb5440a982fb20eb3f745f88"], ["Various Groceries", "b0864451e6a74a6db4cc26a14a1d1bf2"], ["Shelf with different products", "a3553a4935124abe9b4f30048be01c44"], ["Trophies on the shelf", "11e94e31e09f492c9dfd4e272384fe94"], ["Kremowki", "03b659a561074e7ba76ed6e7cf62a9ca"], ["Freshly smoked kielbasa hanging from smoker sticks", "99cba26e801f4302aa18c812e5e4d8ee"],
 ].map(([title, image, wide]) => ({ title, image: `/assets/img/gallery/${image}.jpeg`, wide: Boolean(wide) }));
 
-const pages: Record<string, { title: string; heading: string; intro: string; image: string }> = {
-  "/about": { title: "About", heading: "Lewandoski's Market", intro: "Polish heritage and neighborhood tradition on Grand Rapids' West Side.", image: "/assets/img/about_1_new.jpg" },
-  "/community-partners": { title: "Community Partners", heading: "Proud to stand with our community.", intro: "The West Side is stronger when local people and organizations show up for one another.", image: "/assets/img/community_partners_back.jpg" },
-  "/events": { title: "Events", heading: "Events are coming soon.", intro: "We are updating our events calendar. Please stay tuned.", image: "/assets/img/events_back_new.jpg" },
+const pages = {
+  "/about": { title: "About", eyebrow: "Our story", heading: "Lewandoski's Market", intro: "Polish heritage and neighborhood tradition on Grand Rapids' West Side.", image: "/assets/img/about_1_new.jpg", sections: [{ title: "100 years on the West Side", body: "Our market has been a fixture on Grand Rapids' West Side since 1923 and came into its own in 1948, thanks to the man we call Uncle Ray. From a family of meat market owners, Ray Lewandoski gave everything to his store to offer neighbors the highest-quality products for everyday meals." }, { title: "Keeping the recipes alive", body: "Our roots run deep. We continue to make incomparable fresh and smoked Kielbasa and Krakowska, while sharing favorites like pierogies, kapusta, Italian sausage, and chorizo." }, { title: "Stewards of a staple", body: "Owners and brothers Gary and Roger Szotko grew up visiting Lewandoski's. Today they preserve its history and Polish heritage while helping it grow throughout West Michigan." }] },
+  "/community-partners": { title: "Community Partners", eyebrow: "Our neighborhood", heading: "Proud to stand with our community.", intro: "The West Side is stronger when local people and organizations show up for one another.", image: "/assets/img/community_partners_back.jpg", partners: [{ name: "Fans of Valley Field", body: "A grassroots effort to restore and revitalize historic Sullivan Field on Grand Rapids' West Side.", url: "https://www.fansofvalleyfield.org" }, { name: "Saint Francis Sculpture Garden", body: "A free, accessible outdoor nature trail with 17 bronze statues across 11 acres of natural beauty.", url: "https://www.saintfrancissculpturegarden.org" }, { name: "Steepletown Neighborhood Services", body: "Creating opportunities through education, workforce development, and community empowerment.", url: "https://steepletown.org" }, { name: "Enriched Living", body: "A family-run nonprofit providing licensed adult foster care homes for adults with disabilities in West Michigan.", url: "https://enrichedlivingmichigan.org/" }] },
+  "/events": { title: "Events", eyebrow: "What's happening", heading: "Events are coming soon.", intro: "We are updating our events calendar. Please stay tuned and follow us on Facebook for the latest market news.", image: "/assets/img/events_back_new.jpg" },
 };
 
 const liquid = new Liquid();
 const templates: Record<string, string> = {
+  "about.liquid": aboutTemplate,
+  "community-partners.liquid": communityPartnersTemplate,
+  "contact-us.liquid": contactTemplate,
+  "donation-request.liquid": donationTemplate,
+  "events.liquid": eventsTemplate,
   "layout.liquid": layoutTemplate,
   "home.liquid": homeTemplate,
-  "page.liquid": pageTemplate,
   "menu.liquid": menuTemplate,
-  "form.liquid": formTemplate,
   "partials/menu-category.liquid": menuCategoryTemplate,
   "partials/form-feedback.liquid": formFeedback,
 };
@@ -94,10 +101,15 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
     if (url.pathname.startsWith("/assets/")) {
-      if ("fetch" in env.ASSETS) return env.ASSETS.fetch(new Request(new URL(url.pathname.slice(7), request.url), request));
+      if ("fetch" in env.ASSETS) {
+        const response = await env.ASSETS.fetch(new Request(new URL(url.pathname.slice(7), request.url), request));
+        const headers = new Headers(response.headers);
+        headers.set("cache-control", assetCacheControl);
+        return new Response(response.body, { status: response.status, statusText: response.statusText, headers });
+      }
       const object = await env.ASSETS.get(url.pathname.slice(1));
       if (!object) return new Response("Not found", { status: 404 });
-      return new Response(object.body, { headers: { "content-type": object.httpMetadata?.contentType ?? "application/octet-stream" } });
+      return new Response(object.body, { headers: { "cache-control": assetCacheControl, "content-type": object.httpMetadata?.contentType ?? "application/octet-stream" } });
     }
     if (url.pathname.startsWith("/static/")) return env.STATIC.fetch(new Request(new URL(url.pathname.slice(7), request.url), request));
     if (url.pathname === "/forms/contact" && request.method === "POST") return handleSubmission(request, env, "contact");
@@ -112,12 +124,15 @@ export default {
     if (url.pathname === "/contact-us" || url.pathname === "/donation-request") {
       const donation = url.pathname === "/donation-request";
       const names = donation ? ["name", "email", "phone", "organization", "event_name", "event_date", "guest_count", "items_requested"] : ["first_name", "last_name", "email", "phone", "message"];
-      const context = { title: donation ? "Donation Request" : "Contact Us", heading: donation ? "Donation Request" : "Contact Us", subheading: donation ? "Request Form" : "Send us a message", image: donation ? "/assets/img/donation_request_back.jpg" : "/assets/img/about_back_2.jpg", form_type: donation ? "donation" : "contact", fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : "" })) };
-      return new Response(await renderPage(env, "form.liquid", context), { headers: { "content-type": "text/html" } });
+      const context = { title: donation ? "Donation Request" : "Contact Us", fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : name === "event_date" ? "date" : "" })) };
+      return new Response(await renderPage(env, donation ? "donation-request.liquid" : "contact-us.liquid", context), { headers: { "content-type": "text/html" } });
     }
     if (url.pathname === "/") return new Response(await renderPage(env, "home.liquid", { title: "Home", gallery }), { headers: { "content-type": "text/html" } });
     const page = pages[url.pathname];
-    if (page) return new Response(await renderPage(env, "page.liquid", { title: page.title, page }), { headers: { "content-type": "text/html" } });
+    if (page) {
+      const template = { "/about": "about.liquid", "/community-partners": "community-partners.liquid", "/events": "events.liquid" }[url.pathname]!;
+      return new Response(await renderPage(env, template, { title: page.title, partners: "partners" in page ? page.partners : [] }), { headers: { "content-type": "text/html" } });
+    }
     return new Response("Not found", { status: 404 });
   },
 };

@@ -1,0 +1,29 @@
+<section class="page-hero">
+    <img src="/assets/img/community_partners_back.jpg" alt="">
+    <div class="shell relative">
+        <p class="hero-script">Our neighborhood</p>
+        <h1 class="hero-title mx-auto mt-4">Proud to stand with our community.</h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-market-cream/90">
+            The West Side is stronger when local people and organizations show up for one another.
+        </p>
+    </div>
+</section>
+<section class="bg-market-red py-16"
+         style="background-image:linear-gradient(rgba(168,0,5,.88),rgba(168,0,5,.88)),url('/assets/img/community_partners_back.jpg');
+                background-size:cover;
+                background-position:center">
+    <div class="shell">
+        <h2 class="section-title text-center text-market-cream">Community Partners</h2>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+            {% for partner in partners %}
+                <article class="partner-card">
+                    <h3 class="text-3xl uppercase">{{ partner.name }}</h3>
+                    <p class="mx-auto mt-4 max-w-lg leading-7 text-market-cream/90">{{ partner.body }}</p>
+                    <a class="button-light mt-6"
+                       href="{{ partner.url }}"
+                       target="_blank"
+                       rel="noreferrer">Visit</a></article>
+            {% endfor %}
+        </div>
+    </div>
+</section>

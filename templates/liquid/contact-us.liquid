@@ -1,0 +1,58 @@
+<section class="page-hero">
+    <img src="/assets/img/about_back_2.jpg" alt="">
+    <div class="shell relative">
+        <h1 class="hero-title mx-auto">Contact Us</h1>
+        <p class="hero-script">Come see us on the West Side.</p>
+    </div>
+</section>
+<section class="paper-section">
+    <div class="shell grid gap-14 lg:grid-cols-[0.75fr_1.25fr]">
+        <aside class="text-center">
+            <h2 class="section-title text-4xl">Location</h2>
+            <p class="mt-4 text-lg leading-8">
+                1107 Walker Ave NW
+                <br>
+                Grand Rapids, MI 49504
+                <br>
+                <a href="tel:+16164542281">(616)-454-2281</a>
+            </p>
+            <h2 class="mt-10 section-title text-4xl">Hours</h2>
+            <p class="mt-4 text-lg leading-8">
+                Monday–Friday: 9 AM–5:30 PM
+                <br>
+                Saturday: 9 AM–5:30 PM
+                <br>
+                Sunday: Closed
+            </p>
+        </aside>
+        <section class="form-panel">
+            <h2 class="section-title text-center text-4xl">Send us a message</h2>
+            <div id="form-feedback" class="mt-6" aria-live="polite"></div>
+            <form class="mt-7 space-y-5"
+                  method="post"
+                  action="/forms/contact"
+                  hx-post="/forms/contact"
+                  hx-target="#form-feedback"
+                  hx-swap="innerHTML">
+                <div class="grid gap-5 sm:grid-cols-2">
+                    {% for field in fields %}
+                        <label class="form-label">
+                            {{ field.label }}
+                            {% if field.name == "message" %}
+                                <textarea class="field min-h-36" name="message" required></textarea>
+                            {% else %}
+                                <input class="field"
+                                       name="{{ field.name }}"
+                                       {% if field.type %}type="{{ field.type }}"{% endif %}
+                                       required>
+                            {% endif %}
+                        </label>
+                    {% endfor %}
+                </div>
+                <div class="text-center">
+                    <button class="button" type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+    </div>
+</section>
