@@ -4,9 +4,12 @@ class LqipImage extends HTMLElement {
     if (!image) return;
 
     const reveal = () => this.classList.add("is-loaded");
-    if (image.complete) image.decode().then(reveal, reveal);
-    else image.addEventListener("load", reveal, { once: true });
+    image.addEventListener("load", () => image.decode().then(reveal, reveal), { once: true });
     image.addEventListener("error", reveal, { once: true });
+    if (image.complete && image.naturalWidth) {
+      this.classList.add("is-cached");
+      reveal();
+    }
   }
 }
 

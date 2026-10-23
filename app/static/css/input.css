@@ -284,6 +284,7 @@
   .lqip__placeholder { @apply absolute inset-[-12px] h-[calc(100%+24px)] w-[calc(100%+24px)] object-cover blur-[14px] scale-105; }
   .lqip__image { @apply relative opacity-0 transition-opacity duration-300; }
   lqip-image.is-loaded .lqip__image { @apply opacity-100; }
+  lqip-image.is-cached .lqip__image { @apply transition-none; }
 
   .home-slideshow {
     @apply relative flex h-[34rem] snap-x snap-mandatory overflow-x-auto bg-market-ink sm:h-[40rem];
