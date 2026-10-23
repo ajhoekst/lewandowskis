@@ -43,6 +43,7 @@
                             {% else %}
                                 <input class="field"
                                        name="{{ field.name }}"
+                                       autocomplete="{{ field.autocomplete }}"
                                        {% if field.type %}type="{{ field.type }}"{% endif %}
                                        required>
                             {% endif %}

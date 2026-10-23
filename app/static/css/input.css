@@ -60,6 +60,34 @@
   a {
     @apply underline-offset-4;
   }
+
+  :focus-visible {
+    outline: 3px solid var(--color-market-yellow);
+    outline-offset: 3px;
+  }
+
+  .skip-link {
+    @apply sr-only focus:not-sr-only fixed left-4 top-4 z-[100] bg-market-yellow px-4 py-2 text-market-ink;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: .01ms !important;
+    }
+
+    .hero-media {
+      display: none;
+    }
+  }
 }
 
 @layer components {
@@ -130,6 +158,10 @@
 
   .site-mobile-nav summary span {
     @apply block h-0.5 w-6 bg-market-cream transition duration-200;
+  }
+
+  .mobile-menu-label {
+    @apply mt-1 font-display text-[10px] uppercase text-market-cream;
   }
 
   .site-mobile-nav[open] summary span:first-child {
@@ -280,11 +312,43 @@
     @apply absolute inset-0 h-full w-full object-cover;
   }
 
-  lqip-image { @apply relative block overflow-hidden bg-market-ink; }
-  .lqip__placeholder { @apply absolute inset-[-12px] h-[calc(100%+24px)] w-[calc(100%+24px)] object-cover blur-[14px] scale-105; }
-  .lqip__image { @apply relative opacity-0 transition-opacity duration-300; }
-  lqip-image.is-loaded .lqip__image { @apply opacity-100; }
-  lqip-image.is-cached .lqip__image { @apply transition-none; }
+  lqip-image {
+    @apply relative block overflow-hidden bg-market-ink;
+  }
+
+  .gallery-item lqip-image {
+    @apply h-full w-full;
+  }
+
+  #menu-category article lqip-image,
+  .paper-section article lqip-image {
+    aspect-ratio: 4 / 3;
+  }
+
+  .lqip-donation {
+    aspect-ratio: 3 / 2;
+  }
+
+  .lqip-donation picture,
+  .lqip-donation .lqip__image {
+    @apply h-full w-full object-cover;
+  }
+
+  .lqip__placeholder {
+    @apply absolute inset-[-12px] h-[calc(100%+24px)] w-[calc(100%+24px)] object-cover blur-[14px] scale-105;
+  }
+
+  .lqip__image {
+    @apply relative opacity-0 transition-opacity duration-300;
+  }
+
+  lqip-image.is-loaded .lqip__image {
+    @apply opacity-100;
+  }
+
+  lqip-image.is-cached .lqip__image {
+    @apply transition-none;
+  }
 
   .home-slideshow {
     @apply relative flex h-[34rem] snap-x snap-mandatory overflow-x-auto bg-market-ink sm:h-[40rem];
@@ -355,7 +419,7 @@
   }
 
   .gallery-item span {
-    @apply absolute inset-x-0 bottom-0 bg-black/70 px-3 py-2 text-center text-sm text-market-cream opacity-0 transition group-hover:opacity-100;
+    @apply absolute inset-x-0 bottom-0 bg-black/70 px-3 py-2 text-center text-sm text-market-cream opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100;
   }
 
   .paper-section {

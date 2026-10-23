@@ -1,2 +1,2 @@
-{% if error %}<div role="alert">{{ error }}</div>{% endif %}
+{% if error %}<div role="alert" data-invalid-fields="{{ invalidFields | join: ',' }}">{{ error }}</div>{% endif %}
 {% if success %}<div role="status">{{ success }}</div>{% endif %}

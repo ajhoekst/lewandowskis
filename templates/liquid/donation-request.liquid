@@ -13,11 +13,12 @@
             </p>
         </div>
         <div class="mx-auto mt-12 grid max-w-5xl gap-8 md:grid-cols-2">
-            <lqip-image>
+            <lqip-image class="lqip-donation">
             <img class="lqip__placeholder"
                  src="/assets/img/donation_request_1-32.webp"
                  alt=""
-                 aria-hidden="true">
+                 aria-hidden="true"
+                 role="presentation">
             <picture>
                 <source type="image/avif"
                         srcset="/assets/img/donation_request_1-480.avif 480w,
@@ -38,11 +39,12 @@
                      decoding="async">
             </picture>
             </lqip-image>
-            <lqip-image>
+            <lqip-image class="lqip-donation">
             <img class="lqip__placeholder"
                  src="/assets/img/donation_request_2-32.webp"
                  alt=""
-                 aria-hidden="true">
+                 aria-hidden="true"
+                 role="presentation">
             <picture>
                 <source type="image/avif"
                         srcset="/assets/img/donation_request_2-480.avif 480w,
@@ -83,6 +85,7 @@
                             {% else %}
                                 <input class="field"
                                        name="{{ field.name }}"
+                                       autocomplete="{{ field.autocomplete }}"
                                        {% if field.type %}type="{{ field.type }}"{% endif %}
                                        {% if field.name == "guest_count" %}min="1"{% endif %}
                                        required>

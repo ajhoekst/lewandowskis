@@ -58,9 +58,9 @@ async function renderTemplate(_env: Env, name: string, context: Record<string, u
   return liquid.parseAndRender(source, context);
 }
 
-async function renderPage(env: Env, name: string, context: Record<string, unknown>) {
+async function renderPage(env: Env, name: string, context: Record<string, unknown>, currentPath: string) {
   const content = await renderTemplate(env, name, context);
-  return renderTemplate(env, "layout.liquid", { ...context, content });
+  return renderTemplate(env, "layout.liquid", { ...context, content, currentPath });
 }
 
 const escape = (value: string) => value.replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character] ?? character);
@@ -84,7 +84,7 @@ async function handleSubmission(request: Request, env: Env, type: "contact" | "d
   const payload = Object.fromEntries([...((await request.formData()).entries())].map(([key, value]) => [key, String(value).trim()]));
   const required = type === "contact" ? ["first_name", "last_name", "email", "message"] : ["name", "email", "phone", "organization", "event_name", "event_date", "guest_count", "items_requested"];
   const missing = required.filter(field => !payload[field]);
-  if (missing.length) return new Response(await renderTemplate(env, "partials/form-feedback.liquid", { error: `Please complete: ${missing.map(field => field.replaceAll("_", " ")).join(", ")}.` }), { headers: { "content-type": "text/html" } });
+  if (missing.length) return new Response(await renderTemplate(env, "partials/form-feedback.liquid", { error: `Please complete: ${missing.map(field => field.replaceAll("_", " ")).join(", ")}.`, invalidFields: missing }), { headers: { "content-type": "text/html" } });
   const submittedAt = new Date().toISOString();
   if (env.DB) {
     await env.DB.prepare("INSERT INTO submissions (form_type, submitted_at, payload) VALUES (?, ?, ?)")
@@ -118,20 +118,20 @@ export default {
       const selected = menu.find(category => category.slug === url.searchParams.get("category")) ?? menu[0];
       const context = { title: "Products", menu, selected };
       const name = request.headers.get("HX-Request") === "true" ? "partials/menu-category.liquid" : "menu.liquid";
-      const output = request.headers.get("HX-Request") === "true" ? await renderTemplate(env, name, context) : await renderPage(env, name, context);
+      const output = request.headers.get("HX-Request") === "true" ? await renderTemplate(env, name, context) : await renderPage(env, name, context, url.pathname);
       return new Response(output, { headers: { "content-type": "text/html" } });
     }
     if (url.pathname === "/contact-us" || url.pathname === "/donation-request") {
       const donation = url.pathname === "/donation-request";
       const names = donation ? ["name", "email", "phone", "organization", "event_name", "event_date", "guest_count", "items_requested"] : ["first_name", "last_name", "email", "phone", "message"];
-      const context = { title: donation ? "Donation Request" : "Contact Us", fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : name === "event_date" ? "date" : "" })) };
-      return new Response(await renderPage(env, donation ? "donation-request.liquid" : "contact-us.liquid", context), { headers: { "content-type": "text/html" } });
+      const context = { title: donation ? "Donation Request" : "Contact Us", fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : name === "phone" ? "tel" : name === "event_date" ? "date" : "", autocomplete: ({ first_name: "given-name", last_name: "family-name", email: "email", phone: "tel", organization: "organization" } as Record<string, string>)[name] ?? "off" })) };
+      return new Response(await renderPage(env, donation ? "donation-request.liquid" : "contact-us.liquid", context, url.pathname), { headers: { "content-type": "text/html" } });
     }
-    if (url.pathname === "/") return new Response(await renderPage(env, "home.liquid", { title: "Home", gallery }), { headers: { "content-type": "text/html" } });
+    if (url.pathname === "/") return new Response(await renderPage(env, "home.liquid", { title: "Home", gallery }, url.pathname), { headers: { "content-type": "text/html" } });
     const page = pages[url.pathname];
     if (page) {
       const template = { "/about": "about.liquid", "/community-partners": "community-partners.liquid", "/events": "events.liquid" }[url.pathname]!;
-      return new Response(await renderPage(env, template, { title: page.title, partners: "partners" in page ? page.partners : [] }), { headers: { "content-type": "text/html" } });
+      return new Response(await renderPage(env, template, { title: page.title, partners: "partners" in page ? page.partners : [] }, url.pathname), { headers: { "content-type": "text/html" } });
     }
     return new Response("Not found", { status: 404 });
   },

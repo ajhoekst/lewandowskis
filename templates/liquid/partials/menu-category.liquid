@@ -13,6 +13,8 @@
     {% endfor %}
 </nav>
 <section id="menu-category"
+         tabindex="-1"
+         aria-live="polite"
          data-selected-category="{{ selected.slug }}"
          class="border-t-2 border-market-red pt-8">
     <div class="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
@@ -28,7 +30,8 @@
                     <img class="lqip__placeholder"
                          src="{{ base }}-32.webp"
                          alt=""
-                         aria-hidden="true">
+                         aria-hidden="true"
+                         role="presentation">
                     <picture>
                         <source type="image/avif"
                                 srcset="{{ base }}-320.avif 320w,
