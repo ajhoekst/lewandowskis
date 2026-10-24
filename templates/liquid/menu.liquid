@@ -1,10 +1,10 @@
-<section class="product-catalog">
-    <div class="product-catalog__navigation">
+<section class="product-catalog relative min-h-screen overflow-hidden bg-market-cream py-0 bg-[linear-gradient(rgb(255_255_255_/_72%),rgb(255_255_255_/_72%)),url('/assets/img/food_back_new.jpg')] bg-cover bg-[center_top] bg-fixed max-sm:bg-scroll">
+    <div class="px-0 pt-43 pb-0 sm:px-8 sm:pt-28 sm:pb-12">
         <nav id="menu-category-nav"
-             class="product-category-nav"
+             class="mx-auto flex max-w-5xl flex-wrap justify-center gap-3 max-sm:block"
              aria-label="Menu categories">
             {% for category in menu %}
-                <a class="button-menu{% if category.slug == selected.slug %} !bg-market-cream !text-market-ink{% endif %}"
+                <a class="inline-block min-w-33 text-center rounded-[5px] border-2 border-market-red bg-market-red px-5 py-2 font-display text-base uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-cream hover:text-market-ink max-sm:block max-sm:min-h-17 max-sm:w-full max-sm:rounded-none max-sm:border-x-0 max-sm:border-b-2 max-sm:border-t-0 max-sm:border-market-cream max-sm:px-5 max-sm:py-4 max-sm:text-2xl max-sm:leading-8{% if category.slug == selected.slug %} !bg-market-cream !text-market-ink max-sm:border-market-red{% endif %}"
                    href="/products/{{ category.slug }}"
                    hx-get="/products/{{ category.slug }}"
                    hx-target="#menu-category"
@@ -15,21 +15,21 @@
             {% endfor %}
         </nav>
     </div>
-    <div class="product-catalog__content">
+    <div class="mx-auto w-[calc(100%-2.5rem)] max-w-235 bg-white px-7 py-12 shadow-lg sm:px-10 sm:py-9 max-sm:mt-19 max-sm:w-[calc(100%-4rem)] max-sm:py-13">
         <section id="menu-category"
                  tabindex="-1"
                  aria-live="polite"
                  data-selected-category="{{ selected.slug }}"
-                 class="product-category">
-            <h1 class="section-title">{{ selected.name }}</h1>
-            <p class="product-category__intro">{{ selected.description }}</p>
-            <p class="product-category__copy">{{ selected.copy }}</p>
-            <div class="product-category__items">
+                 class="text-center">
+            <h1 class="font-display text-4xl uppercase leading-none text-market-red sm:text-6xl sm:!text-4xl max-sm:text-3xl">{{ selected.name }}</h1>
+            <p class="mx-auto mt-4 max-w-2xl text-lg font-bold leading-6 max-sm:text-base">{{ selected.description }}</p>
+            <p class="mx-auto mt-1 max-w-2xl leading-6 max-sm:text-base">{{ selected.copy }}</p>
+            <div class="mt-6 grid gap-8 text-left sm:grid-cols-2 max-sm:mt-7 max-sm:grid-cols-1">
                 {% for item in selected.images %}
-                    <article class="product-item">
+                    <article class="border-l-2 border-market-red pl-2">
                         {% assign base = item.src | remove: ".jpeg" %}
-                        <lqip-image>
-                        <img class="lqip__placeholder"
+                        <lqip-image class="relative block overflow-hidden bg-market-ink aspect-[4/3] w-full">
+                        <img class="lqip__placeholder absolute inset-[-12px] h-[calc(100%+24px)] w-[calc(100%+24px)] object-cover blur-[14px] scale-105"
                              src="{{ base }}-32.webp"
                              alt=""
                              aria-hidden="true"
@@ -47,7 +47,7 @@
                                             {{ base }}-640.webp 640w,
                                             {{ base }}-768.webp 768w,
                                             {{ base }}-1024.webp 1024w">
-                            <img class="lqip__image aspect-[4/3] w-full object-cover"
+                            <img class="lqip__image relative opacity-0 transition-opacity duration-300 aspect-[4/3] w-full object-cover"
                                  src="{{ item.src }}"
                                  srcset="{{ base }}-320.webp 320w,
                                          {{ base }}-480.webp 480w,
@@ -61,8 +61,8 @@
                                  decoding="async">
                         </picture>
                         </lqip-image>
-                        <h2>{{ item.alt }}</h2>
-                        <p>{{ item.description }}</p>
+                        <h2 class="mt-3 !font-body text-lg font-bold">{{ item.alt }}</h2>
+                        <p class="mt-1 leading-6">{{ item.description }}</p>
                     </article>
                 {% endfor %}
             </div>

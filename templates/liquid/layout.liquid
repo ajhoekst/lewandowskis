@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="bg-market-red scroll-smooth" lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -35,12 +35,12 @@
         <script type="module" src="/static/js/market-map.js"></script>
         <script type="module" src="/static/js/accessibility.js"></script>
     </head>
-    <body>
-        <a class="skip-link" href="#content">Skip to main content</a>
-        <header class="site-header{% if currentPath == "/" %} site-header--home{% endif %}">
-            <div class="site-logo-row">
-                <div class="shell relative">
-                    <a class="site-logo-link" href="/">
+    <body class="bg-market-cream font-body text-market-ink antialiased [&_h1]:font-display [&_h2]:font-display [&_h3]:font-display [&_a]:underline-offset-4">
+        <a class="sr-only focus:not-sr-only fixed left-4 top-4 z-[100] bg-market-yellow px-4 py-2 text-market-ink" href="#content">Skip to main content</a>
+        <header class="site-header sticky top-0 z-50 bg-market-red text-market-cream shadow-sm{% if currentPath == "/" %} site-header--home shadow-none{% endif %}">
+            <div class="site-logo-row h-22 border-b border-market-cream/45{% if currentPath == "/" %} h-26 md:h-22{% endif %} lg:h-28 [@media(max-width:767px)_and_(orientation:landscape)_and_(max-height:600px)]:h-18">
+                <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 relative">
+                    <a class="site-logo-link absolute left-5 top-0 md:left-1/2 md:-translate-x-1/2" href="/">
                         <picture>
                             <source type="image/avif"
                                     srcset="/assets/img/logo_2-192.avif 192w,
@@ -50,7 +50,7 @@
                                     srcset="/assets/img/logo_2-192.webp 192w,
                                             /assets/img/logo_2-240.webp 240w,
                                             /assets/img/logo_2-480.webp 480w">
-                            <img class="site-logo"
+                            <img class="site-logo block h-22 w-auto max-w-48 object-contain md:max-w-52 lg:h-28 lg:max-w-60 [@media(max-width:767px)_and_(orientation:landscape)_and_(max-height:600px)]:h-18{% if currentPath == "/" %} h-26 max-w-48 md:h-22{% endif %}"
                                  src="/assets/img/logo_2.png"
                                  srcset="/assets/img/logo_2-192.webp 192w,
                                          /assets/img/logo_2-240.webp 240w,
@@ -62,7 +62,7 @@
                     </a>
                 </div>
             </div>
-            <nav class="site-nav" aria-label="Primary navigation">
+            <nav class="site-nav hidden flex-wrap items-center justify-center gap-x-0 border-b border-market-cream/45 bg-market-red py-1 md:flex md:gap-x-1 xl:gap-x-2 [&_a]:px-2 [&_a]:py-1 [&_a]:font-display [&_a]:text-[10px] [&_a]:uppercase [&_a]:tracking-wide [&_a]:text-market-cream [&_a]:no-underline [&_a]:transition [&_a:hover]:text-market-yellow xl:[&_a]:px-3 lg:[&_a]:text-xs min-[1201px]:[&_a]:text-[.97em] [&_.site-nav__social]:px-1 [&_.site-nav__social]:py-1.5 [&_.site-nav__social_svg]:h-3.5 [&_.site-nav__social_svg]:w-3.5" aria-label="Primary navigation">
                 <a href="/about"
                    {% if currentPath == "/about" %}aria-current="page"{% endif %}>About Us</a><a href="/products-specialties-gifts"
    {% if currentPath == "/products-specialties-gifts" %}aria-current="page"{% endif %}>Products, Specialties, &amp; Gifts</a><a href="/events"
@@ -99,7 +99,7 @@
             </svg>
         </a>
     </nav>
-    <nav class="site-mobile-social" aria-label="Social media">
+    <nav class="site-mobile-social absolute right-20 top-1/2 z-60 flex -translate-y-1/2 items-center gap-4 md:hidden [&_a]:block [&_a]:text-market-cream [&_svg]:h-6 [&_svg]:w-6" aria-label="Social media">
         <a href="https://www.facebook.com/162729067084313"
            target="_blank"
            rel="noreferrer"
@@ -127,9 +127,9 @@
     </svg>
 </a>
 </nav>
-<details class="site-mobile-nav">
-    <summary aria-label="Open navigation menu">
-        <span></span><span></span><span></span><b class="mobile-menu-label" aria-hidden="true">Menu</b><span class="sr-only">Open navigation menu</span>
+<details class="site-mobile-nav static md:hidden [&_.mobile-nav-list]:absolute [&_.mobile-nav-list]:left-0 [&_.mobile-nav-list]:top-full [&_.mobile-nav-list]:z-50 [&_.mobile-nav-list]:w-full [&_.mobile-nav-list]:max-h-0 [&_.mobile-nav-list]:-translate-y-2 [&_.mobile-nav-list]:overflow-hidden [&_.mobile-nav-list]:bg-market-red [&_.mobile-nav-list]:opacity-0 [&_.mobile-nav-list]:shadow-lg [&_.mobile-nav-list]:transition-all [&_.mobile-nav-list]:duration-300 [&_.mobile-nav-list]:ease-in-out [&_.mobile-nav-list>div]:overflow-y-auto [&_.mobile-nav-list_a]:block [&_.mobile-nav-list_a]:border-b [&_.mobile-nav-list_a]:border-market-cream/25 [&_.mobile-nav-list_a]:px-7 [&_.mobile-nav-list_a]:py-3 [&_.mobile-nav-list_a]:font-display [&_.mobile-nav-list_a]:text-lg [&_.mobile-nav-list_a]:uppercase [&_.mobile-nav-list_a]:tracking-wide [&_.mobile-nav-list_a]:text-market-cream [&_.mobile-nav-list_a]:no-underline [&_.mobile-nav-list_a]:transition [&_.mobile-nav-list_a:hover]:bg-market-yellow [&_.mobile-nav-list_a:hover]:text-market-ink [@media(max-width:767px)_and_(orientation:landscape)_and_(max-height:600px)]:[&_.mobile-nav-list_a]:px-4 [@media(max-width:767px)_and_(orientation:landscape)_and_(max-height:600px)]:[&_.mobile-nav-list_a]:py-2 [@media(max-width:767px)_and_(orientation:landscape)_and_(max-height:600px)]:[&_.mobile-nav-list_a]:text-base">
+    <summary class="absolute right-5 top-1/2 z-60 flex h-11 w-12 list-none -translate-y-1/2 cursor-pointer flex-col items-center justify-center gap-1 border border-market-cream/80{% if currentPath == "/" %} !border-0{% endif %}" aria-label="Open navigation menu">
+        <span class="block h-0.5 w-6 bg-market-cream transition duration-200"></span><span class="block h-0.5 w-6 bg-market-cream transition duration-200"></span><span class="block h-0.5 w-6 bg-market-cream transition duration-200"></span><b class="mobile-menu-label mt-1 font-display text-[10px] uppercase text-market-cream{% if currentPath == "/" %} sr-only{% endif %}" aria-hidden="true">Menu</b><span class="sr-only">Open navigation menu</span>
     </summary>
     <div class="mobile-nav-list">
         <div>
@@ -151,8 +151,8 @@
 <main id="content">
     {{ content }}
 </main>
-<footer class="site-footer">
-    <div class="shell grid gap-8 text-center sm:grid-cols-3 sm:text-left">
+<footer class="border-t-2 border-market-red/25 bg-market-cream py-12 text-market-ink">
+    <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 grid gap-8 text-center sm:grid-cols-3 sm:text-left">
         <section>
             <h2 class="font-display text-2xl uppercase text-market-red">Lewandoski's Market</h2>
             <p class="mt-3 leading-7 text-market-ink/85">100 years of Polish tradition, right here on Grand Rapids' West Side.</p>

@@ -1,8 +1,8 @@
-<section class="page-hero">
-    <img src="/assets/img/community_partners_back.jpg" alt="">
-    <div class="shell relative">
-        <p class="hero-script">Our neighborhood</p>
-        <h1 class="hero-title mx-auto mt-4">Proud to stand with our community.</h1>
+<section class="relative isolate overflow-hidden bg-market-ink py-26 text-center text-market-cream before:absolute before:inset-0 before:-z-10 before:bg-black/55 sm:py-36">
+    <img class="absolute inset-0 -z-20 h-full w-full object-cover" src="/assets/img/community_partners_back.jpg" alt="">
+    <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 relative">
+        <p class="mt-4 font-script text-4xl text-market-cream sm:text-5xl">Our neighborhood</p>
+        <h1 class="mx-auto mt-4 max-w-4xl font-display text-5xl uppercase leading-[0.92] tracking-wide sm:text-7xl lg:text-8xl">Proud to stand with our community.</h1>
         <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-market-cream/90">
             The West Side is stronger when local people and organizations show up for one another.
         </p>
@@ -12,14 +12,14 @@
          style="background-image:linear-gradient(rgba(168,0,5,.88),rgba(168,0,5,.88)),url('/assets/img/community_partners_back.jpg');
                 background-size:cover;
                 background-position:center">
-    <div class="shell">
-        <h2 class="section-title text-center text-market-cream">Community Partners</h2>
+    <div class="mx-auto w-full max-w-7xl px-5 sm:px-8">
+        <h2 class="font-display text-4xl uppercase leading-none text-market-red sm:text-6xl text-center !text-market-cream">Community Partners</h2>
         <div class="mt-10 grid gap-5 md:grid-cols-2">
             {% for partner in partners %}
-                <article class="partner-card">
+                <article class="border-2 border-market-cream bg-market-red px-8 py-10 text-center text-market-cream shadow-[0_0_0_1px_#a80005]">
                     <h3 class="text-3xl uppercase">{{ partner.name }}</h3>
                     <p class="mx-auto mt-4 max-w-lg leading-7 text-market-cream/90">{{ partner.body }}</p>
-                    <a class="button-light mt-6"
+                    <a class="inline-block rounded-[5px] border-2 border-market-cream bg-transparent px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-red mt-6"
                        href="{{ partner.url }}"
                        target="_blank"
                        rel="noreferrer">Visit</a></article>

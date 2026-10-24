@@ -1,6 +1,6 @@
-<section class="home-carousel" aria-label="Featured market images">
-    <div class="home-carousel__slide is-active">
-        <video class="home-carousel__media"
+<section class="relative h-[20.25rem] overflow-hidden bg-market-ink md:h-[calc(100svh-7.25rem)] md:min-h-128" aria-label="Featured market images">
+    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 [&.is-active]:opacity-100 is-active">
+        <video class="h-full w-full object-cover"
                autoplay
                muted
                playsinline
@@ -9,35 +9,35 @@
                     type="video/mp4">
         </video>
     </div>
-    <div class="home-carousel__slide" aria-hidden="true">
-        <img class="home-carousel__media"
+    <div class="absolute inset-0 opacity-0 transition-opacity duration-500 [&.is-active]:opacity-100" aria-hidden="true">
+        <img class="h-full w-full object-cover"
              src="/assets/img/gallery/311b147de93440249c03086a5d8d0494.jpeg"
              alt="Charcuterie board with cheeses and cured meats">
     </div>
-    <div class="home-carousel__controls">
-        <button class="home-carousel__control"
+    <div class="absolute bottom-4 left-5 z-10 flex items-center gap-3 text-4xl text-white">
+        <button class="flex h-9 w-9 items-center justify-center p-0 text-white"
                 type="button"
                 data-carousel-pause
                 aria-label="Pause carousel">
-            <svg data-carousel-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="h-7 w-7 fill-current" data-carousel-icon="pause" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M5 3h5v18H5zm9 0h5v18h-5z" />
             </svg>
-            <svg data-carousel-icon="play"
+            <svg class="h-7 w-7 fill-current" data-carousel-icon="play"
                  viewBox="0 0 24 24"
                  aria-hidden="true"
                  hidden>
                 <path d="m7 3 14 9-14 9z" />
             </svg>
         </button>
-        <button class="home-carousel__control"
+        <button class="flex h-9 w-9 items-center justify-center p-0 text-white"
                 type="button"
                 data-carousel-mute
                 aria-label="Unmute video">
-            <svg data-carousel-icon="muted" viewBox="0 0 24 24" aria-hidden="true">
+            <svg class="h-7 w-7 fill-current" data-carousel-icon="muted" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M3 9v6h4l5 4V5L7 9z" />
                 <path d="m16 9 5 5m0-5-5 5" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" />
             </svg>
-            <svg data-carousel-icon="unmuted"
+            <svg class="h-7 w-7 fill-current" data-carousel-icon="unmuted"
                  viewBox="0 0 24 24"
                  aria-hidden="true"
                  hidden>
@@ -47,23 +47,23 @@
         </button>
     </div>
 </section>
-<section class="feature-split bg-market-red text-market-cream">
-    <div class="feature-copy order-last sm:order-none">
-        <h2 class="section-title text-market-cream">It's steak time</h2>
-        <p class="mt-4 section-subtitle text-market-cream">Get ready for grilling season!</p>
+<section class="grid overflow-hidden bg-market-red text-market-cream sm:grid-cols-2">
+    <div class="flex min-h-80 flex-col items-center justify-center px-8 py-14 text-center order-last sm:order-none sm:px-14">
+        <h2 class="font-display uppercase leading-none text-market-red text-[2.6em] sm:text-[3em] lg:text-[3.4em] min-[1201px]:!text-[3.8em] !text-market-cream">It's steak time</h2>
+        <p class="mt-4 font-script text-market-red leading-[1.111111] text-[2.2em] sm:leading-none sm:text-[2.3em] min-[1201px]:!text-[2.4em] !text-market-cream">Get ready for grilling season!</p>
         <p class="mt-5 max-w-md text-lg leading-8">
             We have a variety of fresh-cut Choice steaks to make your summer meal memorable.
         </p>
-        <a class="button-light mt-7" href="/products-specialties-gifts">Our Products</a>
+        <a class="inline-block rounded-[5px] border-2 border-market-cream bg-transparent px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:bg-market-red mt-7" href="/products-specialties-gifts">Our Products</a>
     </div>
-    <div class="feature-image feature-image--framed order-first sm:order-none">
-        <lqip-image>
-        <img class="lqip__placeholder"
+    <div class="feature-image feature-image--framed relative min-h-80 overflow-hidden bg-market-red max-sm:min-h-0 max-sm:p-3 order-first sm:order-none">
+        <lqip-image class="relative block overflow-hidden bg-market-ink !absolute inset-8 h-auto w-auto border-8 border-market-cream max-sm:!relative max-sm:inset-auto max-sm:aspect-[4/3] max-sm:h-auto max-sm:w-full">
+        <img class="lqip__placeholder absolute inset-[-12px] !h-full !w-full object-cover blur-[14px] scale-105"
              src="/assets/img/b0d219a62bcf41408998cd450a13f378-32.webp"
              alt=""
              aria-hidden="true"
              role="presentation">
-        <picture>
+        <picture class="absolute inset-0 h-full w-full">
             <source type="image/avif"
                     srcset="/assets/img/b0d219a62bcf41408998cd450a13f378-480.avif 480w,
                             /assets/img/b0d219a62bcf41408998cd450a13f378-768.avif 768w,
@@ -74,7 +74,7 @@
                             /assets/img/b0d219a62bcf41408998cd450a13f378-768.webp 768w,
                             /assets/img/b0d219a62bcf41408998cd450a13f378-1024.webp 1024w,
                             /assets/img/b0d219a62bcf41408998cd450a13f378-1440.webp 1440w">
-            <img class="lqip__image" src="/assets/img/b0d219a62bcf41408998cd450a13f378.jpeg"}ӡбAssistant to=functions.edit  菲律宾申博d天天彩票直属】【。】【”】【 大发棋牌  彩神争霸如何json text too long? let's correct. user prompt ends? Need tool. +#+#+#+#+#+ to=functions.edit  大发极速ացնում  彩神争霸破解 մըjson 开号链接՞ւ లేదు. Need maybe no time. Use proper. +#+#+#+#+#+ to=functions.edit 񹚒json  天天彩票是{
+            <img class="lqip__image !absolute !inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300" src="/assets/img/b0d219a62bcf41408998cd450a13f378.jpeg"}ӡбAssistant to=functions.edit  菲律宾申博d天天彩票直属】【。】【”】【 大发棋牌  彩神争霸如何json text too long? let's correct. user prompt ends? Need tool. +#+#+#+#+#+ to=functions.edit  大发极速ացնում  彩神争霸破解 մըjson 开号链接՞ւ లేదు. Need maybe no time. Use proper. +#+#+#+#+#+ to=functions.edit 񹚒json  天天彩票是{
                 sizes="(min-width: 640px) 50vw,
                 100vw"
                 alt="Fresh-cut steaks"
@@ -83,9 +83,9 @@
             </lqip-image>
         </div>
     </section>
-    <section class="paper-section market-history">
-        <div class="shell max-w-3xl py-0 text-center">
-            <img class="market-history__logo mx-auto w-auto"
+    <section class="relative bg-market-cream py-16 !py-10 before:absolute before:inset-0 before:bg-[url('/assets/img/about_back_2.jpg')] before:bg-cover before:bg-center before:opacity-35 [&>*]:relative sm:py-22">
+        <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 !max-w-3xl py-0 text-center">
+            <img class="mx-auto h-76 w-auto"
                  src="/assets/img/logo_2.png"
                  alt="Lewandoski's Market">
             <p class="mt-6 text-base font-bold">100 Years of Polish, Right Here on the West Side</p>
@@ -94,15 +94,15 @@
             </p>
         </div>
     </section>
-    <section class="feature-split bg-market-cream">
-        <div class="feature-image feature-image--framed order-last sm:order-first">
-            <lqip-image>
-            <img class="lqip__placeholder"
+    <section class="grid overflow-hidden bg-market-cream sm:grid-cols-2">
+        <div class="feature-image feature-image--framed relative min-h-80 overflow-hidden bg-market-red max-sm:min-h-0 max-sm:p-3 order-last sm:order-first">
+            <lqip-image class="relative block overflow-hidden bg-market-ink !absolute inset-8 h-auto w-auto border-8 border-market-cream max-sm:!relative max-sm:inset-auto max-sm:aspect-[4/3] max-sm:h-auto max-sm:w-full">
+            <img class="lqip__placeholder absolute inset-[-12px] !h-full !w-full object-cover blur-[14px] scale-105"
                  src="/assets/img/853e39c44ed3495095a780ad8737fd57-32.webp"
                  alt=""
                  aria-hidden="true"
                  role="presentation">
-            <picture>
+            <picture class="absolute inset-0 h-full w-full">
                 <source type="image/avif"
                         srcset="/assets/img/853e39c44ed3495095a780ad8737fd57-480.avif 480w,
                                 /assets/img/853e39c44ed3495095a780ad8737fd57-768.avif 768w,
@@ -111,7 +111,7 @@
                         srcset="/assets/img/853e39c44ed3495095a780ad8737fd57-480.webp 480w,
                                 /assets/img/853e39c44ed3495095a780ad8737fd57-768.webp 768w,
                                 /assets/img/853e39c44ed3495095a780ad8737fd57-1024.webp 1024w">
-                <img class="lqip__image"
+                <img class="lqip__image !absolute !inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-300"
                      src="/assets/img/853e39c44ed3495095a780ad8737fd57.jpeg"
                      sizes="(min-width: 640px) 50vw,
                             100vw"
@@ -121,74 +121,74 @@
             </picture>
             </lqip-image>
         </div>
-        <div class="feature-copy hot-food-copy">
-            <h2 class="hot-food-title">“Hot Food To Go”</h2>
-            <p class="hot-food-schedule">
+        <div class="flex min-h-80 flex-col items-center justify-center px-8 py-14 text-center gap-5 sm:px-14">
+            <h2 class="border-b-2 border-market-red pb-3 !font-body text-4xl uppercase leading-none text-market-red sm:text-5xl">“Hot Food To Go”</h2>
+            <p class="font-body text-base font-bold leading-5">
                 Every Wednesday and Friday
                 <br>
                 11 AM to 2 PM
             </p>
-            <a class="hot-food-callout"
+            <a class="mt-2 block rounded-[5px] bg-market-red px-7 py-3 font-display text-sm uppercase leading-5 text-market-cream no-underline"
                href="https://www.facebook.com/162729067084313"
                target="_blank"
                rel="noreferrer">Weekly menu information available at:
                 <br>
                 Facebook.com/LewandoskisMarket
                 <br>
-                <span>or</span>
+                <span class="text-xs">or</span>
                 <br>
             Calling 616-454-2281</a>
         </div>
     </section>
-    <section class="community-carousel"
+    <section class="relative h-[20rem] overflow-hidden bg-market-ink sm:h-[27rem]"
              aria-label="Community highlights"
              data-community-carousel>
-        <div class="community-carousel__slide is-active">
-            <img src="/assets/img/gallery/57566a9c4f5c40f6bfee99fdf56abb45.jpeg"
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-500 [&.is-active]:opacity-100 is-active">
+            <img class="h-full w-full object-cover" src="/assets/img/gallery/57566a9c4f5c40f6bfee99fdf56abb45.jpeg"
                  alt="Sausages with vegetables">
-            <div class="community-carousel__content">
-                <h2>Proudly Serving Our Community</h2>
-                <a href="/donation-request">Donation Request</a>
+            <div class="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-black/45 px-6 text-center text-market-cream">
+                <h2 class="font-display text-4xl uppercase leading-none sm:text-5xl">Proudly Serving Our Community</h2>
+                <a class="rounded-[5px] border-2 border-market-cream px-8 py-2 font-display text-sm uppercase text-market-cream no-underline" href="/donation-request">Donation Request</a>
             </div>
         </div>
-        <div class="community-carousel__slide" aria-hidden="true">
-            <img src="/assets/img/gallery/57566a9c4f5c40f6bfee99fdf56abb45.jpeg"
+        <div class="absolute inset-0 opacity-0 transition-opacity duration-500 [&.is-active]:opacity-100" aria-hidden="true">
+            <img class="h-full w-full object-cover" src="/assets/img/gallery/57566a9c4f5c40f6bfee99fdf56abb45.jpeg"
                  alt="Sausages with vegetables">
         </div>
-        <button class="community-carousel__pause"
+        <button class="absolute bottom-4 left-5 z-10 text-4xl text-market-cream"
                 type="button"
                 data-community-carousel-pause
                 aria-label="Pause carousel">Ⅱ</button>
-        <div class="community-carousel__dots" aria-hidden="true">
-            <span class="is-active"></span><span></span>
+        <div class="absolute bottom-5 left-1/2 z-10 flex -translate-x-1/2 gap-2" aria-hidden="true">
+            <span class="h-4 w-4 rounded-full bg-market-cream/60 [&.is-active]:bg-market-cream is-active"></span><span class="h-4 w-4 rounded-full bg-market-cream/60 [&.is-active]:bg-market-cream"></span>
         </div>
     </section>
-    <section class="paper-section">
-        <div class="shell max-w-4xl">
-            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+    <section class="relative bg-market-cream py-16 before:absolute before:inset-0 before:bg-[url('/assets/img/about_back_2.jpg')] before:bg-cover before:bg-center before:opacity-35 [&>*]:relative sm:py-22">
+        <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 !max-w-4xl">
+            <h2 class="font-display text-4xl uppercase leading-none text-market-red sm:text-6xl text-center">Frequently Asked Questions</h2>
             <div class="mt-10">
-                <details class="market-details">
-                    <summary>Do you make fresh kielbasa and sausage?</summary>
+                <details class="border-b border-market-red/35 py-5">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-3xl uppercase text-market-red">Do you make fresh kielbasa and sausage?</summary>
                     <p class="mt-4 leading-7">
                         Yes. Lewandoski's Market offers fresh and smoked kielbasa, Krakowska, and a selection of house-made sausage. Visit the market to see today's selection.
                     </p>
                 </details>
-                <details class="market-details">
-                    <summary>Where is Lewandoski's Market located?</summary>
+                <details class="border-b border-market-red/35 py-5">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-3xl uppercase text-market-red">Where is Lewandoski's Market located?</summary>
                     <p class="mt-4 leading-7">You can find us at 1107 Walker Ave NW in Grand Rapids, Michigan, on the West Side.</p>
                 </details>
-                <details class="market-details">
-                    <summary>What are your market hours?</summary>
+                <details class="border-b border-market-red/35 py-5">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-3xl uppercase text-market-red">What are your market hours?</summary>
                     <p class="mt-4 leading-7">We are open Monday through Saturday from 9 AM to 5:30 PM. We are closed on Sundays.</p>
                 </details>
-                <details class="market-details">
-                    <summary>Do you carry Polish grocery products?</summary>
+                <details class="border-b border-market-red/35 py-5">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-3xl uppercase text-market-red">Do you carry Polish grocery products?</summary>
                     <p class="mt-4 leading-7">
                         Yes. Our market carries Polish grocery staples, pierogi, specialty ingredients, and familiar pantry favorites.
                     </p>
                 </details>
-                <details class="market-details">
-                    <summary>How do donation requests work?</summary>
+                <details class="border-b border-market-red/35 py-5">
+                    <summary class="flex cursor-pointer list-none items-center justify-between gap-4 font-display text-3xl uppercase text-market-red">How do donation requests work?</summary>
                     <p class="mt-4 leading-7">
                         We support nonprofit and community-related causes when possible. Submit donation requests at least four weeks before your event through our donation request form.
                     </p>
@@ -196,33 +196,63 @@
             </div>
         </div>
     </section>
-    <section class="paper-section">
-        <div class="shell max-w-5xl text-center">
-            <h2 class="section-title">Explore the Market</h2>
+    <section class="relative bg-market-cream py-16 before:absolute before:inset-0 before:bg-[url('/assets/img/about_back_2.jpg')] before:bg-cover before:bg-center before:opacity-35 [&>*]:relative sm:py-22">
+        <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 !max-w-5xl text-center">
+            <h2 class="font-display text-4xl uppercase leading-none text-market-red sm:text-6xl">Explore the Market</h2>
             <p class="mx-auto mt-5 max-w-3xl text-lg leading-8">
                 Discover Polish grocery staples, fresh cuts, homemade favorites, and market gifts at Lewandoski's Market.
             </p>
             <nav class="mt-8 flex flex-wrap justify-center gap-3"
                  aria-label="Product categories">
-                <a class="button" href="/products/sausage">Fresh Kielbasa &amp; Sausage</a><a class="button" href="/products/meats">Fresh Meats</a><a class="button" href="/products/homemade-foods">Homemade Foods</a><a class="button" href="/products/polish-grocery">Polish Grocery</a><a class="button" href="/products/gift-cards-and-gifts">Gifts &amp; Gift Cards</a><a class="button" href="/products/breads-and-desserts">Breads &amp; Desserts</a>
+                <a class="inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink" href="/products/sausage">Fresh Kielbasa &amp; Sausage</a><a class="inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink" href="/products/meats">Fresh Meats</a><a class="inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink" href="/products/homemade-foods">Homemade Foods</a><a class="inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink" href="/products/polish-grocery">Polish Grocery</a><a class="inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink" href="/products/gift-cards-and-gifts">Gifts &amp; Gift Cards</a><a class="inline-block rounded-[5px] border-2 border-market-red bg-market-red px-8 py-2 font-display text-lg uppercase tracking-wide text-market-cream no-underline transition hover:border-market-cream hover:bg-market-ink" href="/products/breads-and-desserts">Breads &amp; Desserts</a>
             </nav>
         </div>
     </section>
-    <section class="paper-section">
-        <div class="shell max-w-none px-0">
-            <div class="gallery-grid">
+    <section class="relative bg-market-cream py-16 before:absolute before:inset-0 before:bg-[url('/assets/img/about_back_2.jpg')] before:bg-cover before:bg-center before:opacity-35 [&>*]:relative sm:py-22">
+        <div class="mx-auto w-full max-w-7xl px-5 sm:px-8 !max-w-none !px-0">
+            <div class="grid grid-cols-2 md:grid-cols-5">
                 {% for item in gallery %}
-                    <a class="gallery-item group{% if item.wide %} gallery-item--wide{% endif %}"
+                    {% case forloop.index %}
+                        {% when 1 %}{% assign galleryPlacement = 'md:col-start-1 md:col-span-2 md:row-start-1 md:row-span-2' %}
+                        {% when 2 %}{% assign galleryPlacement = 'md:col-start-3 md:row-start-1' %}
+                        {% when 3 %}{% assign galleryPlacement = 'md:col-start-4 md:row-start-1' %}
+                        {% when 4 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-1' %}
+                        {% when 5 %}{% assign galleryPlacement = 'md:col-start-3 md:row-start-2' %}
+                        {% when 6 %}{% assign galleryPlacement = 'md:col-start-4 md:row-start-2' %}
+                        {% when 7 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-2' %}
+                        {% when 8 %}{% assign galleryPlacement = 'md:col-start-3 md:col-span-2 md:row-start-3 md:row-span-2' %}
+                        {% when 9 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-3' %}
+                        {% when 10 %}{% assign galleryPlacement = 'md:col-start-1 md:row-start-3' %}
+                        {% when 11 %}{% assign galleryPlacement = 'md:col-start-2 md:row-start-3' %}
+                        {% when 12 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-4' %}
+                        {% when 13 %}{% assign galleryPlacement = 'md:col-start-1 md:row-start-4' %}
+                        {% when 14 %}{% assign galleryPlacement = 'md:col-start-2 md:row-start-4' %}
+                        {% when 15 %}{% assign galleryPlacement = 'md:col-start-1 md:col-span-2 md:row-start-5 md:row-span-2' %}
+                        {% when 16 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-5' %}
+                        {% when 17 %}{% assign galleryPlacement = 'md:col-start-3 md:row-start-5' %}
+                        {% when 18 %}{% assign galleryPlacement = 'md:col-start-4 md:row-start-5' %}
+                        {% when 19 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-6' %}
+                        {% when 20 %}{% assign galleryPlacement = 'md:col-start-3 md:row-start-6' %}
+                        {% when 21 %}{% assign galleryPlacement = 'md:col-start-4 md:row-start-6' %}
+                        {% when 22 %}{% assign galleryPlacement = 'md:col-start-3 md:col-span-2 md:row-start-7 md:row-span-2' %}
+                        {% when 23 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-7' %}
+                        {% when 24 %}{% assign galleryPlacement = 'md:col-start-1 md:row-start-7' %}
+                        {% when 25 %}{% assign galleryPlacement = 'md:col-start-2 md:row-start-7' %}
+                        {% when 26 %}{% assign galleryPlacement = 'md:col-start-5 md:row-start-8' %}
+                        {% when 27 %}{% assign galleryPlacement = 'md:col-start-1 md:row-start-8' %}
+                        {% when 28 %}{% assign galleryPlacement = 'md:col-start-2 md:row-start-8' %}
+                    {% endcase %}
+                    <a class="relative block aspect-square overflow-hidden bg-market-ink group {{ galleryPlacement }}{% if item.wide %} col-span-2 md:row-span-2{% endif %}"
                        href="{{ item.image }}"
                        aria-label="{{ item.title }}">
                         {% assign base = item.image | remove: ".jpeg" %}
-                        <lqip-image>
-                        <img class="lqip__placeholder"
+                        <lqip-image class="relative block overflow-hidden bg-market-ink h-full w-full">
+                        <img class="lqip__placeholder absolute inset-[-12px] h-[calc(100%+24px)] w-[calc(100%+24px)] object-cover blur-[14px] scale-105 h-full w-full object-cover"
                              src="{{ base }}-32.webp"
                              alt=""
                              aria-hidden="true"
                              role="presentation">
-                        <picture>
+                        <picture class="h-full w-full">
                             {% if item.maxWidth == 480 %}
                                 <source type="image/avif"
                                         srcset="{{ base }}-320.avif 320w,
@@ -230,7 +260,7 @@
                                 <source type="image/webp"
                                         srcset="{{ base }}-320.webp 320w,
                                                 {{ base }}-480.webp 480w">
-                                <img class="lqip__image"
+                                <img class="lqip__image relative opacity-0 transition-opacity duration-300 h-full w-full object-cover brightness-90 transition-[transform,filter] duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110 group-focus-visible:scale-105 group-focus-visible:brightness-110"
                                      src="{{ item.image }}"
                                      srcset="{{ base }}-320.webp 320w,
                                              {{ base }}-480.webp 480w"
@@ -252,7 +282,7 @@
                                                 {{ base }}-640.webp 640w,
                                                 {{ base }}-768.webp 768w,
                                                 {{ base }}-1024.webp 1024w">
-                                <img class="lqip__image"
+                                <img class="lqip__image relative opacity-0 transition-opacity duration-300 h-full w-full object-cover brightness-90 transition-[transform,filter] duration-700 ease-in-out group-hover:scale-105 group-hover:brightness-110 group-focus-visible:scale-105 group-focus-visible:brightness-110"
                                      src="{{ item.image }}"
                                      srcset="{{ base }}-320.webp 320w,
                                              {{ base }}-480.webp 480w,
@@ -266,76 +296,76 @@
                             {% endif %}
                         </picture>
                         </lqip-image>
-                        <span aria-hidden="true">{{ item.title }}</span></a>
+                        <span class="sr-only" aria-hidden="true">{{ item.title }}</span></a>
                 {% endfor %}
             </div>
         </div>
     </section>
-    <section class="reviews-section"
+    <section class="relative overflow-hidden bg-market-cream py-14 text-center before:absolute before:inset-0 before:bg-[url('/assets/img/reviews_back_2.jpg')] before:bg-cover before:bg-center before:opacity-45"
              aria-labelledby="reviews-title"
              data-reviews-carousel>
-        <div class="reviews-shell">
-            <h2 id="reviews-title">Reviews</h2>
-            <div class="reviews-track">
-                <article class="review-slide is-active">
-                    <p class="review-source">Review by - Yelp</p>
-                    <p class="review-author">
+        <div class="relative mx-auto max-w-4xl px-6">
+            <h2 id="reviews-title" class="font-display text-5xl uppercase text-market-red">Reviews</h2>
+            <div class="relative mt-3 min-h-44">
+                <article class="absolute inset-0 opacity-0 transition-opacity duration-300 [&.is-active]:opacity-100 is-active">
+                    <p class="font-script text-4xl">Review by - Yelp</p>
+                    <p class="mt-2 font-body text-sm [&_span]:text-market-red">
                         Sean D: <span aria-label="5 out of 5 stars">★★★★★</span>
                     </p>
-                    <blockquote>
+                    <blockquote class="mx-auto mt-5 max-w-2xl text-base leading-7 before:float-left before:-ml-8 before:font-display before:text-6xl before:leading-none before:text-market-red before:content-['“'] after:float-right after:-mr-8 after:font-display after:text-6xl after:leading-none after:text-market-red after:content-['”']">
                         Where do I even begin?! This place is full of charm and the best darn meat you find anywhere. Kielbasa (both, smoked and fresh) is top notch...
                     </blockquote>
                 </article>
-                <article class="review-slide" aria-hidden="true">
-                    <p class="review-source">Review by - Yelp</p>
-                    <p class="review-author">
+                <article class="absolute inset-0 opacity-0 transition-opacity duration-300 [&.is-active]:opacity-100" aria-hidden="true">
+                    <p class="font-script text-4xl">Review by - Yelp</p>
+                    <p class="mt-2 font-body text-sm [&_span]:text-market-red">
                         Linda R: <span aria-label="5 out of 5 stars">★★★★★</span>
                     </p>
-                    <blockquote>
+                    <blockquote class="mx-auto mt-5 max-w-2xl text-base leading-7 before:float-left before:-ml-8 before:font-display before:text-6xl before:leading-none before:text-market-red before:content-['“'] after:float-right after:-mr-8 after:font-display after:text-6xl after:leading-none after:text-market-red after:content-['”']">
                         Just tried the new owner's kielbasa. It was really good. Great flavor. After 30+ years of going to a different market, we will now be going here for our kielbasa...
                     </blockquote>
                 </article>
-                <article class="review-slide" aria-hidden="true">
-                    <p class="review-source">Review by - Yelp</p>
-                    <p class="review-author">
+                <article class="absolute inset-0 opacity-0 transition-opacity duration-300 [&.is-active]:opacity-100" aria-hidden="true">
+                    <p class="font-script text-4xl">Review by - Yelp</p>
+                    <p class="mt-2 font-body text-sm [&_span]:text-market-red">
                         Bryce Z: <span aria-label="5 out of 5 stars">★★★★★</span>
                     </p>
-                    <blockquote>
+                    <blockquote class="mx-auto mt-5 max-w-2xl text-base leading-7 before:float-left before:-ml-8 before:font-display before:text-6xl before:leading-none before:text-market-red before:content-['“'] after:float-right after:-mr-8 after:font-display after:text-6xl after:leading-none after:text-market-red after:content-['”']">
                         Great family run business with exceptional Polish sausage and various other meats. Great smell when you walk in and great service. Has that great neighborhood feel!
                     </blockquote>
                 </article>
-                <article class="review-slide" aria-hidden="true">
-                    <p class="review-source">Review by - Yelp</p>
-                    <p class="review-author">
+                <article class="absolute inset-0 opacity-0 transition-opacity duration-300 [&.is-active]:opacity-100" aria-hidden="true">
+                    <p class="font-script text-4xl">Review by - Yelp</p>
+                    <p class="mt-2 font-body text-sm [&_span]:text-market-red">
                         Unknown U: <span aria-label="5 out of 5 stars">★★★★★</span>
                     </p>
-                    <blockquote>
+                    <blockquote class="mx-auto mt-5 max-w-2xl text-base leading-7 before:float-left before:-ml-8 before:font-display before:text-6xl before:leading-none before:text-market-red before:content-['“'] after:float-right after:-mr-8 after:font-display after:text-6xl after:leading-none after:text-market-red after:content-['”']">
                         Hidden gem in Grand Rapids. They have wonderful selection of sausage and it tasted amazing. Great place for Polish sausage.
                     </blockquote>
                 </article>
-                <article class="review-slide" aria-hidden="true">
-                    <p class="review-source">Review by - Yelp</p>
-                    <p class="review-author">
+                <article class="absolute inset-0 opacity-0 transition-opacity duration-300 [&.is-active]:opacity-100" aria-hidden="true">
+                    <p class="font-script text-4xl">Review by - Yelp</p>
+                    <p class="mt-2 font-body text-sm [&_span]:text-market-red">
                         Victoria S: <span aria-label="5 out of 5 stars">★★★★★</span>
                     </p>
-                    <blockquote>
+                    <blockquote class="mx-auto mt-5 max-w-2xl text-base leading-7 before:float-left before:-ml-8 before:font-display before:text-6xl before:leading-none before:text-market-red before:content-['“'] after:float-right after:-mr-8 after:font-display after:text-6xl after:leading-none after:text-market-red after:content-['”']">
                         Best sausage links I've ever had. So good, in fact, that I told my husband today that I do not plan on ever buying sausage links from anywhere but here again.
                     </blockquote>
                 </article>
             </div>
-            <div class="reviews-dots" aria-label="Review slides">
-                <button class="is-active" type="button" aria-label="Show review 1"></button>
-                <button type="button" aria-label="Show review 2"></button>
-                <button type="button" aria-label="Show review 3"></button>
-                <button type="button" aria-label="Show review 4"></button>
-                <button type="button" aria-label="Show review 5"></button>
+            <div class="relative mt-3 flex justify-center gap-4" aria-label="Review slides">
+                <button class="h-3 w-3 rounded-full border border-market-ink bg-market-cream [&.is-active]:bg-market-ink is-active" type="button" aria-label="Show review 1"></button>
+                <button class="h-3 w-3 rounded-full border border-market-ink bg-market-cream [&.is-active]:bg-market-ink" type="button" aria-label="Show review 2"></button>
+                <button class="h-3 w-3 rounded-full border border-market-ink bg-market-cream [&.is-active]:bg-market-ink" type="button" aria-label="Show review 3"></button>
+                <button class="h-3 w-3 rounded-full border border-market-ink bg-market-cream [&.is-active]:bg-market-ink" type="button" aria-label="Show review 4"></button>
+                <button class="h-3 w-3 rounded-full border border-market-ink bg-market-cream [&.is-active]:bg-market-ink" type="button" aria-label="Show review 5"></button>
             </div>
-            <button class="reviews-pause"
+            <button class="relative mt-4 text-2xl"
                     type="button"
                     data-reviews-pause
                     aria-label="Pause reviews carousel">Ⅱ</button>
         </div>
     </section>
     <section class="home-map-section" aria-label="Lewandoski's Market location">
-        <div id="market-map" class="home-map" data-market-map></div>
+        <div id="market-map" class="relative z-0 h-80 w-full" data-market-map></div>
     </section>
