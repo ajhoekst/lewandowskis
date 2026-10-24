@@ -26,12 +26,12 @@
         {% if currentPath == "/" %}
             <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you make fresh kielbasa and sausage?","acceptedAnswer":{"@type":"Answer","text":"Lewandoski's Market offers fresh and smoked kielbasa, Krakowska, and a selection of house-made sausage. Visit the market to see today's selection."}},{"@type":"Question","name":"Where is Lewandoski's Market located?","acceptedAnswer":{"@type":"Answer","text":"Lewandoski's Market is located at 1107 Walker Ave NW in Grand Rapids, Michigan."}},{"@type":"Question","name":"What are your market hours?","acceptedAnswer":{"@type":"Answer","text":"Lewandoski's Market is open Monday through Saturday from 9 AM to 5:30 PM and is closed on Sundays."}},{"@type":"Question","name":"Do you carry Polish grocery products?","acceptedAnswer":{"@type":"Answer","text":"The market carries Polish grocery staples, pierogi, specialty ingredients, and pantry favorites."}},{"@type":"Question","name":"How do donation requests work?","acceptedAnswer":{"@type":"Answer","text":"Submit donation requests at least four weeks before your event through the donation request form."}}]}</script>
         {% endif %}
-        <link rel="stylesheet" href="/static/css/site.css">
+        <link rel="stylesheet" href="/static/css/site.css?v=20261024">
         <link rel="stylesheet" href="/static/vendor/leaflet-1.9.4.css">
         <script src="/static/vendor/htmx-4.0.0.js"></script>
         <script src="/static/vendor/leaflet-1.9.4.js"></script>
         <script type="module" src="/static/js/lqip-image.js"></script>
-        <script type="module" src="/static/js/home.js"></script>
+        <script type="module" src="/static/js/home.js?v=20261024"></script>
         <script type="module" src="/static/js/market-map.js"></script>
         <script type="module" src="/static/js/accessibility.js"></script>
     </head>
@@ -154,14 +154,12 @@
 <footer class="site-footer">
     <div class="shell grid gap-8 text-center sm:grid-cols-3 sm:text-left">
         <section>
-            <h2 class="font-display text-2xl uppercase">Lewandoski's Market</h2>
-            <p class="mt-3 leading-7 text-market-cream/85">
-                100 years of Polish tradition, right here on Grand Rapids' West Side.
-            </p>
+            <h2 class="font-display text-2xl uppercase text-market-red">Lewandoski's Market</h2>
+            <p class="mt-3 leading-7 text-market-ink/85">100 years of Polish tradition, right here on Grand Rapids' West Side.</p>
         </section>
         <section>
-            <h2 class="font-display text-2xl uppercase">Location</h2>
-            <address class="mt-3 not-italic leading-7 text-market-cream/85">1107 Walker Ave NW
+            <h2 class="font-display text-2xl uppercase text-market-red">Location</h2>
+            <address class="mt-3 not-italic leading-7 text-market-ink/85">1107 Walker Ave NW
                 <br>
                 Grand Rapids, MI 49504
                 <br>
@@ -172,15 +170,15 @@
                    rel="noreferrer">Get directions</a></address>
         </section>
         <section>
-            <h2 class="font-display text-2xl uppercase">Hours</h2>
-            <p class="mt-3 leading-7 text-market-cream/85">
+            <h2 class="font-display text-2xl uppercase text-market-red">Hours</h2>
+            <p class="mt-3 leading-7 text-market-ink/85">
                 Monday–Friday: 9 AM–5:30 PM
                 <br>
                 Saturday: 9 AM–5:30 PM
                 <br>
                 Sunday: Closed
             </p>
-            <p class="mt-4 leading-7 text-market-cream/85">
+            <p class="mt-4 leading-7 text-market-ink/85">
                 <strong>2026 Holiday Hours</strong>
                 <br>
                 July 4: Closed
