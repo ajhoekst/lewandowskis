@@ -34,6 +34,7 @@
                   hx-post="/forms/contact"
                   hx-target="#form-feedback"
                   hx-swap="innerHTML">
+                {% if product %}<p class="mb-5 text-center leading-7">You are asking about availability for <strong>{{ product }}</strong>.</p><input type="hidden" name="product_interest" value="{{ product }}">{% endif %}
                 <div class="grid gap-5 sm:grid-cols-2">
                     {% for field in fields %}
                         <label class="form-label">

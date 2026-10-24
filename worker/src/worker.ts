@@ -153,7 +153,7 @@ export default {
     if (url.pathname === "/contact-us" || url.pathname === "/donation-request") {
       const donation = url.pathname === "/donation-request";
       const names = donation ? ["name", "email", "phone", "organization", "event_name", "event_date", "guest_count", "items_requested"] : ["first_name", "last_name", "email", "phone", "message"];
-      const context = { title: donation ? "Donation Request" : "Contact Us", fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : name === "phone" ? "tel" : name === "event_date" ? "date" : "", autocomplete: ({ first_name: "given-name", last_name: "family-name", email: "email", phone: "tel", organization: "organization" } as Record<string, string>)[name] ?? "off" })) };
+      const context = { title: donation ? "Donation Request" : "Contact Us", product: donation ? null : url.searchParams.get("product"), fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : name === "phone" ? "tel" : name === "event_date" ? "date" : "", autocomplete: ({ first_name: "given-name", last_name: "family-name", email: "email", phone: "tel", organization: "organization" } as Record<string, string>)[name] ?? "off" })) };
       return new Response(await renderPage(env, donation ? "donation-request.liquid" : "contact-us.liquid", context, url.pathname, url.hostname), { headers: { "content-type": "text/html" } });
     }
     if (url.pathname === "/") return new Response(await renderPage(env, "home.liquid", { title: "Home", gallery }, url.pathname, url.hostname), { headers: { "content-type": "text/html" } });

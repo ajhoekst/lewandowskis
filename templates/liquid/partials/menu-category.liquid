@@ -63,7 +63,7 @@
                     </lqip-image>
                     <h3 class="mt-4 font-display text-2xl uppercase text-market-red">{{ item.alt }}</h3>
                     <p class="mt-2 leading-7">{{ item.description }}</p>
-                    <a class="button mt-5" href="/contact-us">Ask About Availability</a></article>
+                    <a class="button mt-5" href="/contact-us?product={{ item.alt | url_encode }}">Ask About Availability</a></article>
             {% endfor %}
         </div>
     </div>
