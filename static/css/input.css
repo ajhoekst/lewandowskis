@@ -511,6 +511,111 @@
     @apply sr-only;
   }
 
+  .product-catalog {
+    @apply relative min-h-screen overflow-hidden bg-market-cream py-0;
+    background-image: linear-gradient(rgb(255 255 255 / 72%), rgb(255 255 255 / 72%)), url('/assets/img/food_back_new.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .product-catalog__navigation {
+    @apply px-0 pt-43 pb-0 sm:px-8 sm:pt-28 sm:pb-12;
+  }
+
+  .product-category-nav {
+    @apply mx-auto flex max-w-5xl flex-wrap justify-center gap-3;
+  }
+
+  .product-category-nav .button-menu {
+    @apply min-w-33 text-center;
+  }
+
+  .product-catalog__content {
+    @apply mx-auto w-[calc(100%-2.5rem)] max-w-235 bg-white px-7 py-12 shadow-lg sm:px-10 sm:py-9;
+  }
+
+  .product-category {
+    @apply text-center;
+  }
+
+  .product-category .section-title {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  .product-category__intro,
+  .product-category__copy {
+    @apply mx-auto max-w-2xl leading-6;
+  }
+
+  .product-category__intro {
+    @apply mt-4 text-lg font-bold;
+  }
+
+  .product-category__copy {
+    @apply mt-1;
+  }
+
+  .product-category__items {
+    @apply mt-6 grid gap-8 text-left sm:grid-cols-2;
+  }
+
+  .product-item {
+    @apply border-l-2 border-market-red pl-2;
+  }
+
+  .product-item lqip-image {
+    @apply aspect-[4/3] w-full;
+  }
+
+  .product-item h2 {
+    @apply mt-3 font-body text-lg font-bold;
+  }
+
+  .product-item p {
+    @apply mt-1 leading-6;
+  }
+
+  @media (max-width: 639px) {
+    .product-catalog {
+      background-attachment: scroll;
+      background-position: center top;
+    }
+
+    .product-catalog__navigation {
+      @apply pt-43;
+    }
+
+    .product-category-nav {
+      @apply block;
+    }
+
+    .product-category-nav .button-menu {
+      @apply block min-h-17 w-full rounded-none border-x-0 border-b-2 border-t-0 border-market-cream px-5 py-4 text-2xl leading-8;
+    }
+
+    .product-category-nav .button-menu[aria-current='page'] {
+      @apply border-market-red;
+    }
+
+    .product-catalog__content {
+      @apply mt-19 w-[calc(100%-4rem)] px-7 py-13;
+    }
+
+    .product-category .section-title {
+      @apply text-3xl;
+    }
+
+    .product-category__intro,
+    .product-category__copy {
+      @apply text-base leading-6;
+    }
+
+    .product-category__items {
+      @apply mt-7 grid-cols-1 gap-8;
+    }
+  }
+
   .paper-section {
     @apply relative bg-market-cream py-16 sm:py-22;
   }

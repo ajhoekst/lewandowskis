@@ -1,13 +1,8 @@
-<section class="page-hero">
-    <img src="/assets/img/food_back_new.jpg" alt="">
-    <div class="shell relative">
-        <h1 class="hero-title mx-auto">Our Menu</h1>
-        <p class="hero-script">Good food, made the old-fashioned way.</p>
-    </div>
-</section>
-<section class="paper-section">
-    <div class="shell max-w-6xl">
-        <nav id="menu-category-nav" class="flex flex-wrap justify-center gap-3">
+<section class="product-catalog">
+    <div class="product-catalog__navigation">
+        <nav id="menu-category-nav"
+             class="product-category-nav"
+             aria-label="Menu categories">
             {% for category in menu %}
                 <a class="button-menu{% if category.slug == selected.slug %} !bg-market-cream !text-market-ink{% endif %}"
                    href="/products/{{ category.slug }}"
@@ -19,63 +14,58 @@
                    {% if category.slug == selected.slug %}aria-current="page"{% endif %}>{{ category.name }}</a>
             {% endfor %}
         </nav>
-        <div class="mt-16">
-            <section id="menu-category"
-                     tabindex="-1"
-                     aria-live="polite"
-                     data-selected-category="{{ selected.slug }}"
-                     class="border-t-2 border-market-red pt-8">
-                <div class="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)]">
-                    <div>
-                        <h2 class="section-title text-4xl">{{ selected.name }}</h2>
-                        <p class="mt-5 text-lg leading-8">{{ selected.description }}</p>
-                        <p class="mt-5 leading-7">{{ selected.copy }}</p>
-                    </div>
-                    <div class="grid gap-5 sm:grid-cols-2">
-                        {% for item in selected.images %}
-                            <article class="border border-market-red/25 bg-white p-3">
-                                {% assign base = item.src | remove: ".jpeg" %}
-                                <lqip-image>
-                                <img class="lqip__placeholder"
-                                     src="{{ base }}-32.webp"
-                                     alt=""
-                                     aria-hidden="true"
-                                     role="presentation">
-                                <picture>
-                                    <source type="image/avif"
-                                            srcset="{{ base }}-320.avif 320w,
-                                                    {{ base }}-480.avif 480w,
-                                                    {{ base }}-640.avif 640w,
-                                                    {{ base }}-768.avif 768w,
-                                                    {{ base }}-1024.avif 1024w">
-                                    <source type="image/webp"
-                                            srcset="{{ base }}-320.webp 320w,
-                                                    {{ base }}-480.webp 480w,
-                                                    {{ base }}-640.webp 640w,
-                                                    {{ base }}-768.webp 768w,
-                                                    {{ base }}-1024.webp 1024w">
-                                    <img class="lqip__image aspect-[4/3] w-full object-cover"
-                                         src="{{ item.src }}"
-                                         srcset="{{ base }}-320.webp 320w,
-                                                 {{ base }}-480.webp 480w,
-                                                 {{ base }}-640.webp 640w,
-                                                 {{ base }}-768.webp 768w,
-                                                 {{ base }}-1024.webp 1024w"
-                                         sizes="(min-width: 1024px) 30vw,
-                                                (min-width: 640px) 45vw,
-                                                100vw"
-                                         alt="{{ item.alt }}"
-                                         loading="lazy"
-                                         decoding="async">
-                                </picture>
-                                </lqip-image>
-                                <h3 class="mt-4 font-display text-2xl uppercase text-market-red">{{ item.alt }}</h3>
-                                <p class="mt-2 leading-7">{{ item.description }}</p>
-                                <a class="button mt-5" href="/contact-us?product={{ item.alt | url_encode }}">Ask About Availability</a></article>
-                        {% endfor %}
-                    </div>
-                </div>
-            </section>
-        </div>
+    </div>
+    <div class="product-catalog__content">
+        <section id="menu-category"
+                 tabindex="-1"
+                 aria-live="polite"
+                 data-selected-category="{{ selected.slug }}"
+                 class="product-category">
+            <h1 class="section-title">{{ selected.name }}</h1>
+            <p class="product-category__intro">{{ selected.description }}</p>
+            <p class="product-category__copy">{{ selected.copy }}</p>
+            <div class="product-category__items">
+                {% for item in selected.images %}
+                    <article class="product-item">
+                        {% assign base = item.src | remove: ".jpeg" %}
+                        <lqip-image>
+                        <img class="lqip__placeholder"
+                             src="{{ base }}-32.webp"
+                             alt=""
+                             aria-hidden="true"
+                             role="presentation">
+                        <picture>
+                            <source type="image/avif"
+                                    srcset="{{ base }}-320.avif 320w,
+                                            {{ base }}-480.avif 480w,
+                                            {{ base }}-640.avif 640w,
+                                            {{ base }}-768.avif 768w,
+                                            {{ base }}-1024.avif 1024w">
+                            <source type="image/webp"
+                                    srcset="{{ base }}-320.webp 320w,
+                                            {{ base }}-480.webp 480w,
+                                            {{ base }}-640.webp 640w,
+                                            {{ base }}-768.webp 768w,
+                                            {{ base }}-1024.webp 1024w">
+                            <img class="lqip__image aspect-[4/3] w-full object-cover"
+                                 src="{{ item.src }}"
+                                 srcset="{{ base }}-320.webp 320w,
+                                         {{ base }}-480.webp 480w,
+                                         {{ base }}-640.webp 640w,
+                                         {{ base }}-768.webp 768w,
+                                         {{ base }}-1024.webp 1024w"
+                                 sizes="(min-width: 768px) 40vw,
+                                        100vw"
+                                 alt="{{ item.alt }}"
+                                 loading="lazy"
+                                 decoding="async">
+                        </picture>
+                        </lqip-image>
+                        <h2>{{ item.alt }}</h2>
+                        <p>{{ item.description }}</p>
+                    </article>
+                {% endfor %}
+            </div>
+        </section>
     </div>
 </section>
