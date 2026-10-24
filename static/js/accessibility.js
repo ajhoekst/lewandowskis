@@ -27,12 +27,18 @@ if (carousel) {
     if (activeSlide === 1 && !paused) imageTimer = window.setTimeout(() => showSlide(0), 6000);
   };
 
+  const setCarouselIcon = (button, name) => {
+    button.querySelectorAll('[data-carousel-icon]').forEach(icon => {
+      icon.hidden = icon.dataset.carouselIcon !== name;
+    });
+  };
+
   video?.addEventListener('ended', () => showSlide(1));
   pauseButton?.addEventListener('click', () => {
     paused = !paused;
     window.clearTimeout(imageTimer);
     pauseButton.setAttribute('aria-label', paused ? 'Play carousel' : 'Pause carousel');
-    pauseButton.firstElementChild.textContent = paused ? '▶' : 'Ⅱ';
+    setCarouselIcon(pauseButton, paused ? 'play' : 'pause');
     if (paused) video?.pause();
     else showSlide(activeSlide);
   });
@@ -40,7 +46,7 @@ if (carousel) {
     if (!video) return;
     video.muted = !video.muted;
     muteButton.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
-    muteButton.firstElementChild.textContent = video.muted ? '◢' : '◣';
+    setCarouselIcon(muteButton, video.muted ? 'muted' : 'unmuted');
   });
 }
 

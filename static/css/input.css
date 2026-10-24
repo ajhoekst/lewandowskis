@@ -165,7 +165,19 @@
   }
 
   .site-nav a {
-    @apply px-2 py-1 font-display text-xs uppercase tracking-wide text-market-cream no-underline transition hover:text-market-yellow xl:px-3 xl:text-sm;
+    @apply px-2 py-1 font-display text-[10px] uppercase tracking-wide text-market-cream no-underline transition hover:text-market-yellow xl:px-3;
+  }
+
+  @media (min-width: 1024px) {
+    .site-nav a {
+      @apply text-xs;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    .site-nav a {
+      font-size: .97em;
+    }
   }
 
   .site-mobile-social {
@@ -237,12 +249,12 @@
 
     .site-header--home .site-logo-row,
     .site-header--home .site-logo {
-      @apply h-16;
+      @apply h-22;
     }
 
     .site-header--home.is-scrolled .site-logo-row,
     .site-header--home.is-scrolled .site-logo {
-      @apply h-12;
+      @apply h-16;
     }
 
     .site-logo-row {
@@ -303,7 +315,14 @@
   }
 
   .home-carousel {
-    @apply relative h-[20.25rem] overflow-hidden bg-market-ink sm:h-[26rem];
+    @apply relative h-[20.25rem] overflow-hidden bg-market-ink;
+  }
+
+  @media (min-width: 768px) {
+    .home-carousel {
+      height: calc(100svh - 7.25rem);
+      min-height: 32rem;
+    }
   }
 
   .home-carousel__slide {
@@ -323,7 +342,15 @@
   }
 
   .home-carousel__control {
-    @apply flex h-9 w-6 items-center justify-center p-0 leading-none;
+    @apply flex h-9 w-9 items-center justify-center p-0 text-white;
+  }
+
+  .home-carousel__control svg {
+    @apply h-7 w-7 fill-current;
+  }
+
+  .home-carousel__control svg[hidden] {
+    display: none;
   }
 
   .hero {
@@ -374,6 +401,40 @@
     @apply flex min-h-80 flex-col items-center justify-center px-8 py-14 text-center sm:px-14;
   }
 
+  .feature-copy .section-title {
+    font-size: 2.6em;
+  }
+
+  .feature-copy .section-subtitle {
+    font-size: 2.2em;
+  }
+
+  @media (min-width: 768px) {
+    .feature-copy .section-title {
+      font-size: 3em;
+    }
+
+    .feature-copy .section-subtitle {
+      font-size: 2.3em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .feature-copy .section-title {
+      font-size: 3.4em;
+    }
+  }
+
+  @media (min-width: 1201px) {
+    .feature-copy .section-title {
+      font-size: 3.8em;
+    }
+
+    .feature-copy .section-subtitle {
+      font-size: 2.4em;
+    }
+  }
+
   .feature-image {
     @apply relative min-h-80 overflow-hidden;
   }
@@ -384,6 +445,16 @@
 
   .feature-image--framed lqip-image {
     @apply absolute inset-4 h-auto w-auto border-8 border-market-cream;
+  }
+
+  @media (max-width: 639px) {
+    .feature-image--framed {
+      @apply min-h-0 p-3;
+    }
+
+    .feature-image--framed lqip-image {
+      @apply relative inset-auto aspect-[4/3] h-auto w-full border-8 border-market-cream;
+    }
   }
 
   .feature-image lqip-image,

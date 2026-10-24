@@ -1,0 +1,1991 @@
+@import url("//fonts.googleapis.com/css2?family=Balthazar&family=PT+Serif&family=Parisienne&display=swap");
+
+/*
+Heading fonts: Balthazar, serif
+Body fonts: PT Serif, serif
+Subheading fonts: Parisienne, cursive
+Navigtion fonts: Balthazar, serif
+Button fonts: Balthazar, serif
+*/
+/* Custom style */
+body {
+    font-family: "PT Serif", serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Balthazar", serif;
+}
+
+p {
+    font-weight: 400;
+}
+
+.navbar.nav-v7 .container {
+    width: 98%;
+}
+
+.nav-v7 .navbar-logo .header-logo {
+    max-width: 220px;
+}
+
+.navbar-regular.nav-v7 .navbar-nav>li>a,
+.nav-v7 li.drop-down-link div.drop-down {
+    font-family: "Balthazar", serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    padding: 0 5px;
+    text-transform: uppercase;
+}
+
+.navbar.nav-v6 .social-square .contact-icon:hover i {
+    color: #A80005;
+}
+
+li.drop-down-link .sub-menu {
+    padding: 8px;
+}
+
+li.drop-down-link .sub-menu a {
+    text-transform: uppercase;
+    font-family: "Balthazar", serif;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.section-header,
+.about-us-v8-content .text-wrapper h1,
+.about-us-v7-content .text-wrapper h1,
+.specials-v3.home-specials h1,
+.specials h1,
+.events-container h1,
+.about-us-page .about-us-s1-content h1,
+.custom-modal .newsletter-popup .section-header {
+    text-transform: uppercase;
+    font-family: "Balthazar", serif;
+    font-size: 4.2em;
+}
+
+.about-us-v8-content .text-wrapper h2,
+.about-us-s4-wrapper h2,
+.reviews-v2-wrapper h2,
+.tmt-section h2,
+.map-newsletter h2 {
+    font-family: "Parisienne", cursive;
+    text-transform: none;
+    font-size: 2.5em;
+}
+
+.custom-temp-btn,
+.uk-overlay-panel a.custom-temp-btn,
+.on-cover-content .section-wrapper a.custom-temp-btn,
+.about-us-v7-content .text-wrapper .text-content .custom-temp-btn,
+.about-us-v8-wrapper .about-us-v8-item a.custom-temp-btn,
+.custom-about-us-v8-wrapper.about-us-v8-wrapper .about-us-v8-item a.custom-temp-btn,
+.map-newsletter .sph-email-subscription .sph-submit-button,
+.custom-modal .newsletter-popup .sph-email-subscription .sph-submit-button,
+.addtocalendar.atc-style-blue .atcb-link,
+.specials-v3.home-specials div a.custom-temp-btn,
+.food-menu-nav .food-menu-nav-item,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item,
+.locations-page .food-menu-nav .food-menu-nav-item,
+.locations-page .location-info-item .custom-temp-btn,
+.about-us-page .custom-temp-btn,
+.about-us-page .about-us-v7-content .text-wrapper .text-content .custom-temp-btn,
+.about-us-page .about-us-v8-wrapper .about-us-v8-item a.custom-temp-btn {
+    padding: 8px 40px;
+    text-transform: uppercase;
+    background-color: #a80005;
+    background: #a80005;
+    color: #FFFDD0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #a80005;
+    font-family: "Balthazar", serif;
+    font-weight: 400;
+    font-size: 18px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    line-height: 1.4em;
+}
+
+.custom-temp-btn:hover,
+.custom-temp-btn:focus,
+.custom-temp-btn:active,
+.uk-overlay-panel a.custom-temp-btn:hover,
+.on-cover-content .section-wrapper a.custom-temp-btn:hover,
+.about-us-v7-content .text-wrapper .text-content .custom-temp-btn:hover,
+.about-us-v8-wrapper .about-us-v8-item a.custom-temp-btn:hover,
+.custom-about-us-v8-wrapper.about-us-v8-wrapper .about-us-v8-item a.custom-temp-btn:hover,
+.specials-v3.home-specials div a.custom-temp-btn:hover,
+.map-newsletter .sph-email-subscription .sph-submit-button:hover,
+.custom-modal .newsletter-popup .sph-email-subscription .sph-submit-button:hover,
+.addtocalendar.atc-style-blue .atcb-link:hover,
+.tmt-section a.custom-temp-btn:hover,
+.food-menu-nav .food-menu-nav-item:hover,
+.food-menu-nav .food-menu-nav-item:focus,
+.food-menu-nav .food-menu-nav-item.active,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:hover,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:focus,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item.active,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:hover,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:focus,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item.active,
+.locations-page .food-menu-nav .food-menu-nav-item:hover,
+.locations-page .food-menu-nav .food-menu-nav-item:focus,
+.locations-page .food-menu-nav .food-menu-nav-item.active,
+.locations-page .location-info-item .custom-temp-btn:hover,
+.locations-page .location-info-item .custom-temp-btn:focus,
+.about-us-page .custom-temp-btn:hover,
+.about-us-page .about-us-v7-content .text-wrapper .text-content .custom-temp-btn:hover,
+.about-us-page .about-us-v8-wrapper .about-us-v8-item a.custom-temp-btn:hover {
+    text-decoration: none;
+    background-color: #141414;
+    background: #141414;
+    color: #FFFDD0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFDD0;
+    opacity: 1;
+}
+
+.uk-overlay-panel a.custom-temp-btn,
+.addtocalendar.atc-style-blue .atcb-link {
+    background-color: transparent;
+    background: transparent;
+    color: #FFFDD0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFDD0;
+}
+
+.map-newsletter .sph-email-subscription .sph-submit-button,
+.custom-modal .newsletter-popup .sph-email-subscription .sph-submit-button,
+.order-tmt-section a.custom-temp-btn {
+    background-color: #FFFDD0;
+    background: #FFFDD0;
+    color: #a80005;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFDD0;
+}
+
+.food-menu-nav .food-menu-nav-item,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item {
+    background-color: #a80005;
+    background: #a80005;
+    color: #FFFDD0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #a80005;
+}
+
+.uk-overlay-panel a.custom-temp-btn:hover,
+.addtocalendar.atc-style-blue .atcb-link:hover {
+    background-color: #a80005;
+    background: #a80005;
+    color: #FFFDD0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFDD0;
+}
+
+.map-newsletter .sph-email-subscription .sph-submit-button:hover,
+.custom-modal .newsletter-popup .sph-email-subscription .sph-submit-button:hover,
+.order-tmt-section a.custom-temp-btn:hover,
+.order-tmt-section a.custom-temp-btn:focus,
+.order-tmt-section a.custom-temp-btn:active {
+    background-color: #a80005;
+    background: #a80005;
+    color: #FFFDD0;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #FFFDD0;
+}
+
+.food-menu-nav .food-menu-nav-item:hover,
+.food-menu-nav .food-menu-nav-item:focus,
+.food-menu-nav .food-menu-nav-item.active,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:hover,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:focus,
+.food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item.active,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:hover,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item:focus,
+.drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item.active {
+    background-color: #FFFDD0;
+    background: #FFFDD0;
+    color: #141414;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #a80005;
+}
+
+/* Gallery hover initial */
+.gallery-hover {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: all 0.35s ease-in-out;
+    transition: all 0.35s ease-in-out;
+}
+
+.gallery-hover a {
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-hover a:hover {
+    text-decoration: none;
+}
+
+.gallery-hover img {
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-hover .info {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-line-pack: center;
+    align-content: center;
+    text-align: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-hover .info h3,
+.gallery-hover .info p {
+    display: none;
+}
+
+.gallery-hover .info h3 {
+    margin: 0 auto;
+    padding: 5px;
+    color: #fff;
+    font-size: 2.5em;
+}
+
+.gallery-hover .info p {
+    position: relative;
+    margin: 0 auto;
+    padding: 10px 15px;
+    line-height: 1.1em;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+/* Gallery hover initial END */
+/*HOMEPAGE*/
+/* Slideshow and cover content */
+.uk-overlay-background {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.on-cover-content .section-wrapper .section-header,
+.uk-overlay-panel h1 {
+    margin-top: 70px;
+    text-transform: uppercase;
+    font-family: "Balthazar", serif;
+    font-size: 4.2em;
+    color: #FFFDD0;
+}
+
+.uk-dotnav-contrast>*>* {
+    background: #fff;
+    border: 1px solid #fff;
+    opacity: 0.5;
+}
+
+.uk-dotnav-contrast>.uk-active>*,
+.uk-dotnav-contrast>*> :focus,
+.uk-dotnav-contrast>*> :hover {
+    background: #FFFDD0;
+    border: 1px solid #FFFDD0;
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+/* Slideshow and cover content end*/
+/*Banner section*/
+.banner-section {
+    padding: 30px 0;
+}
+
+.banner-section h1 {
+    font-family: "PT Serif", serif;
+    font-size: 1.3em;
+    text-transform: none;
+}
+
+.banner-section .banner-pin {
+    color: #f9f7a0;
+    font-size: 1.1em;
+}
+
+.banner-section .banner-pin:hover,
+.banner-section .banner-pin:focus,
+.banner-section .banner-pin.active {
+    color: #fffdd0;
+}
+
+/*Banner section end*/
+/*About us section*/
+.about-us-v8-wrapper:before {
+    background-position: left top;
+}
+
+.about-us-v8-content .text-wrapper h2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.about-us-v8-content .text-content.title-bar h1:after {
+    background-color: #fff;
+}
+
+/*About us section end*/
+/*Custom about us section*/
+#aboutus_v8_custom:before {
+    background-attachment: scroll;
+}
+
+.about-us-v8-wrapper.custom-about-us-v8-wrapper:before {
+    background-position: center center;
+}
+
+.custom-about-us-v8-wrapper .about-us-v8-content .text-wrapper h2 {
+    color: #fff;
+}
+
+/*Custom about us section end*/
+/*TMT section*/
+.tmt-section h1 {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.tmt-section h2 {
+    margin-top: 10px;
+}
+
+.tmt-section p {
+    font-size: 1.3em;
+    margin: 20px auto;
+}
+
+.tmt-section a.custom-temp-btn {
+    margin: 0 5px 20px;
+}
+
+.reservations-tmt-section {
+    background-position: center;
+}
+
+.order-tmt-section {
+    background-position: center;
+}
+
+.private-parties-tmt-section {
+    background-position: center;
+}
+
+.catering-tmt-section {
+    background-position: center;
+}
+
+.jobs-tmt-section {
+    background-position: center;
+}
+
+/*TMT section end*/
+.fancybox-skin {
+    border-radius: 0;
+}
+
+/*Reviews section*/
+.reviews-v2-wrapper {
+    background-position: center !important;
+}
+
+.reviews-v2-wrapper {
+    background-size: cover !important;
+    background-attachment: scroll !important;
+}
+
+.reviews-v2-wrapper h1 {
+    margin-top: 20px;
+    color: #a80005;
+}
+
+.reviews-v2-wrapper .container {
+    padding-top: 20px;
+}
+
+.reviews-v2-wrapper h1 {
+    margin-bottom: 0;
+}
+
+.reviews-v2-wrapper h2 {
+    margin-top: 0;
+    color: #141414;
+}
+
+.reviews-v2-wrapper h3 {
+    font-family: "PT Serif", serif;
+    text-transform: capitalize;
+    margin: 20px auto 15px;
+    color: #141414;
+}
+
+.reviews-v2-wrapper h3 .fa.fa-star {
+    color: #a80005;
+    font-size: 0.8em;
+}
+
+.reviews-v2-wrapper .review-quote {
+    color: #a80005;
+    opacity: 1;
+}
+
+.reviews-v2-wrapper .review-text {
+    padding-top: 0;
+}
+
+.reviews-v2-wrapper .review-text p {
+    line-height: 1.5em;
+}
+
+.owl-theme .owl-dots .owl-dot button {
+    background: #FFFDD0;
+    border: 1px solid #141414;
+    opacity: 0.5;
+}
+
+.owl-theme .owl-dots .owl-dot.active button,
+.owl-theme .owl-dots .owl-dot:hover button {
+    background: #FFFDD0;
+    border: 1px solid #141414;
+    opacity: 1;
+}
+
+/*Reviews section end*/
+/* Newsletter common option for newsletter sections and popup */
+.sph-email-subscription .sph-email-form input::-webkit-input-placeholder {
+    -webkit-transition: linear 0.3s;
+    transition: linear 0.3s;
+    -webkit-transform-origin: 0 50%;
+    transform-origin: 0 50%;
+}
+
+.sph-email-subscription .sph-email-form input:focus::-webkit-input-placeholder {
+    letter-spacing: 20px;
+    opacity: 0;
+}
+
+/*Newsletter section*/
+.map-newsletter {
+    border-right: none;
+}
+
+.map-newsletter .text-wrapper:before {
+    background-color: #a80005;
+}
+
+.map-newsletter .text-wrapper:before {
+    background-position: center center;
+    background-attachment: scroll;
+}
+
+.map-newsletter .section-header {
+    color: #fffdd0;
+}
+
+.map-newsletter h2 {
+    color: #fffdd0;
+}
+
+.map-newsletter .sph-email-subscription h2 {
+    font-family: "PT Serif", serif;
+    color: #fffdd0;
+    font-weight: 400;
+    font-size: 1.3em;
+}
+
+.map-newsletter .sph-email-subscription .sph-email-input {
+    padding: 8px 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: transparent;
+    color: #fffdd0;
+    border-bottom: 2px solid #fffdd0;
+    border-width: 1px;
+}
+
+.map-newsletter .sph-email-subscription input::-webkit-input-placeholder {
+    color: #fffdd0;
+}
+
+.map-newsletter .sph-email-subscription input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fffdd0;
+}
+
+.map-newsletter .sph-email-subscription input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fffdd0;
+}
+
+.map-newsletter .sph-email-subscription input:-ms-input-placeholder {
+    color: #fffdd0;
+}
+
+.map-newsletter .bar {
+    top: -8px;
+}
+
+.map-newsletter .bar:before,
+.map-newsletter .bar:after {
+    background: #f9f7a0;
+}
+
+.googlemap-v3-wrapper .triangle {
+    display: none;
+}
+
+.sph-response-message {
+    font-size: 1.3em;
+    color: #fffdd0;
+}
+
+.googlemap-v3-wrapper input:-webkit-autofill,
+.googlemap-v3-wrapper input:-webkit-autofill:hover,
+.googlemap-v3-wrapper input:-webkit-autofill:focus,
+.googlemap-v3-wrapper input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fffdd0;
+    color: #fffdd0 !important;
+}
+
+/*Newsletter section end*/
+/*Newsletter popup section*/
+.custom-modal .modal-content {
+    background-image: url("https://static.spotapps.co/website_images/ab_websites/121669_website/redesign/newsletter_back_2.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-color: #a80005;
+}
+
+.custom-modal .close {
+    color: #fff;
+    opacity: 0.6;
+}
+
+.custom-modal .close:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.custom-modal .newsletter-popup .section-header {
+    color: #fffdd0;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription h2,
+.custom-modal .newsletter-popup .sph-email-subscription label h2 {
+    font-family: "PT Serif", serif;
+    font-size: 1.3em;
+    color: #fffdd0;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription .sph-email-input {
+    color: #fffdd0;
+    border: 1px solid #fffdd0;
+    background-color: transparent;
+    padding: 9px 5px;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription .sph-email-input::-webkit-input-placeholder {
+    color: #fffdd0;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription .sph-email-input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #fffdd0;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription .sph-email-input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fffdd0;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription .sph-email-input:-ms-input-placeholder {
+    color: #fffdd0;
+}
+
+.custom-modal .newsletter-popup .sph-email-subscription input:-webkit-autofill,
+.custom-modal .newsletter-popup .sph-email-subscription input:-webkit-autofill:hover,
+.custom-modal .newsletter-popup .sph-email-subscription input:-webkit-autofill:focus,
+.custom-modal .newsletter-popup .sph-email-subscription input:-webkit-autofill:active {
+    -webkit-text-fill-color: #fffdd0;
+    color: #fffdd0 !important;
+}
+
+.custom-modal .newsletter-popup .bar:before,
+.custom-modal .newsletter-popup .bar:after {
+    background: #f9f7a0;
+}
+
+/*Newsletter popup section end*/
+/*Contact section*/
+.contact-v3 {
+    background-color: #FFFDD0;
+    color: #141414;
+}
+
+.contact-v3 .contact-us p {
+    margin: 0;
+}
+
+.contact-v3 .days {
+    padding: 0;
+    text-transform: capitalize;
+}
+
+.contact-v3 .from-to {
+    text-transform: uppercase;
+}
+
+.contact-v3 a {
+    text-decoration: none;
+    color: #141414;
+}
+
+.contact-v3 a:focus {
+    color: #141414;
+}
+
+/*Contact section end*/
+.footer-v2-wrapper {
+    background-color: #141414;
+    border-top: 2px solid #FFFDD0;
+}
+
+.footer-v2-wrapper p {
+    font-size: 1.3em;
+}
+
+/*HOMEPAGE END*/
+/*ABOUT US PAGE*/
+.about-page-content {
+    min-height: 100vh;
+    background-color: #a80005;
+}
+
+.about-page-content {
+    padding-top: 60px;
+}
+
+.about-page-content .about-us-v7-wrapper .about-us-v7-content:first-of-type {
+    background-position: center;
+}
+
+.about-page-content .about-us-v7-content .text-wrapper:before {
+    background-position: center;
+}
+
+.about-page-content .about-us-v7-content .text-wrapper .text-content {
+    padding: 40px 6%;
+}
+
+/*About us page custom html section s4*/
+.about-us-s4-wrapper {
+    padding: 40px 5%;
+    color: #fffdd0;
+    background-color: #A80005;
+}
+
+.about-us-s4-wrapper h1 {
+    margin-top: 15px;
+}
+
+.about-us-s4-wrapper .container,
+.about-us-s4-wrapper h1 {
+    text-align: center;
+}
+
+.about-us-s4-wrapper p {
+    text-align: center !important;
+}
+
+/*About us page custom html section s4 end*/
+/*ABOUT US PAGE END*/
+/*FOOD AND DRINKS PAGE*/
+.food-menu-page .food-menu-v2-wrapper,
+.drink-menu-page .drink-menu-v2-wrapper {
+    padding-top: 85px;
+}
+
+.food-menu-v2-wrapper .section-header,
+.drink-menu-v2-wrapper .section-header {
+    color: #A80005;
+}
+
+.food-menu-nav .food-menu-nav-item {
+    padding: 8px 40px;
+}
+
+.food-menu-grid-item-content {
+    border-radius: 0;
+}
+
+.drink-menu .food-menu-page h2,
+.drink-menu .drink-menu-page h2,
+.food-menu-grid h2 {
+    font-family: "Balthazar", serif;
+    text-transform: uppercase;
+    font-size: 2em;
+    color: #A80005;
+}
+
+.food-menu-grid h3,
+.food-menu-grid .food-price {
+    font-family: "PT Serif", serif;
+    font-size: 1.3em;
+    color: #000;
+}
+
+.food-menu-grid p,
+.food-menu-grid .food-item-description {
+    font-size: 1.2em;
+}
+
+.food-menu-grid-item-content .food-menu-content {
+    border-left: 1px solid #A80005;
+}
+
+.food-menu-grid .food-price {
+    color: #A80005;
+}
+
+/* Drinks only set*/
+.drink-menu-v2-wrapper .food-menu-grid-item-content .food-menu-content {
+    border-left: 1px solid #A80005;
+}
+
+.drink-menu-v2-wrapper .section-header {
+    color: #A80005;
+}
+
+.drink-menu-v2-wrapper h2,
+.drink-menu .drink-menu-page h2 {
+    color: #A80005;
+    text-transform: uppercase;
+}
+
+.drink-menu-v2-wrapper .food-menu-grid h3,
+.drink-menu-v2-wrapper .food-menu-grid .food-price {
+    color: #000;
+}
+
+.drink-menu-v2-wrapper .food-menu-grid .food-price {
+    color: #000;
+}
+
+/*FOOD AND DRINKS PAGE END*/
+/*SPECIALS PAGE*/
+.onespecial {
+    font-size: 1.3em;
+}
+
+.specials h1 {
+    color: #fff;
+}
+
+.specials h2 {
+    color: #fff;
+}
+
+/*SPECIALS PAGE END*/
+/*EVENTS PAGE*/
+.events-container h1 {
+    color: #fff;
+}
+
+.events-container h2 {
+    font-weight: 400;
+    font-size: 2em;
+    color: #fff;
+}
+
+.events-container h3,
+.events-container .event-info-text p,
+.events-container .event-time {
+    font-family: "PT Serif", serif;
+}
+
+.atc-style-blue .atcb-list {
+    width: 100%;
+}
+
+/*EVENTS PAGE END*/
+/*GIFT CARDS PAGE*/
+.gift-cards-page h1 {
+    margin-top: 35px;
+}
+
+/*GIFT CARDS PAGE END*/
+.drink-menu .pagecontent {
+    padding-top: 150px;
+}
+
+.empty-content-message h2,
+.empty-content-message h3,
+.food-menu-page .empty-content-message h2,
+.food-menu-page .empty-content-message h3 {
+    text-transform: none;
+    text-align: center;
+    font-family: "PT Serif", serif;
+    font-size: 1.3em;
+}
+
+@media (max-width: 1400px) {
+    .navbar.nav-v7 .container {
+        width: 100%;
+    }
+
+    .navbar-regular.nav-v7 .navbar-nav>li>a {
+        font-size: 0.97em;
+        padding: 0 3px;
+    }
+
+    .section-header,
+    .about-us-v8-content .text-wrapper h1,
+    .about-us-v7-content .text-wrapper h1,
+    .specials-v3.home-specials h1,
+    .specials h1,
+    .events-container h1,
+    .about-us-page .about-us-s1-content h1,
+    .custom-modal .newsletter-popup .section-header {
+        font-size: 3.8em;
+    }
+
+    .about-us-v8-content .text-wrapper h2,
+    .tmt-section h2,
+    .reviews-v2-wrapper h2,
+    .about-us-s4-wrapper h2,
+    .map-newsletter h2 {
+        font-size: 2.4em;
+    }
+
+    .on-cover-content .section-wrapper .section-header,
+    .uk-overlay-panel h1 {
+        font-size: 3.8em;
+    }
+
+    .about-us-page .about-us-s1-content img {
+        max-width: 200px;
+    }
+
+    .specials h2 {
+        font-size: 1.3em;
+    }
+
+    .empty-content-message h2,
+    .empty-content-message h3,
+    .food-menu-page .empty-content-message h2,
+    .food-menu-page .empty-content-message h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-regular.nav-v7 .navbar-nav>li>a {
+        font-size: 0.75em;
+    }
+
+    .section-header,
+    .about-us-v8-content .text-wrapper h1,
+    .about-us-v7-content .text-wrapper h1,
+    .specials-v3.home-specials h1,
+    .specials h1,
+    .events-container h1,
+    .about-us-page .about-us-s1-content h1,
+    .custom-modal .newsletter-popup .section-header {
+        font-size: 3.4em;
+    }
+
+    .about-us-v8-content .text-wrapper h2,
+    .tmt-section h2,
+    .reviews-v2-wrapper h2,
+    .about-us-s4-wrapper h2,
+    .map-newsletter h2 {
+        font-size: 2.3em;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    .on-cover-content .section-wrapper .section-header,
+    .uk-overlay-panel h1 {
+        font-size: 3.4em;
+    }
+
+    .banner-section {
+        padding: 25px 0;
+    }
+
+    .banner-section h1 {
+        font-size: 1.2em;
+    }
+
+    .tmt-section p {
+        font-size: 1.2em;
+    }
+
+    .googlemap-v3-wrapper .map-item,
+    #map-v3-container {
+        min-height: 460px;
+    }
+
+    .map-newsletter .sph-email-subscription h2 {
+        font-size: 1.2em;
+    }
+
+    .sph-response-message {
+        font-size: 1.2em;
+    }
+
+    .custom-modal .newsletter-popup .sph-email-subscription h2,
+    .custom-modal .newsletter-popup .sph-email-subscription label h2 {
+        font-size: 1.2em;
+    }
+
+    .contact-v3 .contact-location,
+    .contact-v3 .hours,
+    .contact-v3 .find-us {
+        font-size: 1.1em;
+    }
+
+    .footer-v2-wrapper a {
+        font-size: 1.1em;
+    }
+
+    .about-us-page .about-us-s1-content img {
+        max-width: 150px;
+    }
+
+    .drink-menu .food-menu-page h2,
+    .drink-menu .drink-menu-page h2 {
+        font-size: 1.8em;
+    }
+
+    .food-menu-grid h3,
+    .food-menu-grid .food-price {
+        font-size: 1.2em;
+    }
+
+    .food-menu-grid p,
+    .food-menu-grid .food-item-description {
+        font-size: 1.1em;
+    }
+
+    .onespecial {
+        font-size: 1.2em;
+    }
+
+    .events-container h2 {
+        font-size: 1.8em;
+    }
+
+    .events-container h3,
+    .events-container .event-info-text p,
+    .events-container .event-time {
+        font-size: 1.2em;
+    }
+
+    .empty-content-message h2,
+    .empty-content-message h3,
+    .food-menu-page .empty-content-message h2,
+    .food-menu-page .empty-content-message h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 1024px) {
+
+    #aboutus_v8:before,
+    #aboutus_v8_custom:before {
+        background-attachment: scroll;
+    }
+}
+
+@media (max-width: 1023px) {
+    .navbar-regular.nav-v7 .navbar-nav>li>a {
+        font-size: 0.63em;
+    }
+
+    li.drop-down-link .sub-menu {
+        padding: 5px;
+    }
+
+    li.drop-down-link .sub-menu a {
+        font-size: 0.9em;
+    }
+
+    .section-header,
+    .about-us-v8-content .text-wrapper h1,
+    .about-us-v7-content .text-wrapper h1,
+    .specials-v3.home-specials h1,
+    .specials h1,
+    .events-container h1,
+    .about-us-page .about-us-s1-content h1,
+    .custom-modal .newsletter-popup .section-header {
+        font-size: 3em;
+    }
+
+    .custom-temp-btn,
+    .uk-overlay-panel a.custom-temp-btn,
+    .on-cover-content .section-wrapper a.custom-temp-btn,
+    .about-us-v7-content .text-wrapper .text-content .custom-temp-btn,
+    .about-us-v8-wrapper a.custom-temp-btn,
+    .custom-about-us-v8-wrapper.about-us-v8-wrapper a.custom-temp-btn,
+    .map-newsletter .sph-email-subscription .sph-submit-button,
+    .custom-modal .newsletter-popup .sph-email-subscription .sph-submit-button,
+    .addtocalendar.atc-style-blue .atcb-link,
+    .specials-v3.home-specials div a.custom-temp-btn,
+    .food-menu-nav .food-menu-nav-item {
+        font-size: 16px;
+    }
+
+    .on-cover-content .section-wrapper .section-header,
+    .uk-overlay-panel h1 {
+        font-size: 3em;
+    }
+
+    .about-us-v8-wrapper:before {
+        background-position: center center;
+    }
+
+    .about-us-v8-wrapper.custom-about-us-v8-wrapper:before {
+        background-position: center center;
+    }
+
+    .reservations-tmt-section {
+        background-position: center;
+    }
+
+    .order-tmt-section {
+        background-position: center;
+    }
+
+    .private-parties-tmt-section {
+        background-position: center;
+    }
+
+    .catering-tmt-section {
+        background-position: center;
+    }
+
+    .jobs-tmt-section {
+        background-position: center;
+    }
+
+    .reviews-v2-wrapper {
+        background-position: center !important;
+    }
+
+    .reviews-v2-wrapper h3 {
+        font-size: 1.1em;
+    }
+
+    .reviews-v2-wrapper .review-text p {
+        font-size: 1.1em;
+    }
+
+    .map-newsletter .text-wrapper:before {
+        background-position: center center;
+    }
+
+    .about-us-page .about-us-s1-content img {
+        max-width: 100px;
+    }
+
+    .about-page-content .about-us-v7-wrapper .about-us-v7-content:first-of-type {
+        background-position: center;
+    }
+
+    .about-page-content .about-us-v7-content .text-wrapper:before {
+        background-position: center;
+    }
+
+    .about-page-content .about-us-v7-content .text-wrapper .text-content {
+        text-align: center;
+    }
+
+    .about-page-content .about-us-v7-content .text-wrapper .text-content p {
+        text-align: center !important;
+    }
+
+    .onespecial {
+        font-size: 1.1em;
+    }
+
+    .specials h2 {
+        font-size: 1.2em;
+    }
+
+    .empty-content-message h2,
+    .empty-content-message h3,
+    .food-menu-page .empty-content-message h2,
+    .food-menu-page .empty-content-message h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar.nav-v7 .container {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .social-icons-holder .contact-icon {
+        width: 28px;
+    }
+
+    .navbar.nav-v7 .navbar-tabs .socialnav {
+        display: none;
+    }
+
+    .map-newsletter .bar {
+        top: 0;
+    }
+
+    .about-us-page .about-us-s1-content {
+        text-align: center !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .navbar.nav-v7 .header-logo {
+        max-width: 110px;
+    }
+
+    .navbar-regular.nav-v7 .navbar-nav>li>a,
+    .nav-v7 li.drop-down-link div.drop-down {
+        font-size: 1.1em;
+        padding: 6px 15px;
+    }
+
+    .drink-menu .navbar-regular.nav-v7.nav-v4 .navbar-nav>li>a,
+    .navbar-regular.nav-v7.nav-v4.nav-scroll .navbar-nav>li>a {
+        background-color: #A80005;
+    }
+
+    .navbar-regular.nav-v7 .navbar-nav>li>a:hover,
+    .navbar-regular.nav-v7 .navbar-nav>.active>a,
+    .navbar-regular.nav-v7 .navbar-nav>.active>a:focus,
+    .navbar-regular.nav-v7 .navbar-nav>.active>a:hover {
+        background-color: #fff !important;
+        color: #141414 !important;
+    }
+
+    .navbar.nav-v7 .navbar-tabs .socialnav {
+        display: inline-block;
+    }
+
+    li.drop-down-link .sub-menu {
+        padding: 0 30px 5px 30px;
+    }
+
+    .section-header,
+    .about-us-v8-content .text-wrapper h1,
+    .about-us-v7-content .text-wrapper h1,
+    .specials-v3.home-specials h1,
+    .specials h1,
+    .events-container h1,
+    .about-us-page .about-us-s1-content h1,
+    .custom-modal .newsletter-popup .section-header {
+        font-size: 2.6em;
+    }
+
+    .about-us-v8-content .text-wrapper h2,
+    .tmt-section h2,
+    .reviews-v2-wrapper h2,
+    .about-us-s4-wrapper h2,
+    .map-newsletter h2 {
+        font-size: 2.2em;
+    }
+
+    p {
+        font-size: 1.1em;
+    }
+
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a {
+        text-transform: uppercase;
+        font-family: "Balthazar", serif;
+        font-size: 16px;
+        padding: 15px 5px;
+    }
+
+    .on-cover-content .section-wrapper .section-header,
+    .uk-overlay-panel h1 {
+        font-size: 2em;
+    }
+
+    .banner-section {
+        padding: 15px 0;
+    }
+
+    .banner-section h1 {
+        font-size: 1.1em;
+    }
+
+    .about-us-v8-content {
+        min-height: 200px;
+    }
+
+    .about-us-v8-content .text-wrapper h1 {
+        margin-top: 20px;
+    }
+
+    .about-us-v8-content .text-wrapper {
+        text-align: center;
+    }
+
+    .about-us-v8-content .text-wrapper p {
+        text-align: center !important;
+    }
+
+    .about-us-v8-item .about-us-v8-content .text-content.title-bar h1:after {
+        margin: 10px auto;
+    }
+
+    .tmt-section {
+        padding: 2em 0;
+    }
+
+    .tmt-section p {
+        font-size: 1.1em;
+    }
+
+    .reviews-v2-wrapper h3 {
+        font-size: 1em;
+    }
+
+    .reviews-v2-wrapper .review-text p {
+        font-size: 1em;
+    }
+
+    .googlemap-v3-wrapper .map-item.map-newsletter {
+        min-height: 440px;
+    }
+
+    .map-newsletter .text-wrapper .text-content {
+        top: -10px;
+    }
+
+    .map-newsletter .sph-email-subscription h2 {
+        font-size: 1.1em;
+    }
+
+    .sph-response-message {
+        font-size: 1.1em;
+    }
+
+    .custom-modal .newsletter-popup .sph-email-subscription h2,
+    .custom-modal .newsletter-popup .sph-email-subscription label h2 {
+        font-size: 1.1em;
+    }
+
+    .footer-v2-wrapper p {
+        font-size: 1.1em;
+    }
+
+    .footer-v2-wrapper a {
+        font-size: 1em;
+    }
+
+    .about-page-content {
+        padding-top: 0;
+    }
+
+    .about-us-s1-wrapper {
+        margin-top: 0;
+    }
+
+    .about-us-page .about-us-s1-content img {
+        max-width: 70px;
+    }
+
+    .food-menu-page .food-menu-v2-wrapper,
+    .drink-menu-page .drink-menu-v2-wrapper {
+        padding-top: 45px;
+    }
+
+    .food-menu-nav .food-menu-nav-item {
+        padding: 7px 20px;
+        border: none;
+        border-bottom: 2px solid #a80005;
+        border-radius: 0;
+    }
+
+    .food-menu-nav .food-menu-nav-item:hover,
+    .food-menu-nav .food-menu-nav-item:focus,
+    .food-menu-nav .food-menu-nav-item.active {
+        border: none;
+        border-bottom: 2px solid #a80005;
+        border-radius: 0;
+    }
+
+    .food-menu-nav .food-menu-nav-item:first-of-type {
+        border-top: 2px solid #a80005;
+    }
+
+    .drink-menu .food-menu-page h2,
+    .drink-menu .drink-menu-page h2 {
+        font-size: 1.6em;
+    }
+
+    .food-menu-grid h3,
+    .food-menu-grid .food-price {
+        font-size: 1.1em;
+    }
+
+    .food-menu-grid p,
+    .food-menu-grid .food-item-description {
+        font-size: 1.05em;
+    }
+
+    .events-container .container {
+        margin-bottom: 150px;
+    }
+
+    .events-container h2 {
+        font-size: 1.6em;
+    }
+
+    .events-container h3,
+    .events-container .event-info-text p,
+    .events-container .event-time {
+        font-size: 1.1em;
+    }
+
+    .drink-menu .pagecontent {
+        padding-top: 70px;
+    }
+
+    .empty-content-message h2,
+    .empty-content-message h3,
+    .food-menu-page .empty-content-message h2,
+    .food-menu-page .empty-content-message h3 {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .section-header,
+    .about-us-v8-content .text-wrapper h1,
+    .about-us-v7-content .text-wrapper h1,
+    .specials-v3.home-specials h1,
+    .specials h1,
+    .events-container h1,
+    .about-us-page .about-us-s1-content h1,
+    .custom-modal .newsletter-popup .section-header {
+        font-size: 2.2em;
+    }
+
+    .about-us-v8-content .text-wrapper h2,
+    .tmt-section h2,
+    .reviews-v2-wrapper h2,
+    .about-us-s4-wrapper h2,
+    .map-newsletter h2 {
+        font-size: 2.1em;
+    }
+
+    .navbar-fixed-bottom.nav-v1 .bottom-list-item a {
+        font-size: 14px;
+    }
+
+    .on-cover-content .section-wrapper .section-header,
+    .uk-overlay-panel h1 {
+        font-size: 1.8em;
+    }
+
+    .footer-v2-wrapper a {
+        font-size: 0.9em;
+    }
+
+    .empty-content-message h2,
+    .empty-content-message h3,
+    .food-menu-page .empty-content-message h2,
+    .food-menu-page .empty-content-message h3 {
+        font-size: 1.1em;
+    }
+}
+
+/* START website specific style */
+video#coverVideo {
+    margin-top: 90px;
+}
+
+.hideSub {
+    display: none !important;
+}
+
+.showSub {
+    display: block !important;
+}
+
+.navbar.nav-v8 .nav-tab.helper-tab {
+    margin-right: 120px !important;
+}
+
+.slideshow-v2-wrapper .buttons-holder .custom-temp-btn {
+    margin: 0 5px;
+}
+
+.custom-about-us-v8-wrapper.about-us-v8-wrapper .about-us-v8-item-0 a.custom-temp-btn {
+    background-color: #fffdd0;
+    border-color: #fffdd0;
+    color: #a80005;
+}
+
+.custom-about-us-v8-wrapper.about-us-v8-wrapper .about-us-v8-item-0 a.custom-temp-btn:hover,
+.custom-about-us-v8-wrapper.about-us-v8-wrapper .about-us-v8-item-0 a.custom-temp-btn:focus {
+    background-color: #a80005;
+}
+
+.custom-about-us-v8-wrapper .about-us-v8-item-1 h1 span {
+    display: none;
+}
+
+.custom-about-us-v8-wrapper .hours p {
+    margin: 0;
+    font-weight: 700;
+}
+
+.custom-about-us-v8-wrapper .hours h2 {
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.navbar-regular.nav-v8 .navbar-nav>li>a {
+    font-size: 1em;
+}
+
+.food-menu-v2-wrapper .section-header {
+    visibility: hidden;
+}
+
+#newsletter {
+    display: none;
+}
+
+.about-us-page .contact-v3 h1 {
+    text-align: left;
+}
+
+.about-us-page .contact-v3 .row div[class^=col] {
+    text-align: left;
+}
+
+/* PARTNERS PAGE */
+.partners-page {
+    background-color: #FFF;
+    color: #000;
+}
+
+.partners-page * {
+    text-shadow: none;
+}
+
+.partners-page .pagecontent {
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.partners-page h1 {
+    margin-bottom: 50px;
+}
+
+.partners-page .img-holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    gap: 60px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.partners-page h2 {
+    padding: 50px 0;
+    text-transform: uppercase;
+}
+
+/* PARTNERS PAGE END */
+/* Community Partners page */
+.community-partners-page::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url("https://static.spotapps.co/website_images/ab_websites/121669_website/community_partners/community_partners_back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(0.6) opacity(0.2);
+    -moz-filter: grayscale(0.6) opacity(0.2);
+    -o-filter: grayscale(0.6) opacity(0.2);
+    -ms-filter: grayscale(0.6) opacity(0.2);
+    filter: grayscale(0.6) opacity(0.2);
+}
+
+.community-partners-page * {
+    text-shadow: none;
+}
+
+.community-partners-page .pagecontent .container p a {
+    color: inherit;
+}
+
+.community-partners-page .pagecontent .container p a:hover {
+    color: inherit;
+}
+
+/* Community Partners page end */
+/* Special Event Ordering page */
+.article-background.special-event-ordering-page {
+    background-color: #A70105;
+}
+
+.article-background.special-event-ordering-page .tabs-container {
+    text-shadow: none;
+}
+
+.article-background.special-event-ordering-page .pagecontent {
+    text-align: center;
+    width: 100%;
+}
+
+.article-background.special-event-ordering-page .container.main-container {
+    padding: 0;
+    margin: 0;
+}
+
+.article-background.special-event-ordering-page .section-header {
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
+
+.article-background.special-event-ordering-page a.custom-temp-btn {
+    margin: 20px 5px 0;
+    background-color: #FFFDD0;
+    background: #FFFDD0;
+    color: #141414;
+    border-color: #000;
+}
+
+.article-background.special-event-ordering-page a.custom-temp-btn:hover,
+.article-background.special-event-ordering-page a.custom-temp-btn:focus {
+    margin: 20px 5px 0;
+    background-color: transparent;
+    background: transparent;
+    color: #000;
+    border-color: #000;
+}
+
+.article-background.special-event-ordering-page .custom-gallery-wrapper {
+    padding-top: 1em;
+}
+
+.special-event-ordering-page .custom-gallery-wrapper .gallery-item {
+    margin: 20px auto;
+}
+
+.special-event-ordering-page .section-2 .row {
+    padding: 0;
+    margin: 0;
+}
+
+.special-event-ordering-page .section-1 {
+    background-image: url("https://static.spotapps.co/website_images/ab_websites/121669_website/newsletter_back.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.special-event-ordering-page .section-1 {
+    background-color: #FFFCCF;
+    padding: 4em 5%;
+}
+
+.special-event-ordering-page .section-1 h1 {
+    color: #A70105;
+}
+
+.special-event-ordering-page .section-1 p {
+    color: #000;
+}
+
+.special-event-ordering-page .section-2 hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: #FFFCCF;
+}
+
+.special-event-ordering-page .section-2 h2 {
+    font-size: 3em;
+    color: #FFFCCF;
+}
+
+.special-event-ordering-page .section-2 h3 {
+    color: #FFFCCF;
+    font-size: 2.5em;
+}
+
+.special-event-ordering-page .section-2 ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.special-event-ordering-page .section-2 ul li {
+    font-size: 1.3em;
+}
+
+.special-event-ordering-page .section-3 {
+    background-color: #FFFCCF;
+    padding: 4em 5%;
+}
+
+.special-event-ordering-page .section-3 p {
+    color: #000;
+    text-align: left;
+}
+
+.special-event-ordering-page .section-3 h2 {
+    color: #A70105;
+    font-size: 3em;
+}
+
+.special-event-ordering-page .pagecontent .bold-text {
+    font-weight: bold;
+}
+
+.special-event-ordering-page .section-4 h2,
+.special-event-ordering-page .section-4 p,
+.special-event-ordering-page .section-4 a {
+    color: #FFFCCF;
+}
+
+/* Special Event Ordering page end*/
+/* Donation Request page */
+.donation-request-page .pagecontent .reservations-and-parties p {
+    max-width: 100%;
+}
+
+.donation-request-page .pagecontent .reservations-and-parties label {
+    border: none;
+    color: #fffdd0;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.donation-request-page .reservations-and-parties input,
+.donation-request-page .reservations-and-parties select,
+.donation-request-page .reservations-and-parties textarea,
+.donation-request-page .reservations-and-parties select.full-select {
+    background-color: #fffdd0;
+    border-color: #fffdd0;
+}
+
+.donation-request-page .reservations-and-parties .custom-temp-btn {
+    background-color: #fffdd0;
+    border-color: #fffdd0;
+}
+
+.donation-request-page .reservations-and-parties .custom-temp-btn:hover,
+.donation-request-page .reservations-and-parties .custom-temp-btn:focus {
+    background-color: #000;
+    color: #fffdd0;
+}
+
+.donation-request-page .imgs-holder img {
+    border: 2px solid #fffdd0;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.donation-request-page * {
+    text-shadow: none;
+}
+
+/* Donation Request page end */
+/* Contact Us page */
+.contact-us-custom-page::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    display: block;
+    background-image: url("https://static.spotapps.co/website_images/ab_websites/121669_website/donation_request_back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(0.6) opacity(0.2);
+    -moz-filter: grayscale(0.6) opacity(0.2);
+    -o-filter: grayscale(0.6) opacity(0.2);
+    -ms-filter: grayscale(0.6) opacity(0.2);
+    filter: grayscale(0.6) opacity(0.2);
+}
+
+.contact-us-custom-page * {
+    text-shadow: none;
+}
+
+.contact-us-custom-page .pagecontent {
+    text-align: center;
+    padding-bottom: 1px;
+}
+
+.contact-us-custom-page .section-header,
+.contact-us-custom-page p a {
+    color: #fffdd0;
+}
+
+.contact-us-custom-page .pagecontent .scrolling>.container>p {
+    width: 1000px;
+    max-width: 100%;
+    margin-inline: auto;
+}
+
+.contact-us-custom-page .pagecontent a.custom-temp-btn {
+    overflow: hidden;
+}
+
+.contact-us-custom-page .pagecontent .contact-form .container.form-container {
+    width: -webkit-fit-content !important;
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+}
+
+.contact-us-custom-page .pagecontent .contact-form .multi-field {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.contact-us-custom-page .pagecontent .contact-form .multi-field>div {
+    width: 100%;
+}
+
+.contact-us-custom-page .pagecontent .contact-form .multi-field>div input {
+    width: 100%;
+}
+
+.contact-us-custom-page .pagecontent .contact-form button {
+    width: 100%;
+}
+
+.contact-us-custom-page .pagecontent .reservations-and-parties label {
+    border: none;
+    color: #fffdd0;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.contact-us-custom-page .reservations-and-parties input,
+.contact-us-custom-page .reservations-and-parties select,
+.contact-us-custom-page .reservations-and-parties textarea,
+.contact-us-custom-page .reservations-and-parties select.full-select {
+    background-color: #fffdd0;
+    border-color: #fffdd0;
+}
+
+.contact-us-custom-page .reservations-and-parties .custom-temp-btn {
+    background-color: #fffdd0;
+    border-color: #fffdd0;
+}
+
+.contact-us-custom-page .reservations-and-parties .custom-temp-btn:hover,
+.contact-us-custom-page .reservations-and-parties .custom-temp-btn:focus {
+    background-color: #000;
+    color: #fffdd0;
+}
+
+.contact-us-custom-page .section-wrapper {
+    padding-top: 0;
+}
+
+/* Contact Us page end */
+@media (max-width: 1400px) {
+    .navbar-regular.nav-v8 .navbar-nav>li>a {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 1200px) {
+    .navbar-regular.nav-v8 .navbar-nav>li>a {
+        font-size: 0.7em;
+    }
+
+    .partners-page .img-holder {
+        gap: 30px;
+    }
+
+    .navbar.nav-v8 .nav-tab.helper-tab {
+        margin-right: 100px !important;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar.nav-v8 .navbar-tabs .socialnav {
+        display: none;
+    }
+
+    li.drop-down-link .sub-menu a {
+        font-size: 0.8em;
+    }
+
+    .navbar.nav-v8 .nav-tab.helper-tab {
+        margin-right: 80px !important;
+    }
+}
+
+@media (max-width: 991px) {
+    li.drop-down-link .sub-menu a {
+        font-size: 0.7em;
+    }
+
+    .contact-v3 .contact-us p {
+        font-size: 0.9em;
+    }
+
+    .navbar.nav-v8 .nav-tab.helper-tab {
+        margin-right: 50px !important;
+    }
+
+    .contact-us-custom-page .pagecontent .contact-form .multi-field {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 991px) {
+    .about-us-v8-content .text-wrapper p a.custom-temp-btn.hvr-fade {
+        font-size: 14.9px;
+    }
+}
+
+@media (max-width: 767px) {
+    video#coverVideo {
+        margin-top: 70px;
+    }
+
+    .navbar-regular.nav-v7 .navbar-nav>li>a,
+    .nav-v7 li.drop-down-link div.drop-down {
+        padding: 3px 15px;
+    }
+
+    li.drop-down-link .sub-menu a {
+        font-size: 1em;
+    }
+
+    .slideshow-v2-wrapper .buttons-holder .custom-temp-btn {
+        margin: 5px 0;
+    }
+
+    .contact-v3 .contact-us p {
+        font-size: 1em;
+    }
+
+    .partners-page .img-holder {
+        gap: 10px;
+    }
+
+    .partners-page .img-holder img {
+        width: 100px;
+    }
+
+    .food-menu-nav .food-menu-nav-item,
+    .food-menu-v2-wrapper .food-menu-nav .food-menu-nav-item,
+    .drink-menu-v2-wrapper .food-menu-nav .food-menu-nav-item {
+        border-bottom: 2px solid #FFFDD0;
+        border-radius: unset;
+    }
+
+    .community-partners-page .custom-about-us-v9-wrapper .about-us-v8-image {
+        height: 0;
+    }
+
+    .community-partners-page .section-header {
+        font-size: 2.4em;
+    }
+
+    .community-partners-page .custom-about-us-v9-wrapper h1 {
+        font-size: 2.1em;
+    }
+
+    .about-us-page .contact-v3 {
+        padding-bottom: 100px;
+    }
+
+    .special-event-ordering-page .section-3 p {
+        text-align: center;
+    }
+
+    .special-event-ordering-page .section-2 h2,
+    .special-event-ordering-page .section-3 h2 {
+        font-size: 2.1em;
+    }
+
+    .special-event-ordering-page .section-2 h3 {
+        font-size: 1.7em;
+    }
+
+    .special-event-ordering-page .section-1 {
+        padding: 2em 5%;
+    }
+
+    .donation-request-page .reservations-and-parties .form-block:has(.half-select) label {
+        min-height: 60px;
+    }
+}
