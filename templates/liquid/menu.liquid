@@ -10,8 +10,8 @@
         <nav id="menu-category-nav" class="flex flex-wrap justify-center gap-3">
             {% for category in menu %}
                 <a class="button-menu{% if category.slug == selected.slug %} !bg-market-cream !text-market-ink{% endif %}"
-                   href="?category={{ category.slug }}"
-                   hx-get="/products-specialties-gifts?category={{ category.slug }}"
+                   href="/products/{{ category.slug }}"
+                   hx-get="/products/{{ category.slug }}"
                    hx-target="#menu-category"
                    hx-swap="outerHTML"
                    hx-push-url="true"
@@ -29,6 +29,7 @@
                     <div>
                         <h2 class="section-title text-4xl">{{ selected.name }}</h2>
                         <p class="mt-5 text-lg leading-8">{{ selected.description }}</p>
+                        <p class="mt-5 leading-7">{{ selected.copy }}</p>
                     </div>
                     <div class="grid gap-5 sm:grid-cols-2">
                         {% for item in selected.images %}

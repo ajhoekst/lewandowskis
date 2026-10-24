@@ -3,7 +3,29 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
-        <title>{{ title }} | Lewandoski's Market</title>
+        <title>{{ metadata.title }}</title>
+        <meta name="description" content="{{ metadata.description }}">
+        <link rel="canonical" href="{{ canonicalUrl }}">
+        {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Lewandoski's Market">
+        <meta property="og:title" content="{{ metadata.title }}">
+        <meta property="og:description" content="{{ metadata.description }}">
+        <meta property="og:url" content="{{ canonicalUrl }}">
+        <meta property="og:image"
+              content="https://lewandowskismarket.com{{ metadata.image }}">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="{{ metadata.title }}">
+        <meta name="twitter:description" content="{{ metadata.description }}">
+        <link rel="icon"
+              href="/assets/favicons/favicon-32x32.png"
+              sizes="32x32"
+              type="image/png">
+        <link rel="manifest" href="/assets/favicons/site.webmanifest">
+        <script type="application/ld+json">{"@context":"https://schema.org","@type":"GroceryStore","name":"Lewandoski's Market","url":"https://lewandowskismarket.com","image":"https://lewandowskismarket.com/assets/img/logo_2.png","telephone":"+1-616-454-2281","address":{"@type":"PostalAddress","streetAddress":"1107 Walker Ave NW","addressLocality":"Grand Rapids","addressRegion":"MI","postalCode":"49504","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":"Monday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Tuesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Wednesday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Thursday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"09:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"17:30"}],"specialOpeningHoursSpecification":[{"@type":"OpeningHoursSpecification","validFrom":"2026-07-04","validThrough":"2026-07-04","opens":"00:00","closes":"00:00"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-24","validThrough":"2026-12-24","opens":"08:00","closes":"12:00"},{"@type":"OpeningHoursSpecification","validFrom":"2026-12-25","validThrough":"2026-12-26","opens":"00:00","closes":"00:00"}],"sameAs":["https://www.facebook.com/162729067084313","https://www.instagram.com/lewandoskismarket"]}</script>
+        {% if currentPath == "/" %}
+            <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do you make fresh kielbasa and sausage?","acceptedAnswer":{"@type":"Answer","text":"Lewandoski's Market offers fresh and smoked kielbasa, Krakowska, and a selection of house-made sausage. Visit the market to see today's selection."}},{"@type":"Question","name":"Where is Lewandoski's Market located?","acceptedAnswer":{"@type":"Answer","text":"Lewandoski's Market is located at 1107 Walker Ave NW in Grand Rapids, Michigan."}},{"@type":"Question","name":"What are your market hours?","acceptedAnswer":{"@type":"Answer","text":"Lewandoski's Market is open Monday through Saturday from 9 AM to 5:30 PM and is closed on Sundays."}},{"@type":"Question","name":"Do you carry Polish grocery products?","acceptedAnswer":{"@type":"Answer","text":"The market carries Polish grocery staples, pierogi, specialty ingredients, and pantry favorites."}},{"@type":"Question","name":"How do donation requests work?","acceptedAnswer":{"@type":"Answer","text":"Submit donation requests at least four weeks before your event through the donation request form."}}]}</script>
+        {% endif %}
         <link rel="stylesheet" href="/static/css/site.css">
         <script src="/static/vendor/htmx-4.0.0.js"></script>
         <script type="module" src="/static/js/lqip-image.js"></script>
@@ -87,7 +109,11 @@
                         <br>
                         Grand Rapids, MI 49504
                         <br>
-                        <a href="tel:+16164542281">(616) 454-2281</a></address>
+                        <a href="tel:+16164542281">(616) 454-2281</a>
+                        <br>
+                        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=1107+Walker+Ave+NW,+Grand+Rapids,+MI+49504"
+                           target="_blank"
+                           rel="noreferrer">Get directions</a></address>
                 </section>
                 <section>
                     <h2 class="font-display text-2xl uppercase">Hours</h2>
@@ -97,6 +123,24 @@
                         Saturday: 9 AM–5:30 PM
                         <br>
                         Sunday: Closed
+                    </p>
+                    <p class="mt-4 leading-7 text-market-cream/85">
+                        <strong>2026 Holiday Hours</strong>
+                        <br>
+                        July 4: Closed
+                        <br>
+                        December 24: 8 AM–12 PM
+                        <br>
+                        December 25–26: Closed
+                    </p>
+                    <p class="mt-4 flex flex-wrap gap-x-4 gap-y-2">
+                        <a href="https://www.facebook.com/162729067084313"
+                           target="_blank"
+                           rel="noreferrer">Facebook</a><a href="https://www.instagram.com/lewandoskismarket"
+   target="_blank"
+   rel="noreferrer">Instagram</a><a href="https://www.yelp.com/biz/lewandoskis-market-grand-rapids"
+   target="_blank"
+   rel="noreferrer">Yelp</a>
                     </p>
                 </section>
             </div>

@@ -19,6 +19,26 @@ type Submission = { formType: string; submittedAt: string; payload: Record<strin
 
 const submissions: Submission[] = [];
 const assetCacheControl = "public, max-age=604800, s-maxage=31536000";
+const siteUrl = "https://lewandowskismarket.com";
+const seo = {
+  "/": { title: "Polish Market, Homemade Kielbasa & Fresh Meats | Lewandoski's Market", description: "Lewandoski's Market is a Grand Rapids Polish market offering fresh cuts, homemade kielbasa, Polish grocery staples, and prepared foods.", image: "/assets/img/video_poster.jpg" },
+  "/about": { title: "About Lewandoski's Market | Grand Rapids, MI", description: "Learn the history of Lewandoski's Market and its Polish food traditions on Grand Rapids' West Side.", image: "/assets/img/about_page_left_2.jpg" },
+  "/products-specialties-gifts": { title: "Fresh Sausage, Meats & Polish Grocery | Lewandoski's Market", description: "Explore fresh sausage, butcher-cut meats, homemade foods, Polish grocery staples, breads, desserts, and gifts in Grand Rapids.", image: "/assets/img/food_back_new.jpg" },
+  "/events": { title: "Events | Lewandoski's Market, Grand Rapids", description: "Find upcoming news and events from Lewandoski's Market on Grand Rapids' West Side.", image: "/assets/img/events_back_new.jpg" },
+  "/community-partners": { title: "Community Partners | Lewandoski's Market", description: "Meet the Grand Rapids organizations and community partners supported by Lewandoski's Market.", image: "/assets/img/community_partners_back.jpg" },
+  "/donation-request": { title: "Donation Requests | Lewandoski's Market", description: "Submit a donation request to Lewandoski's Market for a Grand Rapids nonprofit or community event.", image: "/assets/img/donation_request_back.jpg" },
+  "/contact-us": { title: "Contact & Hours | Lewandoski's Market, Grand Rapids", description: "Visit Lewandoski's Market at 1107 Walker Ave NW in Grand Rapids for Polish grocery favorites, fresh meats, and homemade sausage.", image: "/assets/img/about_back_2.jpg" },
+} as const;
+// TODO: Expand each category with verified in-house offerings, current product brands, seasonal availability, and local Grand Rapids purchase guidance.
+// TODO: Add confirmed parking, accessibility, holiday-ordering, and Google Business Profile details to the relevant customer-facing pages.
+const categoryCopy: Record<string, string> = {
+  sausage: "Lewandoski's Market has long been a destination for fresh and smoked kielbasa, Krakowska, and house-made sausage in Grand Rapids. Visit our West Side market for traditional Polish flavors, everyday grilling favorites, and help choosing the right sausage for your next meal.",
+  meats: "Our butcher case features fresh cuts selected for weeknight dinners, weekend grilling, and family gatherings. Stop in to see today's selection of burgers, steaks, roasts, and other fresh meats, or ask our team for a recommendation.",
+  "homemade-foods": "Take home comforting prepared foods made with the same care we bring to our market counter. Our homemade favorites make it easier to put a satisfying meal on the table, whether you are planning a family dinner or picking up a side for a gathering.",
+  "polish-grocery": "Explore Polish grocery staples, pantry favorites, pierogi, and specialty ingredients in the heart of Grand Rapids' West Side. Our shelves offer familiar flavors for longtime customers and an easy introduction to Polish cooking for new visitors.",
+  "gift-cards-and-gifts": "Find thoughtful gifts for food lovers, neighborhood regulars, and anyone who appreciates Lewandoski's Market traditions. Gift cards and market merchandise make it simple to share a favorite local destination with friends and family.",
+  "breads-and-desserts": "Round out your table with breads, desserts, and sweet Polish favorites. Visit the market to discover today's selection and find something special for everyday meals, holidays, and family celebrations.",
+};
 const menu = [
   { slug: "sausage", name: "Sausage", description: "Fresh and smoked Kielbasa, Krakowska, and a premium selection of house-made sausage built on time-honored methods.", items: [["Fresh Kielbasa", "/assets/img/feb9c6602c164b05bdd77d1ebe94979c.jpeg", "Our classic fresh Kielbasa is seasoned and prepared in-house for your next family meal."], ["Smoked sausage", "/assets/img/b40961b50a8c40448e2f4c8505227745.jpeg", "A richly flavored smoked sausage made with time-honored recipes."], ["Homemade sausage", "/assets/img/2b5781b091304453bfb026d0a3b9112d.jpeg", "A selection of handcrafted sausage made fresh for the butcher case."]] },
   { slug: "meats", name: "Meats", description: "Fresh-cut meats selected to make everyday dinners and special occasions memorable.", items: [["Fresh burger patties", "/assets/img/344b9b3c8a20412eabc0cb981c2ad59c.jpeg", "Fresh-ground burger patties ready for the grill, skillet, or your favorite recipe."], ["Fresh meat selection", "/assets/img/8e798e9ab03f44aab4466591e2e41429.jpeg", "Quality cuts and specialty meats for everyday dinners and special occasions."]] },
@@ -26,7 +46,7 @@ const menu = [
   { slug: "polish-grocery", name: "Polish Grocery", description: "Polish pantry staples, specialty ingredients, and familiar flavors for your table.", items: [["Polish grocery and pierogi case", "/assets/img/c32f783993ad438ca0938aade9178ed2.jpeg", "A well-stocked selection of pierogi, Polish staples, and market favorites."]] },
   { slug: "gift-cards-and-gifts", name: "Gift Cards & Gifts", description: "Thoughtful gifts for the food lovers and Lewandoski's regulars in your life.", items: [["Lewandoskis Market merchandise", "/assets/img/gallery/f8b7bdf209434584b37c8fbd2f52ebcb.jpeg", "Market merchandise and gifts for loyal West Side food lovers."]] },
   { slug: "breads-and-desserts", name: "Breads & Desserts", description: "Sweet and savory bakery favorites to round out any meal.", items: [["Fresh baked bread", "/assets/img/gallery/5b1ed2d1d813474a84469fd9e5290031.jpeg", "Fresh bread and bakery favorites to complete a meal."], ["Kremowki dessert", "/assets/img/gallery/03b659a561074e7ba76ed6e7cf62a9ca.jpeg", "A classic Polish pastry with delicate layers and a rich, creamy filling."]] },
-].map(category => ({ ...category, images: category.items.map(([alt, src, description]) => ({ alt, src, description })) }));
+].map(category => ({ ...category, copy: categoryCopy[category.slug], images: category.items.map(([alt, src, description]) => ({ alt, src, description })) }));
 
 const gallery = [
   ["Cheese Spread", "d0671e8f98e0417d821ac42620539198", true], ["Gołąbki", "b335e7b1f14e7ea478bcb14aeb7f4d"], ["Brats", "57566a9c4f5c40f6bfee99fdf56abb45"], ["Old picture", "58aa2baa662d482e98ca00a01f84f42d"], ["Lewandoskis Market exterior", "bfa9b02970ff4f68b9f7416b44c3b576"], ["Old picture of the market", "31683db2b6cb4a8b87b7519f9cb1a074"], ["Charcuterie board with cheeses and cured meats", "311b147de93440249c03086a5d8d0494"], ["Staff member posing for a photo", "c8fe361e9f784f01bbb95fdf33e90683", true], ["Steak", "349921811b7b4f579c2115a95eb9bb21"], ["Exterior of the restaurant", "1ec97e80d3714743bf1dc2bd8a011e96"], ["Kapusta", "0393b163d7f941bb9542633e86ee2524"], ["Fresh Baked Bread", "5b1ed2d1d813474a84469fd9e5290031"], ["Interior, shelf with different products", "2221484751614805a650467b9031451f"], ["Owner and an employee", "1859c42d87a64a11acb2ad02901d1c8f"], ["Merchandise t-shirts", "f8b7bdf209434584b37c8fbd2f52ebcb", true], ["Meatballs", "307a500fa60b4130b991cba414dab3fa"], ["Baked Beans", "8514655a5ad7461a9b17b14d8339d608"], ["Lewandoskis Market", "6f8c81e4f66a488589b11d58b552cbf2"], ["Pickled products", "f16979b2793d4f1999d1c9c216e18862"], ["T-bone steak", "aa861fbeb51341b89e87df1c99373abc"], ["Bacon", "8887a886246d4ec88889176c55599145"], ["Interior, display fridges area", "c0c56128f51442a59771852de159db92", true], ["Sausages", "52a2d8d4bb5440a982fb20eb3f745f88"], ["Various Groceries", "b0864451e6a74a6db4cc26a14a1d1bf2"], ["Shelf with different products", "a3553a4935124abe9b4f30048be01c44"], ["Trophies on the shelf", "11e94e31e09f492c9dfd4e272384fe94"], ["Kremowki", "03b659a561074e7ba76ed6e7cf62a9ca"], ["Freshly smoked kielbasa hanging from smoker sticks", "99cba26e801f4302aa18c812e5e4d8ee"],
@@ -58,9 +78,11 @@ async function renderTemplate(_env: Env, name: string, context: Record<string, u
   return liquid.parseAndRender(source, context);
 }
 
-async function renderPage(env: Env, name: string, context: Record<string, unknown>, currentPath: string) {
+async function renderPage(env: Env, name: string, context: Record<string, unknown>, currentPath: string, hostname: string) {
   const content = await renderTemplate(env, name, context);
-  return renderTemplate(env, "layout.liquid", { ...context, content, currentPath });
+  const category = currentPath.startsWith("/products/") ? menu.find(item => item.slug === currentPath.slice("/products/".length)) : undefined;
+  const metadata = category ? { title: `${category.name} | Lewandoski's Market, Grand Rapids`, description: `${category.description} Visit Lewandoski's Market on Grand Rapids' West Side.`, image: category.images[0]?.src ?? "/assets/img/food_back_new.jpg" } : seo[currentPath as keyof typeof seo] ?? seo["/"];
+  return renderTemplate(env, "layout.liquid", { ...context, content, currentPath, canonicalUrl: `${siteUrl}${currentPath}`, metadata, noindex: hostname !== "lewandowskismarket.com" && hostname !== "www.lewandowskismarket.com" });
 }
 
 const escape = (value: string) => value.replace(/[&<>"']/g, character => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character] ?? character);
@@ -100,6 +122,11 @@ async function handleSubmission(request: Request, env: Env, type: "contact" | "d
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+    if (url.pathname === "/robots.txt") return new Response(`User-agent: *\nAllow: /\nSitemap: ${siteUrl}/sitemap.xml\n`, { headers: { "content-type": "text/plain" } });
+    if (url.pathname === "/sitemap.xml") {
+      const paths = [...Object.keys(seo), ...menu.map(category => `/products/${category.slug}`)].map(path => `<url><loc>${siteUrl}${path}</loc></url>`).join("");
+      return new Response(`<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${paths}</urlset>`, { headers: { "content-type": "application/xml" } });
+    }
     if (url.pathname.startsWith("/assets/")) {
       if ("fetch" in env.ASSETS) {
         const response = await env.ASSETS.fetch(new Request(new URL(url.pathname.slice(7), request.url), request));
@@ -114,24 +141,25 @@ export default {
     if (url.pathname.startsWith("/static/")) return env.STATIC.fetch(new Request(new URL(url.pathname.slice(7), request.url), request));
     if (url.pathname === "/forms/contact" && request.method === "POST") return handleSubmission(request, env, "contact");
     if (url.pathname === "/forms/donation" && request.method === "POST") return handleSubmission(request, env, "donation");
-    if (url.pathname === "/products-specialties-gifts") {
-      const selected = menu.find(category => category.slug === url.searchParams.get("category")) ?? menu[0];
+    if (url.pathname === "/products-specialties-gifts" || url.pathname.startsWith("/products/")) {
+      const slug = url.pathname.startsWith("/products/") ? url.pathname.slice("/products/".length) : url.searchParams.get("category");
+      const selected = menu.find(category => category.slug === slug) ?? menu[0];
       const context = { title: "Products", menu, selected };
       const name = request.headers.get("HX-Request") === "true" ? "partials/menu-category.liquid" : "menu.liquid";
-      const output = request.headers.get("HX-Request") === "true" ? await renderTemplate(env, name, context) : await renderPage(env, name, context, url.pathname);
+      const output = request.headers.get("HX-Request") === "true" ? await renderTemplate(env, name, context) : await renderPage(env, name, context, url.pathname, url.hostname);
       return new Response(output, { headers: { "content-type": "text/html" } });
     }
     if (url.pathname === "/contact-us" || url.pathname === "/donation-request") {
       const donation = url.pathname === "/donation-request";
       const names = donation ? ["name", "email", "phone", "organization", "event_name", "event_date", "guest_count", "items_requested"] : ["first_name", "last_name", "email", "phone", "message"];
       const context = { title: donation ? "Donation Request" : "Contact Us", fields: names.map(name => ({ name, label: name.replaceAll("_", " "), type: name === "email" ? "email" : name === "phone" ? "tel" : name === "event_date" ? "date" : "", autocomplete: ({ first_name: "given-name", last_name: "family-name", email: "email", phone: "tel", organization: "organization" } as Record<string, string>)[name] ?? "off" })) };
-      return new Response(await renderPage(env, donation ? "donation-request.liquid" : "contact-us.liquid", context, url.pathname), { headers: { "content-type": "text/html" } });
+      return new Response(await renderPage(env, donation ? "donation-request.liquid" : "contact-us.liquid", context, url.pathname, url.hostname), { headers: { "content-type": "text/html" } });
     }
-    if (url.pathname === "/") return new Response(await renderPage(env, "home.liquid", { title: "Home", gallery }, url.pathname), { headers: { "content-type": "text/html" } });
+    if (url.pathname === "/") return new Response(await renderPage(env, "home.liquid", { title: "Home", gallery }, url.pathname, url.hostname), { headers: { "content-type": "text/html" } });
     const page = pages[url.pathname];
     if (page) {
       const template = { "/about": "about.liquid", "/community-partners": "community-partners.liquid", "/events": "events.liquid" }[url.pathname]!;
-      return new Response(await renderPage(env, template, { title: page.title, partners: "partners" in page ? page.partners : [] }, url.pathname), { headers: { "content-type": "text/html" } });
+      return new Response(await renderPage(env, template, { title: page.title, partners: "partners" in page ? page.partners : [] }, url.pathname, url.hostname), { headers: { "content-type": "text/html" } });
     }
     return new Response("Not found", { status: 404 });
   },
