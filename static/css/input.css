@@ -401,7 +401,7 @@
   }
 
   .gallery-grid {
-    @apply grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-5;
+    @apply grid grid-cols-2 md:grid-cols-5;
   }
 
   .gallery-item {
@@ -415,11 +415,20 @@
   .gallery-item lqip-image,
   .gallery-item picture,
   .gallery-item img {
-    @apply h-full w-full object-cover transition duration-300 hover:scale-105;
+    @apply h-full w-full object-cover;
+  }
+
+  .gallery-item .lqip__image {
+    @apply transition-transform duration-300 ease-out;
+  }
+
+  .gallery-item:hover .lqip__image,
+  .gallery-item:focus-visible .lqip__image {
+    @apply scale-105;
   }
 
   .gallery-item span {
-    @apply absolute inset-x-0 bottom-0 bg-black/70 px-3 py-2 text-center text-sm text-market-cream opacity-0 transition group-hover:opacity-100 group-focus-visible:opacity-100;
+    @apply sr-only;
   }
 
   .paper-section {

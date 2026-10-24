@@ -156,7 +156,8 @@
             <div class="gallery-grid mt-10">
                 {% for item in gallery %}
                     <a class="gallery-item group{% if item.wide %} gallery-item--wide{% endif %}"
-                       href="{{ item.image }}">
+                       href="{{ item.image }}"
+                       aria-label="{{ item.title }}">
                         {% assign base = item.image | remove: ".jpeg" %}
                         <lqip-image>
                         <img class="lqip__placeholder"
@@ -208,7 +209,7 @@
                             {% endif %}
                         </picture>
                         </lqip-image>
-                        <span>{{ item.title }}</span></a>
+                        <span aria-hidden="true">{{ item.title }}</span></a>
                 {% endfor %}
             </div>
         </div>

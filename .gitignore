@@ -1,6 +1,7 @@
 assets/
 data/
 node_modules/
+static/css/site.css
 .venv/
 worker/dist/
 worker/public/
