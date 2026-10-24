@@ -7,7 +7,7 @@
     "build:css": "npx @tailwindcss/cli -i static/css/input.css -o static/css/site.css --minify",
     "watch:css": "npx @tailwindcss/cli -i static/css/input.css -o static/css/site.css --watch",
     "build": "npm run build:css && npm run build:worker",
-    "build:worker": "mkdir -p worker/public/static/css worker/public/static/js worker/public/static/vendor worker/dist && cp static/css/site.css worker/public/static/css/site.css && cp static/llms.txt worker/public/llms.txt && cp static/js/lqip-image.js worker/public/static/js/lqip-image.js && cp static/js/accessibility.js worker/public/static/js/accessibility.js && cp node_modules/htmx.org/dist/htmx.js worker/public/static/vendor/htmx-4.0.0.js && npx esbuild worker/src/worker.ts --bundle --format=esm --platform=browser --loader:.liquid=text --outfile=worker/dist/worker.js",
+    "build:worker": "mkdir -p worker/public/static/css worker/public/static/js worker/public/static/vendor/images worker/dist && cp static/css/site.css worker/public/static/css/site.css && cp static/llms.txt worker/public/llms.txt && cp static/js/lqip-image.js worker/public/static/js/lqip-image.js && cp static/js/accessibility.js worker/public/static/js/accessibility.js && cp static/js/home.js worker/public/static/js/home.js && cp static/js/market-map.js worker/public/static/js/market-map.js && cp node_modules/htmx.org/dist/htmx.js worker/public/static/vendor/htmx-4.0.0.js && cp node_modules/leaflet/dist/leaflet.css worker/public/static/vendor/leaflet-1.9.4.css && cp node_modules/leaflet/dist/leaflet.js worker/public/static/vendor/leaflet-1.9.4.js && cp -R node_modules/leaflet/dist/images/. worker/public/static/vendor/images && npx esbuild worker/src/worker.ts --bundle --format=esm --platform=browser --loader:.liquid=text --outfile=worker/dist/worker.js",
     "dev:worker": "npm run build:worker && workerd serve worker/workerd.capnp --watch --directory-path assets=assets --directory-path static=static --directory-path templates=templates/liquid",
     "test": "echo \"No JavaScript tests configured\""
   },
@@ -19,6 +19,7 @@
     "@tailwindcss/cli": "4.1.4",
     "esbuild": "^0.28.2",
     "htmx.org": "4.0.0",
+    "leaflet": "1.9.4",
     "liquidjs": "^10.30.0",
     "tailwindcss": "4.1.4"
   }
