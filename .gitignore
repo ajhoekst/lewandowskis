@@ -9,3 +9,4 @@ __pycache__/
 playwright-ca-bundle.pem
 *.crt
 *.cer
+.DS_Store

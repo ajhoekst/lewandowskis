@@ -10,12 +10,10 @@ const config :Workerd.Config = (
       bindings = [
         (name = "ASSETS", service = "assets"),
         (name = "STATIC", service = "static"),
-        (name = "TEMPLATES", service = "templates"),
       ],
     )),
     (name = "assets", disk = (path = "assets", writable = false)),
-    (name = "static", disk = (path = "static", writable = false)),
-    (name = "templates", disk = (path = "templates", writable = false)),
+    (name = "static", disk = (path = "../static", writable = false)),
   ],
   sockets = [
     (name = "http", address = "127.0.0.1:8787", http = (), service = "market-ts"),
