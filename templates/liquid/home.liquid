@@ -1,24 +1,36 @@
-<section class="hero">
-    <video class="hero-media"
-           autoplay
-           muted
-           loop
-           playsinline
-           poster="/assets/img/video_poster.jpg">
-        <source src="/assets/video/Lewandoskis_Market_Video_Vimeo_720p30.mp4"
-                type="video/mp4">
-    </video>
-    <div class="hero-shade"></div>
-    <div class="shell py-24 text-center">
-        <h1 class="hero-title mx-auto">Polish heritage, right here on the West Side.</h1>
-        <p class="hero-script">Fresh cuts. Homemade sausage. Food worth gathering around.</p>
-        <div class="mt-9 flex flex-wrap justify-center gap-4">
-            <a class="button-light" href="/products-specialties-gifts">Our Products</a><a class="button-light" href="/contact-us">Visit Us</a>
-        </div>
+<section class="home-carousel" aria-label="Featured market images">
+    <div class="home-carousel__slide is-active">
+        <video class="home-carousel__media"
+               autoplay
+               muted
+               playsinline
+               poster="/assets/img/video_poster.jpg">
+            <source src="/assets/video/Lewandoskis_Market_Video_Vimeo_720p30.mp4"
+                    type="video/mp4">
+        </video>
+    </div>
+    <div class="home-carousel__slide" aria-hidden="true">
+        <img class="home-carousel__media"
+             src="/assets/img/gallery/311b147de93440249c03086a5d8d0494.jpeg"
+             alt="Charcuterie board with cheeses and cured meats">
+    </div>
+    <div class="home-carousel__controls">
+        <button class="home-carousel__control"
+                type="button"
+                data-carousel-pause
+                aria-label="Pause carousel">
+            <span aria-hidden="true">Ⅱ</span>
+        </button>
+        <button class="home-carousel__control"
+                type="button"
+                data-carousel-mute
+                aria-label="Unmute video">
+            <span aria-hidden="true">◢</span>
+        </button>
     </div>
 </section>
 <section class="feature-split bg-market-red text-market-cream">
-    <div class="feature-copy">
+    <div class="feature-copy order-last sm:order-none">
         <h2 class="section-title text-market-cream">It's steak time</h2>
         <p class="mt-4 section-subtitle text-market-cream">Get ready for grilling season!</p>
         <p class="mt-5 max-w-md text-lg leading-8">
@@ -26,7 +38,7 @@
         </p>
         <a class="button-light mt-7" href="/products-specialties-gifts">Our Products</a>
     </div>
-    <div class="feature-image">
+    <div class="feature-image feature-image--framed order-first sm:order-none">
         <lqip-image>
         <img class="lqip__placeholder"
              src="/assets/img/b0d219a62bcf41408998cd450a13f378-32.webp"
@@ -65,7 +77,7 @@
         </div>
     </section>
     <section class="feature-split bg-market-cream">
-        <div class="feature-image order-last sm:order-first">
+        <div class="feature-image feature-image--framed order-last sm:order-first">
             <lqip-image>
             <img class="lqip__placeholder"
                  src="/assets/img/c40d684b2c5b44d6b968115ed95ee4aa-32.webp"
@@ -151,7 +163,7 @@
         </div>
     </section>
     <section class="paper-section">
-        <div class="shell">
+        <div class="shell max-w-none px-0">
             <h2 class="section-title text-center">Gallery</h2>
             <div class="gallery-grid mt-10">
                 {% for item in gallery %}

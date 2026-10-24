@@ -1,3 +1,49 @@
+const homeHeader = document.querySelector('.site-header--home');
+if (homeHeader) {
+  const updateHomeHeader = () => homeHeader.classList.toggle('is-scrolled', window.scrollY > 8);
+  updateHomeHeader();
+  window.addEventListener('scroll', updateHomeHeader, { passive: true });
+}
+
+const carousel = document.querySelector('.home-carousel');
+if (carousel) {
+  const slides = [...carousel.querySelectorAll('.home-carousel__slide')];
+  const video = carousel.querySelector('video');
+  const pauseButton = carousel.querySelector('[data-carousel-pause]');
+  const muteButton = carousel.querySelector('[data-carousel-mute]');
+  let activeSlide = 0;
+  let paused = false;
+  let imageTimer;
+
+  const showSlide = index => {
+    activeSlide = index;
+    slides.forEach((slide, slideIndex) => {
+      const active = slideIndex === activeSlide;
+      slide.classList.toggle('is-active', active);
+      slide.setAttribute('aria-hidden', String(!active));
+    });
+    if (activeSlide === 0 && !paused) video?.play();
+    else video?.pause();
+    if (activeSlide === 1 && !paused) imageTimer = window.setTimeout(() => showSlide(0), 6000);
+  };
+
+  video?.addEventListener('ended', () => showSlide(1));
+  pauseButton?.addEventListener('click', () => {
+    paused = !paused;
+    window.clearTimeout(imageTimer);
+    pauseButton.setAttribute('aria-label', paused ? 'Play carousel' : 'Pause carousel');
+    pauseButton.firstElementChild.textContent = paused ? '▶' : 'Ⅱ';
+    if (paused) video?.pause();
+    else showSlide(activeSlide);
+  });
+  muteButton?.addEventListener('click', () => {
+    if (!video) return;
+    video.muted = !video.muted;
+    muteButton.setAttribute('aria-label', video.muted ? 'Unmute video' : 'Mute video');
+    muteButton.firstElementChild.textContent = video.muted ? '◢' : '◣';
+  });
+}
+
 document.querySelectorAll('.site-mobile-nav').forEach(menu => {
   const summary = menu.querySelector('summary');
   const label = summary.querySelector('.sr-only');
