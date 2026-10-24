@@ -138,6 +138,7 @@ export default {
       if (!object) return new Response("Not found", { status: 404 });
       return new Response(object.body, { headers: { "cache-control": assetCacheControl, "content-type": object.httpMetadata?.contentType ?? "application/octet-stream" } });
     }
+    if (url.pathname === "/llms.txt") return env.STATIC.fetch(new Request(new URL("llms.txt", request.url), request));
     if (url.pathname.startsWith("/static/")) return env.STATIC.fetch(new Request(new URL(url.pathname.slice(7), request.url), request));
     if (url.pathname === "/forms/contact" && request.method === "POST") return handleSubmission(request, env, "contact");
     if (url.pathname === "/forms/donation" && request.method === "POST") return handleSubmission(request, env, "donation");
