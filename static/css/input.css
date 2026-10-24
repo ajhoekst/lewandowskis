@@ -104,11 +104,11 @@
   }
 
   lqip-image.is-loaded .lqip__image {
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   lqip-image.is-cached .lqip__image {
-    transition: none;
+    transition: none !important;
   }
 
   .market-details summary::-webkit-details-marker {
